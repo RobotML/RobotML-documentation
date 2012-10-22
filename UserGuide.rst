@@ -9,3 +9,4 @@ Contents:
    RobotML Introduction <UserGuide/RobotMLIntroduction>
    Platform Installation <UserGuide/PlatformInstallation.rst>
    Examples of Use <UserGuide/ExamplesOfUse>
+   Launching the generations towards execution targets <UserGuide/LaunchingGenerators.rst>
