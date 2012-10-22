@@ -66,12 +66,31 @@ List of composed datatypes for the scenario ATK
 List of the external librairy's functions
 -----------------------------------------
 
+::
+
+   public <<Algorithm>> function initRadarStep(in time : Long, in timestep : Long, in NID : long)
+
 .. TODO
    liste des fonctions externes
    
 List of the processing
 ----------------------
 
+::
+   public function_body initRadarStep() { return time == 0; }
+
 .. TODO
    liste des processings
+   
+List of the componants
+----------------------
 
+::
+   public class Aircraft : Model
+   {
+      public <<dataflowport>> port in time : Long
+      private property SID : Long
+   }
+     
+.. TODO
+   Liste des composants

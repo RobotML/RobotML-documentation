@@ -111,6 +111,9 @@ Model creation
 
 In first time we have created the model level 0. Now we go to create the other levels.
 
+Adding a new model in the project
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 In the **Project explorer** view, select the project node and do right clic to select the *New/Other...* submenu.
 Choose **RobotML Model** in the **Papyrus** category.
 
@@ -221,21 +224,67 @@ Create our external librairy's functions
 
 In our scenario we have two kinds of function:
 
-* A simple interaction
+* A simple function
+* An interaction
 * A processing
 
 
-*A simple interaction*
+*A simple function*
 
 In the **ExternalLibrairies_ComponentDiagram** view, select the **Operation** element in the **RobotML tool panel** and drag it on the **libExternalFunction** component. A new operation has added in the external librairy component, select it and rename as **manageSASystem**.
 Go on the profil tab and assign the **Algorithm** profil.
 
-Edit the properties and add the function parameters on clicking on |add_parameter| button *(See the* :ref:`Annex <Annex>` *to know the parameters)*.
+Edit the properties and add the function arguments on clicking on |add_parameter| button *(See the* :ref:`Annex <Annex>` *to know the parameters)*.
 
 .. |add_parameter| image:: ../ATKScenario_images/add_parameter_button.png
+   :align: center
+   :alt: Add parameter button
 
 Create the external function referenced in the :ref:`Annex <Annex>`.
 
+*An interaction*
+The interaction is a simple function but it only called on the activation component's states. See :ref:`Machine State <MachineState>` to known how modelling it.
+
 *A processing*
 
+The processing is a pool of functions and it will be executed sequentially. It authorized adding action code in the modèle. A processing is called by an interaction.
+To add a processing select **libExternalFunction** component in the **model explorer**. Press right click and add a new **OpaqueBehavior**.
+
+Edit the properties to change name, add an language definition, and link this processing to an interaction. To modeling processing, we choose the :term:`Alf <Alf>` language definition. This language is known by all plateform's generators and could be known by the custom generators (see :ref:`Alf  . 
+Generators API <_Alf_Gen_API>`). The action description code is write on the "body" property section. To link the processing with an interaction, clic on |add_specification| button in the **Specification** property section.
+
+.. |add_specification| image:: ../ATKScenario_images/add_specification_button.png
+   :align: center
+   :alt: Add operation specification button
+
+.. image:: ../ATKScenario_imaes/processing_properties.png
+   :align: center
+   :alt: Processing properties
+
+Create all the processing defined in the :ref:`Annex <Annex>`.
+
+.. :note: Ok, now we have define all datatypes and functions needed, we go to create the base components.
+
+Adding the basic model objects
+------------------------------
+
+As we see on upside, the basic model objects are define in the level 1 of the scenario model. So go to create the level 1 of the model, and named it ATK_N1.
+
+Create the base components
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the scenary we can found 4 base compenents:
+* Automat : The element can be autonomous
+* Function : The element is used as function  (ex : management)
+* Equipment : The element is used as equipement (ex : jammer)
+* Simulation object : The element is a simulation object
+
+Show the **RobotML** perspective, and select the **BasicModelObject** node in the **Model explorer**. Do right clic and choose **new child/Add new package..**
+Names the new package as **Component base**, and do right clic on it. Choose **add new diagram/Add a class diagram**, named it **baseComponent_classDiagram**.
+
+In the **RobotML tool panel** select the **Class component** and drag it on the diagram to create to **Automat** component. Edit the component properties and assign the **System** profile to **automat component**
+The automat has some action to do, go to :ref:`Adding a state machine <StateMachine>` add some dynamic at the component;  
+Create the other base component,   
+
+ 
  
