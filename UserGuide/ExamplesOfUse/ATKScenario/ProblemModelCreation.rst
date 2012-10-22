@@ -219,6 +219,7 @@ In the **Property** view, select **Profil** and assign the **AlgorithmLibrary** 
    :align: center
    :alt: External librairy profil setting
 
+.. ExternalFunctions:
 Create our external librairy's functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -284,7 +285,53 @@ Names the new package as **Component base**, and do right clic on it. Choose **a
 
 In the **RobotML tool panel** select the **Class component** and drag it on the diagram to create to **Automat** component. Edit the component properties and assign the **System** profile to **automat component**
 The automat has some action to do, go to :ref:`Adding a state machine <StateMachine>` add some dynamic at the component;  
-Create the other base component,   
+Create the other base component,  as the following picture. Use **Generalization tool** on **RobotML tool panel** to assign the inheritance.
 
- 
- 
+.. image:: ../ATKScenario_images/base_components_inherit.png
+   :align: center
+   :alt: Base components class diagram 
+
+.. StateMachine:
+
+*Add a state machine to a component*
+The easiest method to add a state machine to a component is create a **State Machine diagram**. So select our **Automat** component and do right clic. Choose add a new **State machine diagram**.
+In the scenario, our automat has 3 states:
+* Init, this state is only on the simulation startup.
+* Running, only the component is initilazed and simulation is running.
+* Killed, only in the simulation shutdown (never used).
+
+With the **RobotML tool panel**:
+* Select the **Initial state** element and drag it on the diagram. Edit their properties and named it **INIT**.
+* Select **State** element and drag it on the diagram. Edit their properties and named it **RUNNING**.
+* Select the **Final state** element and drag it on the diagram. Edit their properties and named it **KILLED**.
+* Select the **Transition** element and draw the transition between "INIT / RUNNING" and "RUNNING / KILLED" states.
+
+.. image:: ../ATKScenario_images/SateMachineDiagram.png
+   :align: center
+   :alt: Automat state machine digram 
+
+*Add transtion's guard and effect*
+Normally we have already added the usally function in the model. If it is not do, then
+
+.. seealso:: :ref:`Create our external librairy's functions <ExternalFunctions>`
+
+In the **State machine diagram** created, select the transition between this INIT and RUNNING states. Edit the properties, and show the **RobotML** tab.
+Assign the **InitGuard** operation to the transition guard. this operation define our condition to autorized the running state activation.
+
+.. image:: ../ATKScenario_images/transition_property.png
+   :align: center
+   :alt: Transition property
+
+.. note:: If you should to add an effect to a transition, then do the same action on the effect property.
+
+.. warning:: RobotML not permit to a state machine to be inherited. The state machine must be clone in the child component. You can use the copy/paste function to do it.
+
+Create the  basics components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Show the **RobotML** perspective, and select the **BasicModelObject** node in the **Model explorer**. Do right clic and choose **new child/Add new package..**
+Names the new package as **basic components**, and do right clic on it. Choose **add new diagram/Add a component diagram**, named it **basicComponents_componentDiagram**.
+
+
+
+   

@@ -8,7 +8,8 @@ Annex
 List of enumeration for the scenario ATK
 ----------------------------------------
  
-::
+.. code-block:: c++
+
    enum NetworkID {
       INVALID_NETWORK(0),
       IFDL(20001),
@@ -41,23 +42,24 @@ List of enumeration for the scenario ATK
 List of composed datatypes for the scenario ATK
 -----------------------------------------------
 
-::
+.. code-block:: c++
+
    datatype SensorDefinition {
-   public type : SensorType;
-   public workWithEntities : Logical
-   public workWithEntitiesTypes : longs
-   public technos : SensorTechnos
-   public useLineOfSight : logical
-   public fieldOfRegard : SensorAngularBounds
-   public fieldofView : SensorAngularDelta
-   public intervisitype : Long
-   public resolution : Vector3
-   public toBeAcquireDuration : Long
-   public tobeLostDuration : Long
-   public canBeJammed : Logical
-   public historyLenght : Long
-   public isEmitter : Logica 
-   public id : Long
+      public type : SensorType;
+      public workWithEntities : Logical
+      public workWithEntitiesTypes : longs
+      public technos : SensorTechnos
+      public useLineOfSight : logical
+      public fieldOfRegard : SensorAngularBounds
+      public fieldofView : SensorAngularDelta
+      public intervisitype : Long
+      public resolution : Vector3
+      public toBeAcquireDuration : Long
+      public tobeLostDuration : Long
+      public canBeJammed : Logical
+      public historyLenght : Long
+      public isEmitter : Logica 
+      public id : Long
    }
 
 .. TODO
@@ -66,7 +68,7 @@ List of composed datatypes for the scenario ATK
 List of the external librairy's functions
 -----------------------------------------
 
-::
+.. code-block:: c++
 
    public <<Algorithm>> function initRadarStep(in time : Long, in timestep : Long, in NID : long)
 
@@ -76,16 +78,17 @@ List of the external librairy's functions
 List of the processing
 ----------------------
 
-::
+.. code-block:: c++
    public function_body initRadarStep() { return time == 0; }
 
 .. TODO
    liste des processings
    
-List of the componants
+List of the components
 ----------------------
 
-::
+.. code-block:: c++
+
    public class Aircraft : Model
    {
       public <<dataflowport>> port in time : Long
