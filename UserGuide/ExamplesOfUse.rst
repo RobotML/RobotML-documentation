@@ -8,3 +8,4 @@ Contents:
 
    How-to: MORSE and ROS <ExamplesOfUse/HowToMorseAndRos>
    How-to: Your first scenario - Attack of an airport <ExamplesOfUse/ATKScenario>
+   How-to: CycabTK <ExamplesOfUse/HowToCycabTK>
