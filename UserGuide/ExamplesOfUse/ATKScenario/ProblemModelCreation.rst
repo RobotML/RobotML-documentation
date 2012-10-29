@@ -28,7 +28,8 @@ Enter the **RobotML portal** authentification.
    :align: center
    :alt: SVN authentification
  
-.. note:: Can save the authentification informations for next time.
+.. note::
+   Can save the authentification informations for next time.
 
 Next clic on finish. The new SNV repository will be added in the **Project explorer** view.
  
@@ -204,7 +205,7 @@ Name it as **id**, and select **Long** for the type value. Add a another attribu
    :align: center
    :alt: Datatype's attribute properties 
    
-Create the composed datatypes referenced int the :ref:`Annex <Annex>`.
+Create the composed datatypes referenced in the :ref:`Annex <Annex>`.
 
 Create our external librairy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -264,7 +265,8 @@ Generators API <_Alf_Gen_API>`). The action description code is write on the "bo
 
 Create all the processing defined in the :ref:`Annex <Annex>`.
 
-.. :note: Ok, now we have define all datatypes and functions needed, we go to create the base components.
+.. note::
+    Ok, now we have define all datatypes and functions needed, we go to create the base components.
 
 Adding the basic model objects
 ------------------------------
@@ -275,10 +277,11 @@ Create the base components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the scenary we can found 4 base compenents:
+
 * Automat : The element can be autonomous
 * Function : The element is used as function  (ex : management)
 * Equipment : The element is used as equipement (ex : jammer)
-* Simulation object : The element is a simulation object
+* Simulation object : The element is a simulation publicobject
 
 Show the **RobotML** perspective, and select the **BasicModelObject** node in the **Model explorer**. Do right clic and choose **new child/Add new package..**
 Names the new package as **Component base**, and do right clic on it. Choose **add new diagram/Add a class diagram**, named it **baseComponent_classDiagram**.
@@ -296,11 +299,13 @@ Create the other base component,  as the following picture. Use **Generalization
 *Add a state machine to a component*
 The easiest method to add a state machine to a component is create a **State Machine diagram**. So select our **Automat** component and do right clic. Choose add a new **State machine diagram**.
 In the scenario, our automat has 3 states:
+
 * Init, this state is only on the simulation startup.
 * Running, only the component is initilazed and simulation is running.
 * Killed, only in the simulation shutdown (never used).
 
 With the **RobotML tool panel**:
+
 * Select the **Initial state** element and drag it on the diagram. Edit their properties and named it **INIT**.
 * Select **State** element and drag it on the diagram. Edit their properties and named it **RUNNING**.
 * Select the **Final state** element and drag it on the diagram. Edit their properties and named it **KILLED**.
@@ -322,15 +327,122 @@ Assign the **InitGuard** operation to the transition guard. this operation defin
    :align: center
    :alt: Transition property
 
-.. note:: If you should to add an effect to a transition, then do the same action on the effect property.
+.. note:: 
+   If you should to add an effect to a transition, then do the same action on the effect property.
 
-.. warning:: RobotML not permit to a state machine to be inherited. The state machine must be clone in the child component. You can use the copy/paste function to do it.
+.. warning:: 
+   RobotML not permit to a state machine to be inherited. The state machine must be clone in the child component. You can use the copy/paste function to do it.
 
 Create the  basics components
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Show the **RobotML** perspective, and select the **BasicModelObject** node in the **Model explorer**. Do right clic and choose **new child/Add new package..**
 Names the new package as **basic components**, and do right clic on it. Choose **add new diagram/Add a component diagram**, named it **basicComponents_componentDiagram**.
+
+In the **RobotML tool panel** select the **Component** element, and drag it on the diagram. Named this component as **Esm**
+
+*Adding port*
+To add a port to the component, select the **Dataflow port** element in the **RobotML tool panel**, and drag it on the component. The new added port is symbolized by a black arrow. Named this port as **status_in** and edit their property.
+In the property view, choose **StatusList** for the port type. By default the dataflow port direction is **in**. In the **RobotML** tab, we can change it. The available values are:
+
++---+----------+----------------------+
+| * | In       | Input port           |
++---+----------+----------------------+
+| * | Out      | Output port          |
++---+----------+----------------------+
+| * | In / Out | Input and ouput port |
++---+----------+----------------------+
+
+.. image:: ../ATKScenario_images/robotml_dataflow.png
+   :align: center
+   :alt: RobotML tab's property for the dataflow.
+
+*Adding property*
+To add a property to the component, select the **property** element in **RobotML tool panel**, and drag it on the component. The new property is symbilzed by a rectangle. Named this property as **esmDef**, and edit their property.
+In the property view,choose **esmDefinitions** for the property type.
+ 
+*Inheritance*
+Now we had a **Esm** component but in the real life, this component is considerate as an equipement. We had also define the **Equipment** component base, we don't go to rewrite it!
+Then we go to use the inheritance method. We go to define **Esm** as child of the **Equipment** component base.
+So select the **BasicModelObject** node, and do right clic to chosse **add new diagram/add a class diagram**. Named the new diagram **BasicModelObject_Classdiagram**.
+In the **Model explorer** select the **Equipment** component base drag it on the diagram. Do the same action with the **Esm** component. In the **RobotMl tool panel** select the **Generalization** tool and link the **Esm** component to **Equipment**.
+
+Now create all basics components referenced in the :ref:`Annex <Annex>`, and assign the inheritance as the following class diagram.
+
+.. image:: ../ATKScenario_images/basics_components_class_diagram.png
+   :align: center
+   :alt: Basics components class diagram.
+
+Create the systems components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now we go to define the systems components present in our scenario:
+
++---+------------+------------------------------+
+| * | MMS        | Mission  system management   |
++---+------------+------------------------------+
+| * | Protection | Protection system management |
++---+------------+------------------------------+
+| * | Sensors    | Sensors system management    |
++---+------------+------------------------------+
+| * | Navigation | Navigation system management |
++---+------------+------------------------------+
+
+So Create a new RobotMl model in the project view, and named it as **SystemObjectModel**, add a new **SystemComponents** package.
+Add a new **Component diagram** to the **SystemComponents** package, and create the fours system with the **Component** element of the **RobotML tool panel**.
+
+Edit the properties's component and assign ports, inherit and property as it defined in the :ref:`Annex<Annex>`.
+
+Create the robots components
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the scenario, we have two robots components entities:
+
++---+----------+--------------------+
+| * | SASystem | Ground / Air robot |
++---+----------+--------------------+
+| * | Aircraft | Aircraft robot     |
++---+----------+--------------------+
+
+Create the new **RobotObjectModel** RobotML model, and add the **RobotComponents** package.
+Add a new **Component diagram** to the **RobotMLComponents** package, and create the fours system with the **Component** element of the **RobotML tool panel**.
+
+Edit the properties's component and assign ports, inherit and property as it defined in the :ref:`Annex<Annex>`.
+
+Create the scenary component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The scenary component is the root element of the simulation. It define the simulation's envrionment, and contains the instances simulation.
+
+Define the new **ScenaryObjectModel** RobotML model, and add the **ScenaryComponents** package.
+Create a **Component diagram** and create the **Root** component with the **Component** element of the **RobotML tool panel**.
+
+Edit their properties and as assign ports, inherit and property as it define in the :ref:`Annex <Annex>`.
+
+Link the components
+^^^^^^^^^^^^^^^^^^^
+Now all our components are created, but they need to communicate to have some dynamic. So with the **Link** element of the **RobotML tool panel**, go the draw the component communications in the different model level.
+
+Static validation model
+=======================
+
+When we finish the scenary modelling operation, we should to validate our model statically. The validation can to be run on all the model our just a sub tree section. To validate, select a node and do right clic. Choose **Validation / Validate model** or **Validation / Validate subtree**.
+When the validation been running, the error status is display on the **Model explorer**. Show the **Error log** view to known the model errors or warning.
+
+.. note::
+   A model with not error and warning is strongest, and reduce the generation errors.
+
+The deployment
+==============
+
+The deployment is use to generate the sources code files to destination of a middleware or a simulator. For our scenary, our destination is the :term:`VLE <VLE>` simulator.
+
+Create a new deployment
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To create a new deployment, open the model level 4, and select the root level node. Do right clic, and select **add new diagram / new deployment diagram**.
+
+.. TODO 
 
 
 
