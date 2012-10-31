@@ -8,14 +8,14 @@ In RobotML, the :term:`Alf<alf>` language is used to describe the operation cont
 
 For your needs, you can create a specific :term:`Alf<alf>` generator language on using this :ref:`Alf Generator API<_Alf_Gen_API>`.
 
-.. warning:: The :term:`Alf<alf>` knowkedge is clearly recommended. Go to see the `Alf language site <http://www.omg.com/>`_ before start your work!
+.. warning:: The :term:`Alf<alf>` knowledge is clearly recommended. Go to see the `Alf language site <http://www.omg.org/spec/ALF/>`_ before start your work!
  
 Overview
 ########
 
 .. image:: ../ATK_Scenario_images/Alf_overview.png
    :align: center
-   :alt: Alf API overview.]
+   :alt: Alf API overview.
    
    
 .. _AlfServcies:
