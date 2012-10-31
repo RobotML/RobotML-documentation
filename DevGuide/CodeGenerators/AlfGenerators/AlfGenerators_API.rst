@@ -13,7 +13,7 @@ For your needs, you can create a specific :term:`Alf<alf>` generator language on
 Overview
 ########
 
-.. image:: ../ATK_Scenario_images/Alf_overview.png
+.. image:: ../ATK_Scenario_images/alf_API_Overview.png
    :align: center
    :alt: Alf API overview.
    
@@ -61,8 +61,6 @@ Translate an Alf bloc to C++ code.
 
 AlfBlock
 ********
-
-.. TODO:: Definition
 
 *public*
 
