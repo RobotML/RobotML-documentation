@@ -58,6 +58,65 @@ Name your module, select the metamodel should to use, and select the module type
 
 .. seealso:: How to create a new RobotML generator
 
+Adding your new generator in the RobotML generator interface
+############################################################
+
+Import the **RobotML generator project** in your workspace (org.eclipse.robotml.generators.generator.ui).
+Open the file *MANIFEST.MF* and slect the **Dependencies** tab. In the **Required plug-in** section, add your generator plug-in.
+In the package **org.eclipse.robotml.generators.generator.ui.xml**, open the file **config.xml**, and add you generator declaration int the **generator_list** node.
+
+The following example show how to declare generators:
+
+.. code-block:: xml
+
+   <robotml>
+      <domain_list>
+         <domain name="athenaDSL">
+            <implementation class="org.xtext.athenaDSL.impl.AthenaDSLFactoryImpl" method="init"/>
+            <implementation class="org.xtext.athenaDSL.impl.AthenaDSLPackageImpl" method="init"/>
+         </domain>
+      </domain_list>
+      <generator_list>
+         <generator name="athena" id="org.eclipse.robotml.generators.acceleo.athena" class="org.eclipse.robotml.generators.acceleo.athena.files.GenerateAthena" src-type="model" target-folder="athena"/>
+         <generator name="vle" id="org.eclipse.robotml.generators.xtext.athena.vle" class="org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE" src-type="file" src-ext="adl" target-folder="vle-generated-src" src-enerator="athena"/>
+         <generator name="athena-simu" id="org.eclipse.robotml.generators.xtext.athena.simu" class="org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena" src-type="file" src-ext="adl" target-folder="simu-athena-generated-src" src-generator="athena"/>
+      </generator_list>
+   </robotml>
+
+   
++----------------+-----------------+-----------------------------------------------------------------+
+| Node           | Attribute       | Description                                                     |
++================+=================+=================================================================+
+| robotml        |                 | Root node.                                                      |
++----------------+-----------------+-----------------------------------------------------------------+
+| domain_list    |                 | Declaration node for a domain list.                             |
++----------------+-----------------+-----------------------------------------------------------------+
+| domain         |                 | Domain language declaration.                                    |
+|                | - name          | - Language name.                                                |
++----------------+-----------------+-----------------------------------------------------------------+
+| implementation |                 | Implementation declaration.                                     |
+|                | - class         | - Class containing the method to call.                          |
+|                | - method        | - Method name to call.                                          |
++----------------+-----------------+-----------------------------------------------------------------+
+| generator_list |                 | Declaration node for a generator list.                          |
++----------------+-----------------+-----------------------------------------------------------------+
+| generator      |                 | Generator declaration.                                          |
+|                | - name          | - Generator name.                                               |
+|                | - id            | - Generator ID (org.eclipse.robotml.generators.XXX).            |
+|                | - class         | - Generator class.                                              |
+|                | - src-type      | - Source type (model or file).                                  |
+|                | - src-ext       | - Source file extension (Only if src="file").                   |
+|                | - target-folder | - Target folder name.                                           |
+|                | - src-generator | - Name of the source generator used to generate the source file |
+|                |                 | (only if src="file").                                           |
++----------------+-----------------+-----------------------------------------------------------------+
+
+.. note::
+   
+   If your should to define a new Domain Specific Language, you shoukd to declare it on the file **config.xml**.
+   Add a **domain** node, and specify the implementation to initialize your domain language (see the example). 
+
+
 Create a user interface for a RobotMl generator
 ###############################################
 
