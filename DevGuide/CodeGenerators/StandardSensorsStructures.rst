@@ -94,10 +94,9 @@ Vehicle with one wheel steering (Vipalab, for example).
 * CarLikeOdometry structure content:
 
   * Header header
-  * uint32 seq = numbering from 0 and is incremented for each message
-  * time stamp
   * float64 steering_angle;
-  * float64 velocity;
+  * float64 left_rear_wheel_distance;
+  * float64 right_rear_wheel_distance;
   * float64 left_rear_wheel_velocity;
   * float64 right_rear_wheel_velocity;
 
@@ -112,8 +111,6 @@ Vehicle with 2 wheels (tank like vehicle)
 * DifferencialOdometry structure content :
 
   * Header header
-  * uint32 seq = numbering from 0 and is incremented for each message
-  * time stamp
   * float64 left_distance;
   * float64 right_distance;
   * float64 left_velocity;
