@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>VirtualBox &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Installation for developers" href="../InstallationForDevelopers.html" />
+    <link rel="next" title="Install and use SVN" href="SVN.html" />
+    <link rel="prev" title="Revisit of RobotML-sdk Installation" href="RevisitOfDistributionInstallation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SVN.html" title="Install and use SVN"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RevisitOfDistributionInstallation.html" title="Revisit of RobotML-sdk Installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../InstallationForDevelopers.html" accesskey="U">Installation for developers</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="virtualbox">
+<h1>VirtualBox<a class="headerlink" href="#virtualbox" title="Permalink to this headline">¶</a></h1>
+<p>If you install PROTEUS tools through a virtual machine, remember that 3D simulation software wont work well since they need OpenGL, which is not supported by VirtualBox. You will need to change some default settings:</p>
+<ul class="simple">
+<li>Activate PEA/NX</li>
+<li>Activate 3D acceleration</li>
+<li>Add video memory</li>
+</ul>
+<p>Once Ubuntu installation is over, go to &#8220;Devices &gt; Install the Guest Additions&#8221;, then activate the VirtualBox video driver.</p>
+<p>Use the tool <tt class="docutils literal"><span class="pre">/usr/bin/jockey-gtk</span></tt> to install additional drivers.</p>
+<p>In MORSE, it is recomanded to use the &#8220;WIREFRAME&#8221; mode for your simultaion. cf. <a class="reference external" href="https://github.com/laas/morse/blob/0.5.1/src/morse/builder/morsebuilder.py#L401">morsebuilder.py#L401</a>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">env</span><span class="o">.</span><span class="n">set_viewport</span><span class="p">(</span><span class="n">viewport_shade</span> <span class="o">=</span> <span class="s">&#39;WIREFRAME&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="vb-settings" src="../../_images/vb1.png" />
+</div>
+</div>
+<div class="section" id="pea-nx">
+<h2>PEA/NX<a class="headerlink" href="#pea-nx" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="vb-peanx" src="../../_images/vb2.png" />
+</div>
+</div>
+<div class="section" id="d">
+<h2>3D<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="vb-3d" src="../../_images/vb3.png" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">VirtualBox</a><ul>
+<li><a class="reference internal" href="#settings">Settings</a></li>
+<li><a class="reference internal" href="#pea-nx">PEA/NX</a></li>
+<li><a class="reference internal" href="#d">3D</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RevisitOfDistributionInstallation.html"
+                        title="previous chapter">Revisit of <tt class="docutils literal docutils literal docutils literal"><span class="pre">RobotML-sdk</span></tt> Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SVN.html"
+                        title="next chapter">Install and use <tt class="docutils literal docutils literal"><span class="pre">SVN</span></tt></a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/DevGuide/InstallationForDevelopers/VirtualBox.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SVN.html" title="Install and use SVN"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RevisitOfDistributionInstallation.html" title="Revisit of RobotML-sdk Installation"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../InstallationForDevelopers.html" >Installation for developers</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

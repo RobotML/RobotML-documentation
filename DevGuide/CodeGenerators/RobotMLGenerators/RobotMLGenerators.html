@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The RobotML generators &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Code generators" href="../../CodeGenerators.html" />
+    <link rel="next" title="Naming conventions" href="../NamingConventions.html" />
+    <link rel="prev" title="The Alf Generator API" href="../AlfGenerators/AlfGenerators_API.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../NamingConventions.html" title="Naming conventions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../AlfGenerators/AlfGenerators_API.html" title="The Alf Generator API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../../CodeGenerators.html" accesskey="U">Code generators</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-robotml-generators">
+<h1>The RobotML generators<a class="headerlink" href="#the-robotml-generators" title="Permalink to this headline">¶</a></h1>
+<p>This generators allowed to generate source code from the <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> model to some middleware or simulator.
+They are include in the <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> platform, and using <a class="reference internal" href="../../../Glossary.html#term-acceleo"><em class="xref std std-term">Acceleo</em></a> to browse the <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> model.</p>
+<p>List of the RobotML platform generators:</p>
+<ul class="simple">
+<li>AROCCAM</li>
+<li>CycabTk</li>
+<li>MORSE</li>
+<li>ORROCOS</li>
+<li>RTMaps</li>
+<li>VLE</li>
+</ul>
+<div class="section" id="how-to-create-a-new-robotml-generator">
+<h2>How to create a new RobotML generator<a class="headerlink" href="#how-to-create-a-new-robotml-generator" title="Permalink to this headline">¶</a></h2>
+<p>In your <strong>Project explorer</strong> view, do right clic and select <strong>New/Project..</strong>. In the <strong>New project</strong> window, choose <strong>Acceleo prject</strong> in the <strong>Acceleo model to text</strong> category, and clic on <strong>Next</strong>.</p>
+<img alt="New project window" class="align-center" src="../../../_images/new_project_window.png" />
+<p>In the window <strong>Create a new Acceleo generator project</strong>, name your project, and select the 1.5 JAVA version (J2SE-1.5). Clic on <strong>Next</strong>.</p>
+<img alt="New Acceleo generator project window creation." class="align-center" src="../../../_images/new_generator_project.png" />
+<p>Now named your new module, and on the <strong>add</strong> button in the metamodel section. A metamodel list is shown. Select your metamodel should to use, and clic on OK.
+For example if you should use UML, select <strong>http://www.eclipse.org/uml2/3.0.0/UML</strong> in the <strong>developpement time version</strong> tab.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you should use a custom domain specific language, select your metamodel in the <strong>Runtime version</strong> tab.</p>
+</div>
+<p>Select your module type:</p>
+<ul class="simple">
+<li><strong>Template</strong>, if you should to realize some generation with the metamodel.</li>
+<li><strong>Query</strong>, if you should to do a functions library.</li>
+</ul>
+<p>Clic on <strong>Finish</strong></p>
+<img alt="Module properties" class="align-center" src="../../../_images/module_properties.png" />
+<p>Your new RobotMLGenerators will added in your <strong>Project explorer</strong>. Now</p>
+</div>
+<div class="section" id="adding-a-new-module-to-an-existing-robotml-generator">
+<h2>Adding a new module to an existing RobotML generator<a class="headerlink" href="#adding-a-new-module-to-an-existing-robotml-generator" title="Permalink to this headline">¶</a></h2>
+<p>On your <strong>Acceleo generator project</strong>, do right clic, and select <strong>new/Other...</strong>. Chosse <strong>Acceleo module file</strong> in the category <strong>Acceleo model to text</strong>, and clic <strong>Next</strong>.</p>
+<p>Name your module, select the metamodel should to use, and select the module type. Clic on <strong>Finsih</strong>.</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">How to create a new RobotML generator</p>
+</div>
+</div>
+<div class="section" id="adding-your-new-generator-in-the-robotml-generator-interface">
+<h2>Adding your new generator in the RobotML generator interface<a class="headerlink" href="#adding-your-new-generator-in-the-robotml-generator-interface" title="Permalink to this headline">¶</a></h2>
+<p>Import the <strong>RobotML generator project</strong> in your workspace (org.eclipse.robotml.generators.generator.ui).
+Open the file <em>MANIFEST.MF</em> and slect the <strong>Dependencies</strong> tab. In the <strong>Required plug-in</strong> section, add your generator plug-in.
+In the package <strong>org.eclipse.robotml.generators.generator.ui.xml</strong>, open the file <strong>config.xml</strong>, and add you generator declaration int the <strong>generator_list</strong> node.</p>
+<p>The following example show how to declare generators:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;robotml&gt;</span>
+   <span class="nt">&lt;domain_list&gt;</span>
+      <span class="nt">&lt;domain</span> <span class="na">name=</span><span class="s">&quot;athenaDSL&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">&quot;org.xtext.athenaDSL.impl.AthenaDSLFactoryImpl&quot;</span> <span class="na">method=</span><span class="s">&quot;init&quot;</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">&quot;org.xtext.athenaDSL.impl.AthenaDSLPackageImpl&quot;</span> <span class="na">method=</span><span class="s">&quot;init&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/domain&gt;</span>
+   <span class="nt">&lt;/domain_list&gt;</span>
+   <span class="nt">&lt;generator_list&gt;</span>
+      <span class="nt">&lt;generator</span> <span class="na">name=</span><span class="s">&quot;athena&quot;</span> <span class="na">id=</span><span class="s">&quot;org.eclipse.robotml.generators.acceleo.athena&quot;</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.robotml.generators.acceleo.athena.files.GenerateAthena&quot;</span> <span class="na">src-type=</span><span class="s">&quot;model&quot;</span> <span class="na">target-folder=</span><span class="s">&quot;athena&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;generator</span> <span class="na">name=</span><span class="s">&quot;vle&quot;</span> <span class="na">id=</span><span class="s">&quot;org.eclipse.robotml.generators.xtext.athena.vle&quot;</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.robotml.generators.xtext.athena.vle.main.GenerateVLE&quot;</span> <span class="na">src-type=</span><span class="s">&quot;file&quot;</span> <span class="na">src-ext=</span><span class="s">&quot;adl&quot;</span> <span class="na">target-folder=</span><span class="s">&quot;vle-generated-src&quot;</span> <span class="na">src-enerator=</span><span class="s">&quot;athena&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;generator</span> <span class="na">name=</span><span class="s">&quot;athena-simu&quot;</span> <span class="na">id=</span><span class="s">&quot;org.eclipse.robotml.generators.xtext.athena.simu&quot;</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.robotml.generators.xtext.athena.simu.main.GenerateAthena&quot;</span> <span class="na">src-type=</span><span class="s">&quot;file&quot;</span> <span class="na">src-ext=</span><span class="s">&quot;adl&quot;</span> <span class="na">target-folder=</span><span class="s">&quot;simu-athena-generated-src&quot;</span> <span class="na">src-generator=</span><span class="s">&quot;athena&quot;</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/generator_list&gt;</span>
+<span class="nt">&lt;/robotml&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="17%" />
+<col width="66%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Node</th>
+<th class="head">Attribute</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>robotml</td>
+<td>&nbsp;</td>
+<td>Root node.</td>
+</tr>
+<tr class="row-odd"><td>domain_list</td>
+<td>&nbsp;</td>
+<td>Declaration node for a domain list.</td>
+</tr>
+<tr class="row-even"><td>domain</td>
+<td><ul class="first last simple">
+<li>name</li>
+</ul>
+</td>
+<td>Domain language declaration.
+- Language name.</td>
+</tr>
+<tr class="row-odd"><td>implementation</td>
+<td><ul class="first last simple">
+<li>class</li>
+<li>method</li>
+</ul>
+</td>
+<td>Implementation declaration.
+- Class containing the method to call.
+- Method name to call.</td>
+</tr>
+<tr class="row-even"><td>generator_list</td>
+<td>&nbsp;</td>
+<td>Declaration node for a generator list.</td>
+</tr>
+<tr class="row-odd"><td>generator</td>
+<td><ul class="first last simple">
+<li>name</li>
+<li>id</li>
+<li>class</li>
+<li>src-type</li>
+<li>src-ext</li>
+<li>target-folder</li>
+<li>src-generator</li>
+</ul>
+</td>
+<td>Generator declaration.
+- Generator name.
+- Generator ID (org.eclipse.robotml.generators.XXX).
+- Generator class.
+- Source type (model or file).
+- Source file extension (Only if src=&#8221;file&#8221;).
+- Target folder name.
+- Name of the source generator used to generate the source file
+(only if src=&#8221;file&#8221;).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your should to define a new Domain Specific Language, you shoukd to declare it on the file <strong>config.xml</strong>.
+Add a <strong>domain</strong> node, and specify the implementation to initialize your domain language (see the example).</p>
+</div>
+</div>
+<div class="section" id="create-a-user-interface-for-a-robotml-generator">
+<h2>Create a user interface for a RobotMl generator<a class="headerlink" href="#create-a-user-interface-for-a-robotml-generator" title="Permalink to this headline">¶</a></h2>
+<p>In your <strong>Acceleo generator project</strong>,, do right clic, and select <strong>Acceleo/Create Acceleo UI launcher</strong>. Name you UI project, clic on <strong>Next</strong>.
+Select the project who will be called by your interface.</p>
+<img alt="Project list for the user interface." class="align-center" src="../../../_images/project_list_ui.png" />
+<p>Give a label to your generator.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This label will be visible in the environment context menu.</p>
+</div>
+<p>Choose your working file filter. Your generator interface will be visible only if the selection match this file filter. Clic on <strong>Finish</strong>.</p>
+<img alt="User interface properties." class="align-center" src="../../../_images/interface_properties.png" />
+</div>
+<div class="section" id="implement-a-robotml-generator-in-your-user-interface">
+<h2>Implement a RobotML generator in your user interface<a class="headerlink" href="#implement-a-robotml-generator-in-your-user-interface" title="Permalink to this headline">¶</a></h2>
+<p>In your Acceleo User interface project, open the file <cite>GenerateAll.java</cite>, and modifiy the method doGenerate() as following:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">doGenerate</span><span class="o">(</span><span class="n">IProgressMonitor</span> <span class="n">monitor</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+   <span class="k">if</span> <span class="o">(!</span><span class="n">targetFolder</span><span class="o">.</span><span class="na">getLocation</span><span class="o">().</span><span class="na">toFile</span><span class="o">().</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+      <span class="n">targetFolder</span><span class="o">.</span><span class="na">getLocation</span><span class="o">().</span><span class="na">toFile</span><span class="o">().</span><span class="na">mkdirs</span><span class="o">();</span>
+   <span class="o">}</span>
+
+   <span class="n">monitor</span><span class="o">.</span><span class="na">subTask</span><span class="o">(</span><span class="s">&quot;Loading...&quot;</span><span class="o">);</span>
+
+   <span class="c1">//GenerateXXX is the main class of the RobotML generator. By convention, &lt;XXX&gt; is the name of the generator.</span>
+   <span class="c1">//Example for `Athena` langauge, the name of the main class is GenerateAthena.</span>
+   <span class="n">GenerateXXX</span> <span class="n">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GenerateXXX</span><span class="o">(</span><span class="n">modelURI</span><span class="o">,</span> <span class="n">targetFolder</span><span class="o">.</span><span class="na">getLocation</span><span class="o">().</span><span class="na">toFile</span><span class="o">(),</span> <span class="n">arguments</span><span class="o">);</span>
+   <span class="n">monitor</span><span class="o">.</span><span class="na">worked</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+   <span class="n">String</span> <span class="n">generationID</span> <span class="o">=</span>
+      <span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">acceleo</span><span class="o">.</span><span class="na">engine</span><span class="o">.</span><span class="na">utils</span><span class="o">.</span><span class="na">AcceleoLaunchingUtil</span><span class="o">.</span><span class="na">computeUIProjectID</span><span class="o">(</span><span class="s">&quot;org.eclipse.robotml.generators.acceleo.XXX&quot;</span><span class="o">,</span>
+      <span class="s">&quot;org.eclipse.robotml.generators.acceleo.athena.files.GenerateXXX&quot;</span><span class="o">,</span>
+      <span class="n">modelURI</span><span class="o">.</span><span class="na">toString</span><span class="o">(),</span>
+      <span class="n">targetFolder</span><span class="o">.</span><span class="na">getFullPath</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+      <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>
+   <span class="n">generator</span><span class="o">.</span><span class="na">setGenerationID</span><span class="o">(</span><span class="n">generationID</span><span class="o">);</span>
+   <span class="n">generator</span><span class="o">.</span><span class="na">doGenerate</span><span class="o">(</span><span class="n">BasicMonitor</span><span class="o">.</span><span class="na">toMonitor</span><span class="o">(</span><span class="n">monitor</span><span class="o">));</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="validate-a-new-robotml-generator">
+<h2>Validate a new RobotML generator<a class="headerlink" href="#validate-a-new-robotml-generator" title="Permalink to this headline">¶</a></h2>
+<p>In your <strong>project explorer</strong> view, select your <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> generator, and do right clic. Choose, <strong>Run as.../Eclipse application</strong>. A new eclipse applciation start.
+In this new envioronment, import the needed files to execute your generator, then select a imported file, do right clic. The contextual menu, should contain your gnerator label. Select it to execute your generator.</p>
+</div>
+<div class="section" id="exception">
+<h2>Exception<a class="headerlink" href="#exception" title="Permalink to this headline">¶</a></h2>
+<p>In exception, if you using particular metamodel, it&#8217;s necessary to register it befor using.
+For example : if you use the <a class="reference internal" href="../../../Glossary.html#term-dsl"><em class="xref std std-term">DSL</em></a> Athena, you should to initialized it with the following methods in your user interface code.</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">AthenaDSLFactoryImpl</span><span class="o">.</span><span class="na">init</span><span class="o">();</span>
+<span class="n">AthenaDSLPackageImpl</span><span class="o">.</span><span class="na">init</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>You need also to modifiy the <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> generator code registerPackage method as following:</p>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerPackages</span><span class="o">(</span><span class="n">ResourceSet</span> <span class="n">resourceSet</span><span class="o">)</span> <span class="o">{</span>
+   <span class="kd">super</span><span class="o">.</span><span class="na">registerPackages</span><span class="o">(</span><span class="n">resourceSet</span><span class="o">);</span>
+   <span class="k">if</span><span class="o">(!</span><span class="n">isInWorkspace</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">xtext</span><span class="o">.</span><span class="na">athenaDSL</span><span class="o">.</span><span class="na">AthenaDSLPackage</span><span class="o">.</span><span class="na">class</span><span class="o">))</span> <span class="o">{</span>
+   <span class="n">resourceSet</span><span class="o">.</span><span class="na">getPackageRegistry</span><span class="o">().</span><span class="na">put</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">xtext</span><span class="o">.</span><span class="na">athenaDSL</span><span class="o">.</span><span class="na">AthenaDSLPackage</span><span class="o">.</span><span class="na">eINSTANCE</span><span class="o">.</span><span class="na">getNsURI</span><span class="o">(),</span>
+   <span class="n">org</span><span class="o">.</span><span class="na">xtext</span><span class="o">.</span><span class="na">athenaDSL</span><span class="o">.</span><span class="na">AthenaDSLPackage</span><span class="o">.</span><span class="na">eINSTANCE</span><span class="o">);</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not forget replace the tag &#64;generated by &#64;generated not to not loosing your modification, when you modifiy the template file module.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The RobotML generators</a><ul>
+<li><a class="reference internal" href="#how-to-create-a-new-robotml-generator">How to create a new RobotML generator</a></li>
+<li><a class="reference internal" href="#adding-a-new-module-to-an-existing-robotml-generator">Adding a new module to an existing RobotML generator</a></li>
+<li><a class="reference internal" href="#adding-your-new-generator-in-the-robotml-generator-interface">Adding your new generator in the RobotML generator interface</a></li>
+<li><a class="reference internal" href="#create-a-user-interface-for-a-robotml-generator">Create a user interface for a RobotMl generator</a></li>
+<li><a class="reference internal" href="#implement-a-robotml-generator-in-your-user-interface">Implement a RobotML generator in your user interface</a></li>
+<li><a class="reference internal" href="#validate-a-new-robotml-generator">Validate a new RobotML generator</a></li>
+<li><a class="reference internal" href="#exception">Exception</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../AlfGenerators/AlfGenerators_API.html"
+                        title="previous chapter">The Alf Generator API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../NamingConventions.html"
+                        title="next chapter">Naming conventions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/DevGuide/CodeGenerators/RobotMLGenerators/RobotMLGenerators.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../NamingConventions.html" title="Naming conventions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../AlfGenerators/AlfGenerators_API.html" title="The Alf Generator API"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../../CodeGenerators.html" >Code generators</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Standard sensors structures &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Code generators" href="../CodeGenerators.html" />
+    <link rel="next" title="Installation for developers" href="../InstallationForDevelopers.html" />
+    <link rel="prev" title="Naming conventions" href="NamingConventions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../InstallationForDevelopers.html" title="Installation for developers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NamingConventions.html" title="Naming conventions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../CodeGenerators.html" accesskey="U">Code generators</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="standard-sensors-structures">
+<h1>Standard sensors structures<a class="headerlink" href="#standard-sensors-structures" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lidar-1-layer">
+<h2><em>Lidar 1 layer:</em><a class="headerlink" href="#lidar-1-layer" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype LidarSystem</li>
+<li>1 output port:<ul>
+<li>LaserScan ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/LaserScan.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/LaserScan.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="lidar-n-layers">
+<h2><em>Lidar N layers:</em><a class="headerlink" href="#lidar-n-layers" title="Permalink to this headline">¶</a></h2>
+<p>This model can fit all lidars, whether single or multi-layers.</p>
+<ul class="simple">
+<li>Stereotype LidarSystem</li>
+<li>1 output port:<ul>
+<li>Datatype MultiLaserScan (based on the structure LaserScan ROS datatype)</li>
+</ul>
+</li>
+<li>MultiLaserScan structure content:<ul>
+<li>header header</li>
+<li>layer_angle_min float32;</li>
+<li>layer_angle_max float32;</li>
+<li>layer_angle_increment float32;</li>
+<li>LaserScan [] layers;</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="camera">
+<h2><em>Camera:</em><a class="headerlink" href="#camera" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype CameraSystem</li>
+<li>1 output port:<ul>
+<li>Image ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/Image.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/Image.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="stereovision-camera">
+<h2><em>Stereovision camera:</em><a class="headerlink" href="#stereovision-camera" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype CameraSystem</li>
+<li>2 output ports:<ul>
+<li>Image ROS datatype for the left image</li>
+<li>Image ROS datatype for right image</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="gps">
+<h2><em>GPS:</em><a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype GPSSystem</li>
+<li>1 output port:<ul>
+<li>NavSatFix ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/NavSatFix.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/NavSatFix.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="imu">
+<h2><em>IMU:</em><a class="headerlink" href="#imu" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype IMUSystem</li>
+<li>1 output port:<ul>
+<li>Imu ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ins-inertial-navigation-system">
+<h2><em>INS (Inertial Navigation System):</em><a class="headerlink" href="#ins-inertial-navigation-system" title="Permalink to this headline">¶</a></h2>
+<p>For Landins Vipalab sensor, for example.</p>
+<ul class="simple">
+<li>Stereotype INSSystem</li>
+<li>2 output ports:<ul>
+<li>NavSatFix ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/NavSatFix.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/NavSatFix.html</a></li>
+<li>Imu ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="ir-sensor-proximetry">
+<h2><em>IR sensor proximetry:</em><a class="headerlink" href="#ir-sensor-proximetry" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Stereotype IRProximetrySystem</li>
+<li>1 output port:<ul>
+<li>Range ROS datatype <a class="reference external" href="http://www.ros.org/doc/api/sensor_msgs/html/msg/Range.html">http://www.ros.org/doc/api/sensor_msgs/html/msg/Range.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="vehicles">
+<h2><em>Vehicles:</em><a class="headerlink" href="#vehicles" title="Permalink to this headline">¶</a></h2>
+<p>Vehicle with one wheel steering (Vipalab, for example).</p>
+<ul class="simple">
+<li>Stereotype CarLikeVehicleSystem</li>
+<li>1 output port:<ul>
+<li>Structure CarLikeOdometry</li>
+</ul>
+</li>
+<li>CarLikeOdometry structure content:<ul>
+<li>Header header</li>
+<li>float64 steering_angle;</li>
+<li>float64 left_rear_wheel_distance;</li>
+<li>float64 right_rear_wheel_distance;</li>
+<li>float64 left_rear_wheel_velocity;</li>
+<li>float64 right_rear_wheel_velocity;</li>
+</ul>
+</li>
+</ul>
+<p>Vehicle with 2 wheels (tank like vehicle)</p>
+<ul class="simple">
+<li>Stereotype DifferencialVehicleSystem</li>
+<li>1 output port<ul>
+<li>Structure DifferencialOdometry</li>
+</ul>
+</li>
+<li>DifferencialOdometry structure content :<ul>
+<li>Header header</li>
+<li>float64 left_distance;</li>
+<li>float64 right_distance;</li>
+<li>float64 left_velocity;</li>
+<li>float64 right_velocity;</li>
+</ul>
+</li>
+</ul>
+<p>TBD</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Standard sensors structures</a><ul>
+<li><a class="reference internal" href="#lidar-1-layer"><em>Lidar 1 layer:</em></a></li>
+<li><a class="reference internal" href="#lidar-n-layers"><em>Lidar N layers:</em></a></li>
+<li><a class="reference internal" href="#camera"><em>Camera:</em></a></li>
+<li><a class="reference internal" href="#stereovision-camera"><em>Stereovision camera:</em></a></li>
+<li><a class="reference internal" href="#gps"><em>GPS:</em></a></li>
+<li><a class="reference internal" href="#imu"><em>IMU:</em></a></li>
+<li><a class="reference internal" href="#ins-inertial-navigation-system"><em>INS (Inertial Navigation System):</em></a></li>
+<li><a class="reference internal" href="#ir-sensor-proximetry"><em>IR sensor proximetry:</em></a></li>
+<li><a class="reference internal" href="#vehicles"><em>Vehicles:</em></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NamingConventions.html"
+                        title="previous chapter">Naming conventions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../InstallationForDevelopers.html"
+                        title="next chapter">Installation for developers</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/DevGuide/CodeGenerators/StandardSensorsStructures.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../InstallationForDevelopers.html" title="Installation for developers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NamingConventions.html" title="Naming conventions"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../CodeGenerators.html" >Code generators</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

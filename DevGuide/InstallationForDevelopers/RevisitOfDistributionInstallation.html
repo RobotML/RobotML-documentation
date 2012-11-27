@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Revisit of RobotML-sdk Installation &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Installation for developers" href="../InstallationForDevelopers.html" />
+    <link rel="next" title="VirtualBox" href="VirtualBox.html" />
+    <link rel="prev" title="Revisit of Platform Installation" href="RevisitOfPlatformInstallation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="VirtualBox.html" title="VirtualBox"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RevisitOfPlatformInstallation.html" title="Revisit of Platform Installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../InstallationForDevelopers.html" accesskey="U">Installation for developers</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="revisit-of-robotml-sdk-installation">
+<span id="dg-ifd-rodi"></span><h1>Revisit of <a class="reference internal" href="../../Glossary.html#term-robotml-sdk"><em class="xref std std-term">RobotML-sdk</em></a> Installation<a class="headerlink" href="#revisit-of-robotml-sdk-installation" title="Permalink to this headline">¶</a></h1>
+<p>What was presented in the user guide, is now detailed for each of the component and using the manual installer.
+Other tools installation are detailed and are associated to page of their own as indicated.</p>
+<div class="section" id="installer">
+<h2>Installer<a class="headerlink" href="#installer" title="Permalink to this headline">¶</a></h2>
+<p>Run <tt class="docutils literal"><span class="pre">proteus.run</span></tt> in:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://dassault3.ddo.net/svn/proteus-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run">svn-wp2/trunk/S2.3.4-PROTEUS-Distribution/install/proteus.run</a></li>
+</ul>
+<p>with the following command in a terminal (do not <tt class="docutils literal"><span class="pre">sudo</span></tt>):</p>
+<div class="highlight-python"><pre>sh proteus.run</pre>
+</div>
+<p>You will need to provided you login and password for the <a class="reference external" href="https://packages.greyc.fr/proteus">repository</a>. And your root pass as well to install the packages.</p>
+<p><em>nb</em>: in case of download or network failure, you can restart this script when you want. It will overwrite the configuration without re-downloading what was already done.</p>
+<div class="section" id="installation-tool-run-in-terminal">
+<h3>Installation tool: Run in Terminal<a class="headerlink" href="#installation-tool-run-in-terminal" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-runterm" src="../../_images/Screenshot0runterm.png" style="width: 600px;" />
+<p class="caption">Click on &#8220;<tt class="docutils literal"><span class="pre">Run</span> <span class="pre">in</span> <span class="pre">Terminal</span></tt>&#8220;</p>
+</div>
+</div>
+<div class="section" id="installation-tool-login">
+<h3>Installation tool: login<a class="headerlink" href="#installation-tool-login" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-login" src="../../_images/Screenshot1login.png" style="width: 600px;" />
+<p class="caption">Login and password for <a class="reference external" href="https://packages.greyc.fr/proteus">the repository</a></p>
+</div>
+</div>
+<div class="section" id="installation-tool-next">
+<h3>Installation tool: next<a class="headerlink" href="#installation-tool-next" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-loginnext" src="../../_images/Screenshot2loginnext.png" style="width: 600px;" />
+<p class="caption">Next...</p>
+</div>
+</div>
+<div class="section" id="installation-tool-choose-apps">
+<h3>Installation tool: choose apps<a class="headerlink" href="#installation-tool-choose-apps" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-selectapp" src="../../_images/Screenshot3selectapp.png" style="width: 600px;" />
+<p class="caption">Choose your packages</p>
+</div>
+</div>
+<div class="section" id="installation-tool-install">
+<h3>Installation tool: install<a class="headerlink" href="#installation-tool-install" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-install" src="../../_images/Screenshot4install.png" style="width: 600px;" />
+<p class="caption">Install...</p>
+</div>
+</div>
+<div class="section" id="installation-tool-checking-password">
+<h3>Installation tool: checking password<a class="headerlink" href="#installation-tool-checking-password" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-checklogin" src="../../_images/Screenshot5checklogin.png" style="width: 600px;" />
+<p class="caption">Checking your password for <a class="reference external" href="https://packages.greyc.fr/proteus/">packages.greyc.fr/proteus</a></p>
+</div>
+</div>
+<div class="section" id="installation-tool-root">
+<h3>Installation tool: root<a class="headerlink" href="#installation-tool-root" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="install-rootpw" src="../../_images/Screenshot6rootpw.png" style="width: 600px;" />
+<p class="caption">Give your <tt class="docutils literal"><span class="pre">root</span></tt> password (aka. super user)</p>
+</div>
+</div>
+</div>
+<div class="section" id="demo-tests">
+<h2>Demo / Tests<a class="headerlink" href="#demo-tests" title="Permalink to this headline">¶</a></h2>
+<p>A MORSE presentation containing examples and video is available at: <a class="reference external" href="http://bit.ly/proteus2">bit.ly/proteus2</a></p>
+<div class="figure align-center">
+<img alt="demo-slides" src="../../_images/demo-slides.png" style="width: 600px;" />
+<p class="caption"><a class="reference internal" href="../../UserGuide/PlatformInstallation/InstallProteusDistribution.html#ug-pi-ipd"><em>MORSE &amp; ROS HOWTO</em></a></p>
+</div>
+</div>
+<div class="section" id="installation-eclipse">
+<h2>Installation: Eclipse<a class="headerlink" href="#installation-eclipse" title="Permalink to this headline">¶</a></h2>
+<p>version: Eclipse Modeling Indigo (3.7) &amp; Papyrus 0.8.2</p>
+<div class="highlight-python"><pre>sudo apt-get install proteus-base-eclipse</pre>
+</div>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-base-eclipse">Open proteus-base-eclipse in Software Center</a></p>
+<div class="section" id="test-install">
+<h3>Test install<a class="headerlink" href="#test-install" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command in a terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">eclipse</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="update">
+<h3>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center">
+<img alt="eclipse-update" src="../../_images/screen-eclipse-update.png" style="width: 600px;" />
+<p class="caption">eclipse-update</p>
+</div>
+</div>
+</div>
+<div class="section" id="installation-of-frameworks">
+<h2>Installation of frameworks<a class="headerlink" href="#installation-of-frameworks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation-cycabtk">
+<h3>Installation: CycabTK<a class="headerlink" href="#installation-cycabtk" title="Permalink to this headline">¶</a></h3>
+<p>version: 2.0</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-cycabtk</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-cycabtk">Open CycabTK in Software Center</a></p>
+<div class="section" id="id1">
+<h4>Test install<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Run the following command in a terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">mgengine</span>
+</pre></div>
+</div>
+<p>Then, in <tt class="docutils literal"><span class="pre">mgengine</span></tt> console</p>
+<div class="highlight-python"><pre>require "tutorial"</pre>
+</div>
+<p>Which should display a vehicle with a camera, a laser scanner and two infrared sensors.</p>
+</div>
+</div>
+<div class="section" id="installation-morse">
+<h3>Installation: MORSE<a class="headerlink" href="#installation-morse" title="Permalink to this headline">¶</a></h3>
+<p>version: 0.4</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-morse</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-morse">Open in Software Center</a></p>
+<div class="section" id="id2">
+<h4>Test install<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Run the following command in a terminal:</p>
+<div class="highlight-python"><pre>morse check</pre>
+</div>
+<p>see <a class="reference external" href="https://github.com/laas/morse#readme">MORSE README</a></p>
+</div>
+</div>
+<div class="section" id="installation-rtmaps">
+<h3>Installation: RTMaps<a class="headerlink" href="#installation-rtmaps" title="Permalink to this headline">¶</a></h3>
+<p>version: 4.0.1</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-rtmaps</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-rtmaps">Open in Software Center</a></p>
+<div class="section" id="id3">
+<h4>Test install<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Run the following command in a terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">rtmaps</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">rtmaps</span><span class="o">/</span><span class="n">samples</span><span class="o">/</span><span class="n">demo_lidar_linux</span><span class="o">.</span><span class="n">rtd</span>
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="demo-rtmaps" src="../../_images/demo_rtmaps.png" style="width: 600px;" />
+<p class="caption"><a class="reference external" href="http://intempora.com/technology/rtmaps-software">RTMaps demo</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="installation-urbi">
+<h3>Installation: Urbi<a class="headerlink" href="#installation-urbi" title="Permalink to this headline">¶</a></h3>
+<p>version: 2.7.1</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-urbi</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-urbi">Open in Software Center</a></p>
+</div>
+<div class="section" id="installation-vle">
+<h3>Installation: VLE<a class="headerlink" href="#installation-vle" title="Permalink to this headline">¶</a></h3>
+<p>version: 1.0</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-vle</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-vle">Open in Software Center</a></p>
+</div>
+<div class="section" id="installation-orocos">
+<h3>Installation: Orocos<a class="headerlink" href="#installation-orocos" title="Permalink to this headline">¶</a></h3>
+<p>version: 0.4</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-orocos</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-orocos">Open in Software Center</a></p>
+</div>
+<div class="section" id="installation-effibox">
+<h3>Installation: Effibox<a class="headerlink" href="#installation-effibox" title="Permalink to this headline">¶</a></h3>
+<p>version: XXX</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-aroccam</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-aroccam">Open in Software Center</a></p>
+</div>
+<div class="section" id="installation-protege">
+<h3>Installation: Protege<a class="headerlink" href="#installation-protege" title="Permalink to this headline">¶</a></h3>
+<p>version: 4.1</p>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">proteus-base-protege</span></tt></p>
+<p><a class="reference external" href="http://apt.ubuntu.com/p/proteus-base-protege">Open in Software Center</a></p>
+</div>
+</div>
+<div class="section" id="update-the-distribution">
+<h2>Update the distribution<a class="headerlink" href="#update-the-distribution" title="Permalink to this headline">¶</a></h2>
+<p>First, you need to update the repositories list:</p>
+<div class="highlight-python"><pre>sudo apt-get update</pre>
+</div>
+<p>Then, upgrade your packages:</p>
+<div class="highlight-python"><pre>sudo apt-get upgrade</pre>
+</div>
+<div class="section" id="remove-a-package">
+<h3>Remove a package<a class="headerlink" href="#remove-a-package" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>sudo apt-get remove vle</pre>
+</div>
+<p>and autoremove to clean the former dependencies:</p>
+<div class="highlight-python"><pre>sudo apt-get autoremove</pre>
+</div>
+</div>
+</div>
+<div class="section" id="svn">
+<h2><a class="reference internal" href="../../Glossary.html#term-svn"><em class="xref std std-term">SVN</em></a><a class="headerlink" href="#svn" title="Permalink to this headline">¶</a></h2>
+<p>This asset is mandatory for accessing <em>Formal Robotician portal</em> elements.
+Some assets can be accessed directly through the portal itself.</p>
+<p>Specific documentation can be found following this <a class="reference internal" href="SVN.html#dg-ifd-svn"><em>link</em></a>.</p>
+</div>
+<div class="section" id="proxy">
+<h2>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h2>
+<p>To update root&#8217;s proxy settings:</p>
+<div class="highlight-python"><pre>sudo gnome-network-properties</pre>
+</div>
+<p>or see <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">-i</span></tt>:</p>
+<div class="highlight-python"><pre>The -i (simulate initial login) option runs the shell specified in the
+passwd(5) entry of the target user as a login shell.  This means that
+login-specific resource files such as .profile or .login will be read by
+the shell.  If a command is specified, it is passed to the shell for
+execution.  Otherwise, an interactive shell is executed.  sudo attempts to
+change to that user's home directory before running the shell.  It also
+initializes the environment, leaving DISPLAY and TERM unchanged, setting
+HOME, MAIL, SHELL, USER, LOGNAME, and PATH, as well as the contents of
+/etc/environment on Linux and AIX systems.  All other environment
+variables are removed.</pre>
+</div>
+<p>or with <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">--proxy</span></tt>:</p>
+<div class="highlight-python"><pre>sudo pip install --proxy=http://myproxy:8080 -U rosinstall</pre>
+</div>
+</div>
+<div class="section" id="that-s-all-folks">
+<h2>That&#8217;s all Folks!<a class="headerlink" href="#that-s-all-folks" title="Permalink to this headline">¶</a></h2>
+<p>short link to this presentation: <a class="reference external" href="http://bit.ly/proteus1">bit.ly/proteus1</a></p>
+<div class="figure align-center">
+<img alt="proteus-install" src="../../_images/proteus1.qrcode.png" />
+</div>
+<p>1 page doc: <a class="reference external" href="http://bit.ly/proteus1md">bit.ly/proteus1md</a></p>
+<p>sources on GitHub: <a class="reference external" href="http://bit.ly/proteus-src">bit.ly/proteus-src</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Revisit of <tt class="docutils literal"><span class="pre">RobotML-sdk</span></tt> Installation</a><ul>
+<li><a class="reference internal" href="#installer">Installer</a><ul>
+<li><a class="reference internal" href="#installation-tool-run-in-terminal">Installation tool: Run in Terminal</a></li>
+<li><a class="reference internal" href="#installation-tool-login">Installation tool: login</a></li>
+<li><a class="reference internal" href="#installation-tool-next">Installation tool: next</a></li>
+<li><a class="reference internal" href="#installation-tool-choose-apps">Installation tool: choose apps</a></li>
+<li><a class="reference internal" href="#installation-tool-install">Installation tool: install</a></li>
+<li><a class="reference internal" href="#installation-tool-checking-password">Installation tool: checking password</a></li>
+<li><a class="reference internal" href="#installation-tool-root">Installation tool: root</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo-tests">Demo / Tests</a></li>
+<li><a class="reference internal" href="#installation-eclipse">Installation: Eclipse</a><ul>
+<li><a class="reference internal" href="#test-install">Test install</a></li>
+<li><a class="reference internal" href="#update">Update</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-of-frameworks">Installation of frameworks</a><ul>
+<li><a class="reference internal" href="#installation-cycabtk">Installation: CycabTK</a><ul>
+<li><a class="reference internal" href="#id1">Test install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-morse">Installation: MORSE</a><ul>
+<li><a class="reference internal" href="#id2">Test install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-rtmaps">Installation: RTMaps</a><ul>
+<li><a class="reference internal" href="#id3">Test install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installation-urbi">Installation: Urbi</a></li>
+<li><a class="reference internal" href="#installation-vle">Installation: VLE</a></li>
+<li><a class="reference internal" href="#installation-orocos">Installation: Orocos</a></li>
+<li><a class="reference internal" href="#installation-effibox">Installation: Effibox</a></li>
+<li><a class="reference internal" href="#installation-protege">Installation: Protege</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-the-distribution">Update the distribution</a><ul>
+<li><a class="reference internal" href="#remove-a-package">Remove a package</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#svn"><tt class="docutils literal"><span class="pre">SVN</span></tt></a></li>
+<li><a class="reference internal" href="#proxy">Proxy</a></li>
+<li><a class="reference internal" href="#that-s-all-folks">That&#8217;s all Folks!</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RevisitOfPlatformInstallation.html"
+                        title="previous chapter">Revisit of Platform Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="VirtualBox.html"
+                        title="next chapter">VirtualBox</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/DevGuide/InstallationForDevelopers/RevisitOfDistributionInstallation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="VirtualBox.html" title="VirtualBox"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RevisitOfPlatformInstallation.html" title="Revisit of Platform Installation"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../InstallationForDevelopers.html" >Installation for developers</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

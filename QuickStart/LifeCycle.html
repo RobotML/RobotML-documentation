@@ -1,0 +1,200 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Life cycle &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../index.html" />
+    <link rel="up" title="QuickStart PROTEUS" href="../QuickStart.html" />
+    <link rel="next" title="Supporting Life cycle through associated tools" href="LifeCycleSupportingTools.html" />
+    <link rel="prev" title="After PROTEUS" href="AfterProteus.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="LifeCycleSupportingTools.html" title="Supporting Life cycle through associated tools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AfterProteus.html" title="After PROTEUS"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../QuickStart.html" accesskey="U">QuickStart PROTEUS</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="life-cycle">
+<span id="qs-l"></span><h1>Life cycle<a class="headerlink" href="#life-cycle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rationale">
+<h2>Rationale<a class="headerlink" href="#rationale" title="Permalink to this headline">¶</a></h2>
+<p>PROTEUS project was based on a vision. A vision where those providing <a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">problem</em></a>s and those proposing <a class="reference internal" href="../Glossary.html#term-solution"><em class="xref std std-term">solution</em></a>s would find a way to cooperate in order to leverage as best as possible in products or new research topics the knowledge so created. In order to reach such a goal a commonplace was deemed necessary as well as the design of associated tools allowing interactions with this commonplace embodied y a portal. Next schematic is presenting the different participants to the promoted cooperation.</p>
+<div class="figure align-center">
+<img alt="Proteus Rationale graphical presentation" src="../_images/D0.11-P0.8-P0.1-ProteusWorkflow-2.png" style="width: 500px;" />
+<p class="caption"><em>PROTEUS Rationale</em></p>
+</div>
+</div>
+<div class="section" id="roles">
+<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
+<p>As presented in the above picture there are several roles to be considered:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../Glossary.html#term-provider"><em class="xref std std-term">Provider</em></a>: Here it means someone that is able to upload something on the <a class="reference internal" href="../Glossary.html#term-portal"><em class="xref std std-term">portal</em></a> either using the different tools developed in the <a class="reference internal" href="../Glossary.html#term-proteus"><em class="xref std std-term">PROTEUS</em></a> project or directly knowing the protocols to be used. These actions ask for an authentication that will allow to limit access to the different parts of the portal.</li>
+<li><a class="reference internal" href="../Glossary.html#term-user"><em class="xref std std-term">User</em></a>: Here it means someone that is able to download something from the portal in the same conditions as the <a class="reference internal" href="../Glossary.html#term-provider"><em class="xref std std-term">provider</em></a> with as much authentication knowing that some parts will be relayed to private website askinng perhaps for other authentication steps</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="objects-on-the-portal">
+<h2>Objects on the <a class="reference internal" href="../Glossary.html#term-portal"><em class="xref std std-term">portal</em></a><a class="headerlink" href="#objects-on-the-portal" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../Glossary.html#term-provider"><em class="xref std std-term">provider</em></a>s create and upload many different elements that can be downloaded by many <a class="reference internal" href="../Glossary.html#term-user"><em class="xref std std-term">user</em></a>s. Elements that could be exchanged are numerous:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><a class="reference internal" href="../Glossary.html#term-model"><em class="xref std std-term">Model</em></a>: It is an abstract view of a system as implemented using the <a class="reference internal" href="../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> representation</li>
+<li><a class="reference internal" href="../Glossary.html#term-algorithm"><em class="xref std std-term">Algorithm</em></a>: an Algorithm <a class="reference internal" href="../Glossary.html#term-provider"><em class="xref std std-term">provider</em></a> can provide to the community either a description of its solution or a software module implementing this description. In the scope of the <a class="reference internal" href="../Glossary.html#term-portal"><em class="xref std std-term">portal</em></a> this module will have to respect properties.</li>
+<li><a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">Problem</em></a>: in the scope of the portal a <em>problem</em> is not only some documents lightly defining problems&#8217; condition. It means to provide specific data allowing to understand in detail what it is and to assess possible answers against it.</li>
+<li><a class="reference internal" href="../Glossary.html#term-robot"><em class="xref std std-term">Robot</em></a>: This portal is open to the community and thus also to Robots providers that will be able to promote their products on the portal. In the context of the life cycle it means also that</li>
+<li>Data: It can be videos, photos, whatever that is of interest to robotic, e.g. elements to test video processing functions or EM images, etc.</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Life Cycle<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="presentation">
+<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<p>Rationale, Roles and objects to be manipulated are not sufficient to implement a life cycle. In fact, the <cite>portal</cite> philosophy is explicitly build around the following life cycle:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>In order to begin such a life cycle, it is necessary first to ask questions and in this scope it means for <a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">Problem</em></a> to provide <a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">problem</em></a>s</li>
+<li>Then there is a need to provide answers, it means for <a class="reference internal" href="../Glossary.html#term-solution"><em class="xref std std-term">Solutions</em></a> to provide <a class="reference internal" href="../Glossary.html#term-algorithm"><em class="xref std std-term">Algorithms, including architectures</em></a> able to answer the question asked by the above <a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">problem</em></a>.</li>
+<li>Last but not least, there should be away for those asking questions to assess for themselves the so-called answers.</li>
+</ol>
+</div></blockquote>
+<p>These steps are described in the following figure</p>
+<div class="figure align-center">
+<img alt="Proteus Workflow" src="../_images/LifeCycle-1.png" style="width: 300px;" />
+<p class="caption"><em>PROTEUS Workflow</em></p>
+</div>
+<p>As can be seen <a class="reference internal" href="../Glossary.html#term-scenario"><em class="xref std std-term">Scenario</em></a> and <a class="reference internal" href="../Glossary.html#term-problem"><em class="xref std std-term">Problems</em></a> are in the hands mostly of the end-users.
+An end-user is often a company not knowing how to solve a question but knowing what this question is.
+It is in our context up to roboticians to provide answers to these questions providing <a class="reference internal" href="../Glossary.html#term-solution"><em class="xref std std-term">Solutions</em></a>
+and going to the extent of creating reusable <a class="reference internal" href="../Glossary.html#term-module"><em class="xref std std-term">modules</em></a> for the community to consider at large.</p>
+</div>
+<div class="section" id="portal-and-life-cycle">
+<h3>Portal and life cycle<a class="headerlink" href="#portal-and-life-cycle" title="Permalink to this headline">¶</a></h3>
+<p>As can be seen in the following picture, the <a class="reference internal" href="../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> <a class="reference internal" href="../Glossary.html#term-portal"><em class="xref std std-term">portal</em></a> implements as it is this life cycle taking into
+account management of web account (authoring, reserved space on the portal, ...).</p>
+</div>
+<div class="section" id="robotml-platform-and-life-cycle">
+<h3>RobotML platform and life cycle<a class="headerlink" href="#robotml-platform-and-life-cycle" title="Permalink to this headline">¶</a></h3>
+<p>As can be seen on the following picture a specific customisation of the platform help system has been created that implements
+the life cycle. The user will be able to follow it and she / he will be guided through the different steps implementing each
+of the steps of the life cycle.</p>
+<div class="figure align-center">
+<img alt="RobotML platform and Life cycle" src="../_images/LifeCycleAndRobotML.png" style="width: 500px;" />
+<p class="caption"><em>RobotML platform implementation of Life cycle</em></p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Life cycle</a><ul>
+<li><a class="reference internal" href="#rationale">Rationale</a></li>
+<li><a class="reference internal" href="#roles">Roles</a></li>
+<li><a class="reference internal" href="#objects-on-the-portal">Objects on the <tt class="docutils literal"><span class="pre">portal</span></tt></a></li>
+<li><a class="reference internal" href="#id1">Life Cycle</a><ul>
+<li><a class="reference internal" href="#presentation">Presentation</a></li>
+<li><a class="reference internal" href="#portal-and-life-cycle">Portal and life cycle</a></li>
+<li><a class="reference internal" href="#robotml-platform-and-life-cycle">RobotML platform and life cycle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="AfterProteus.html"
+                        title="previous chapter">After PROTEUS</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LifeCycleSupportingTools.html"
+                        title="next chapter">Supporting Life cycle through associated tools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/QuickStart/LifeCycle.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="LifeCycleSupportingTools.html" title="Supporting Life cycle through associated tools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AfterProteus.html" title="After PROTEUS"
+             >previous</a> |</li>
+        <li><a href="../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../QuickStart.html" >QuickStart PROTEUS</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

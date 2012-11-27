@@ -1,0 +1,2030 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Alf Generator API &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Code generators" href="../../CodeGenerators.html" />
+    <link rel="next" title="The RobotML generators" href="../RobotMLGenerators/RobotMLGenerators.html" />
+    <link rel="prev" title="Code generators" href="../../CodeGenerators.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../RobotMLGenerators/RobotMLGenerators.html" title="The RobotML generators"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../../CodeGenerators.html" title="Code generators"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../../CodeGenerators.html" accesskey="U">Code generators</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-alf-generator-api">
+<span id="alf-gen-api"></span><h1>The Alf Generator API<a class="headerlink" href="#the-alf-generator-api" title="Permalink to this headline">¶</a></h1>
+<p>In RobotML, the <em class="xref std std-term">Alf</em> language is used to describe the operation contents (only OpaqueBehavior). This language permit to have a generic modeling and generate it easily in more other langauge.</p>
+<p>For your needs, you can create a specific <em class="xref std std-term">Alf</em> generator language on using this <em class="xref std std-ref">Alf Generator API</em>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The <em class="xref std std-term">Alf</em> knowledge is clearly recommended. Go to see the <a class="reference external" href="http://www.omg.org/spec/ALF/">Alf language site</a> before start your work!</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<img alt="Alf API overview." class="align-center" src="DevGuide/CodeGenerators/AlfGenerators/../ATK_Scenario_images/alf_API_Overview.png" />
+<div class="section" id="alfservices">
+<span id="alfservcies"></span><h3>AlfServices<a class="headerlink" href="#alfservices" title="Permalink to this headline">¶</a></h3>
+<p>The module <strong>AlfServices</strong> contains all the methods to translate RobotML element to functional code.</p>
+<p><em>public</em></p>
+<p><strong>public static org.eclipse.papyrus.uml.alf.alf.Block createAlfBloc(org.eclipse.papyrus.uml2.NamedElement element)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="88%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>element</td>
+<td>UML element model.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Return an Alf Bloc corresponding to the UML element parameter.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Create an Alf bloc code from an Opaque behavior UML element.</p>
+<p><strong>public static String translateAlfBlocTo_Athena(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Alf bloc to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Return the alf bloc translation on Athena language.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Translate an Alf bloc to Athena code.</p>
+<p><strong>public static String translateAlfBlocTo_CPP(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Alf bloc to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Return the alf bloc translation on C++ language.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Translate an Alf bloc to C++ code.</p>
+</div>
+<div class="section" id="alfblock">
+<span id="id1"></span><h3>AlfBlock<a class="headerlink" href="#alfblock" title="Permalink to this headline">¶</a></h3>
+<p><em>public</em></p>
+<p><strong>AlfBlock(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Original Alf bloc.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Constructor, the alf bloc is mandatory, it will be transmited to the genrators.</p>
+<p><strong>void generateTo(IAlfGenerator generator)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>generator</td>
+<td>Translate generator</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Call the Alf translation on using the generator parameter to work.</p>
+<p><strong>org.eclipse.papyrus.uml.alf.alf.Block getBlock()</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>return</td>
+<td>Return the original Alf bloc</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf bloc to get the original information.</p>
+<p><strong>void setCodeTranslation(String code)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>code</td>
+<td>Code string to append on the result.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Append the code string parameter on the code string result.</p>
+<p><strong>String getCodeTranslation()</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>return</td>
+<td>Return the code string result.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the code string translation result.</p>
+</div>
+<div class="section" id="ialfgenerator">
+<span id="id2"></span><h3>IAlfGenerator<a class="headerlink" href="#ialfgenerator" title="Permalink to this headline">¶</a></h3>
+<p>Alf generator interface, contains the mandatory method to implement for the Alf generator.</p>
+<p><em>public</em></p>
+<p><strong>abstract void generate(AlfBlock bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Alf bloc to translate.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Abstract method to redefine in implementation. Translate the Alf bloc.</p>
+</div>
+<div class="section" id="alfgenerator">
+<span id="id3"></span><h3>AlfGenerator<a class="headerlink" href="#alfgenerator" title="Permalink to this headline">¶</a></h3>
+<p>Abstract Alf base generator. Contains the common method for all Alf generators. It implement the <a class="reference internal" href="#ialfgenerator">IAlfGenerator</a> interface.</p>
+<p><em>public</em></p>
+<p><strong>abstract void generate(AlfBlock bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Alf bloc to translate.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Translate the Alf bloc.</p>
+<p><em>protected</em></p>
+<p id="alfgenerator-generatealfblock"><strong>String generateAlfBlock(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>bloc</td>
+<td>Alf bloc to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf bloc translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf bloc translation.</p>
+<p><strong>String generateStatementSequence(org.eclipse.papyrus.uml.alf.alf.StatementSequence aStatementSequence)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aStatementSequence</td>
+<td>Alf statement sequence to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf statement sequance translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf statement sequence translation.</p>
+<p><strong>String generateDocumentedStatement(org.eclipse.papyrus.uml.alf.alf.DocumentedStatement aDocumentedStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aDocumentedStatement</td>
+<td>Alf documented statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf documented statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf documeneted statment translation.</p>
+<p><strong>String generateSequoclenceStatement(org.eclipse.papyrus.uml.alf.alf.Statement aStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aStatement</td>
+<td>Alf statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf documeneted statment translation.</p>
+<p id="alfgenerator-generatestatement"><strong>String generateStatement(org.eclipse.papyrus.uml.alf.alf.Statement aStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aStatement</td>
+<td>Alf statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf documeneted statment translation.</p>
+<p id="alfgenerator-generateinlinestatement"><strong>String generateInlineStatement(org.eclipse.papyrus.uml.alf.alf.InlineStatement aInlineStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aInLineStatement</td>
+<td>Alf inline statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf inline statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf inline statment translation.</p>
+<p><strong>String generateAnnotatedStatement(org.eclipse.papyrus.uml.alf.alf.AnnotatedStatement aAnnotatedStatement)*</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAnnotatedStatement</td>
+<td>Alf annotated statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf annotated statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf annotated statment translation.</p>
+<p><strong>String generateBlockStatement(org.eclipse.papyrus.uml.alf.alf.BlockStatement aBlockStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aBlockStatement</td>
+<td>Alf block statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf block statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf block statment translation.</p>
+<p><strong>String generateEmptyStatement(org.eclipse.papyrus.uml.alf.alf.EmptyStatement aEmptyStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aEmptyStatement</td>
+<td>Alf empty statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf empty statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf empty statment translation.</p>
+<p id="alfgenerator-generateifstatement"><strong>String generateIfStatement(org.eclipse.papyrus.uml.alf.alf.IfStatement aIfStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aIfStatement</td>
+<td>Alf if statment to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf if statment translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf if statment translation.</p>
+<p id="alfgenerator-generatesequentialclausestemplate"><strong>String generateSequentialClausesTemplate(org.eclipse.papyrus.uml.alf.alf.SequentialClauses aSequentialClauses)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequentialClauses</td>
+<td>Alf sequential clauses to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequential clauses translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequential clauses translation.</p>
+<p id="alfgenerator-generateconcurrentclausestemplate"><strong>String generateConcurrentClausesTemplate(org.eclipse.papyrus.uml.alf.alf.ConcurrentClauses aConcurrentClauses)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aConcurrentClauses</td>
+<td>Alf concurrent clauses to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf concurrent clauses translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf concurrent clauses translation.</p>
+<p id="alfgenerator-generatenonfinalclausetemplate"><strong>String generateNonFinalClauseTemplate(org.eclipse.papyrus.uml.alf.alf.NonFinalClause aNonFinalClause)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aNonFinalClause</td>
+<td>Alf non final clause to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf non final clause translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf non final clause translation.</p>
+<p><strong>String generateFinalClauseTemplate(org.eclipse.papyrus.uml.alf.alf.FinalClause aFinalClause)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aFianalClause</td>
+<td>Alf final clause to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf final clause translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf fianl clause translation.</p>
+<p id="alfgenerator-generateswitchstatement"><strong>String generateSwitchStatement(org.eclipse.papyrus.uml.alf.alf.SwitchStatement aSwitchStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSwitchStatement</td>
+<td>Alf switch statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf switch statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf switch statement translation.</p>
+<p id="alfgenerator-generateswitchdefaultclause"><strong>String generateSwitchDefaultclause(org.eclipse.papyrus.uml.alf.alf.SwitchDefaultClause aSwitchDefaultClause)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSwitchDefaultClause</td>
+<td>Alf switch default clause to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf switch default clause translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf switch default clause translation.</p>
+<p id="alfgenerator-generateswitchclause"><strong>String generateSwitchClause(org.eclipse.papyrus.uml.alf.alf.SwitchClause aSwitchClause)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSwitchClause</td>
+<td>Alf switch clause to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf switch clause translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf switch clause translation.</p>
+<p id="alfgenerator-generateswitchcase"><strong>String generateSwitchCase(org.eclipse.papyrus.uml.alf.alf.SwitchCase aSwitchCase)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSwitchCase</td>
+<td>Alf switch case to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf switch case translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf switch case translation.</p>
+<p><strong>String generateNonEmptyStatementSequence(org.eclipse.papyrus.uml.alf.alf.NonEmptyStatementSequence aNonEmptyStatementSequence)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>anonEmptyStatementSequence</td>
+<td>Alf non empty statement sequence to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf non empty statement sequence translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf non empty statement sequence translation.</p>
+<p id="alfgenerator-generatewhilestatement"><strong>String generateWhileStatement(org.eclipse.papyrus.uml.alf.alf.WhileStatement aWhileStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aWhileStatement</td>
+<td>Alf while statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf while statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf while statement translation.</p>
+<p id="alfgenerator-generatedostatement"><strong>String generateDoStatement(org.eclipse.papyrus.uml.alf.alf.DoStatement aDoStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aDoStatement</td>
+<td>Alf do statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf do statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf do statement translation.</p>
+<p><strong>String generateForStatement(org.eclipse.papyrus.uml.alf.alf.ForStatement aForStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aForStatement</td>
+<td>Alf for statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf for statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf for statement translation.</p>
+<p><strong>String generateBreakStatement(org.eclipse.papyrus.uml.alf.alf.BreakStatement aBreakStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aBreakStatement</td>
+<td>Alf break statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf break statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf break statement translation.</p>
+<p><strong>String generateReturnStatement(org.eclipse.papyrus.uml.alf.alf.ReturnStatement aReturnStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aReturnStatement</td>
+<td>Alf return statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf return statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf return statement translation.</p>
+<p><strong>String generateAcceptStatement(org.eclipse.papyrus.uml.alf.alf.AcceptStatement aAcceptStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAcceptStatement</td>
+<td>Alf accept statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf accepet statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf accept statement translation.</p>
+<p><strong>String generateClassifyStatement(org.eclipse.papyrus.uml.alf.alf.ClassifyStatement aClassifyStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aClassifyStatement</td>
+<td>Alf classify statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf classify statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf classify statement translation.</p>
+<p id="alfgenerator-generateinvocationorassignementordeclarationstatement"><strong>String generateInvocationOrAssignementOrDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.InvocationOrAssignementOrDeclarationStatement aInvocationOrAssignementOrDeclarationStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="59%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aInvocationorAssignementOrDeclarationStatement</td>
+<td>Alf invocation or assignement or declaration statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf invocation or assignement or declaration statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf  invocation, or assignement, or declaration, statement translation.</p>
+<p id="alfgenerator-generatevariabledeclarationcompletion"><strong>String generateVariableDeclarationCompletion(org.eclipse.papyrus.uml.alf.alf.VariableDeclarationCompletion aVariableDeclarationCompletion)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aVaraibleDeclarationCompletion</td>
+<td>Alf variable declaration completion to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf variable declaration completion translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf variable declaration completion  translation.</p>
+<p><strong>String generateAssignmentCompletion(org.eclipse.papyrus.uml.alf.alf.AssignmentCompletion aAssignmentCompletion)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAssignementCompletion</td>
+<td>Alf assignement completion to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf assignement completion translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf assignement completion translation.</p>
+<p><strong>String generateAssignmentOperator(org.eclipse.papyrus.uml.alf.alf.AssignmentOperator aAssignmentOperator)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAssignementOperator</td>
+<td>Alf assignement operator to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf assignement operator translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf assignement operator translation.</p>
+<p><strong>String generateSuperInvocationStatement(org.eclipse.papyrus.uml.alf.alf.SuperInvocationStatement aSuperInvocationStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSuperInvocationStatement</td>
+<td>Alf super invocation statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf super invocation translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf super invocation statement translation.</p>
+<p id="alfgenerator-generatesuperinvocationexpression"><strong>String generateSuperInvocationExpression(org.eclipse.papyrus.uml.alf.alf.SuperInvocationExpression aSuperInvocationExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSuperInvocationExpression</td>
+<td>Alf super invocation expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf super invocation expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf super invocation expression translation.</p>
+<p><strong>String generateOperationCallExpression(org.eclipse.papyrus.uml.alf.alf.OperationCallExpression aOperationCallExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aOperationCallExpression</td>
+<td>Alf operation call expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf operation call expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf operation call expression translation.</p>
+<p><strong>String generateTupleTemplate(org.eclipse.papyrus.uml.alf.alf.Tuple aTuple)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aTuple</td>
+<td>Alf tuple to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf tuple translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf tuple translation.</p>
+<p><strong>String generateTupleElement(org.eclipse.papyrus.uml.alf.alf.TupleElement aTupleElement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="69%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aTupleElement</td>
+<td>Alf tuple element to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf tuple element translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf tuple element translation.</p>
+<p id="alfgenerator-generateoperationcallexpressionwithoutdot"><strong>String generateOperationCallExpressionWithoutDot(org.eclipse.papyrus.uml.alf.alf.OperationCallExpressionWithoutDot aOperationCallExpressionWithoutDot)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aOperationCallExpressionWithoutDot</td>
+<td>Alf operation call expression without dot to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf operation call expression without dot translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf operation call expression without dot translation.</p>
+<p><strong>String generateThisInvocationStatement(org.eclipse.papyrus.uml.alf.alf.ThisInvocationStatement aThisInvocationStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aThisInvocationstatement</td>
+<td>Alf this invocation statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf this invocation statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf this invocation statement translation.</p>
+<p><strong>String generateInstanceCreationInvocationStatement(org.eclipse.papyrus.uml.alf.alf.InstanceCreationInvocationStatement aInstanceCreationInvocationStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="60%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aInstanceCreationinvocationStatement</td>
+<td>Alf instance creation invocation statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf instance creation invocation statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf instance creation invocation statement translation.</p>
+<p><strong>String generateAnnotation(org.eclipse.papyrus.uml.alf.alf.Annotation aAnnotation)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAnnotation</td>
+<td>Alf annotation to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf annotation translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf annotation translation.</p>
+<p><strong>String generateExpressionForm(org.eclipse.papyrus.uml.alf.alf.Expression aExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aExpression</td>
+<td>Alf expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf expression translation.</p>
+<p><strong>String generateSequenceExpressionForm(org.eclipse.papyrus.uml.alf.alf.EList&lt;Expression&gt; list)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td colspan="2">list   | Alf expression list to translate.</td>
+</tr>
+<tr class="row-even"><td colspan="2">return | Alf expression list translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf expression list translation.</p>
+<p><strong>String generateConditionalTestExpression(org.eclipse.papyrus.uml.alf.alf.ConditionalTestExpression aConditionalTestExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aConditionalTestExpression</td>
+<td>Alf conditional test expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf conditionnal test expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf conditonal test expression translation.</p>
+<p><strong>String generateConditionalOrExpression(org.eclipse.papyrus.uml.alf.alf.ConditionalOrExpression aConditionalOrExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aConditionalOrExpression</td>
+<td>Alf conditional or expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf conditionnal or expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf conditonal or expression translation.</p>
+<p><strong>String generateConditionalAndExpression(org.eclipse.papyrus.uml.alf.alf.ConditionalAndExpression aConditionalAndExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aConditionalAndExpression</td>
+<td>Alf conditional and expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf conditionnal and expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf conditonal and expression translation.</p>
+<p><strong>String generateInclusiveOrExpression(org.eclipse.papyrus.uml.alf.alf.InclusiveOrExpression aInclusiveOrExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aInclusiveOrExpression</td>
+<td>Alf inclusive or expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf inclusive or expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf inclusive or expression translation.</p>
+<p><strong>String generateExclusiveOrExpression(org.eclipse.papyrus.uml.alf.alf.ExclusiveOrExpression aExclusiveOrExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aExclusiveOrExpression</td>
+<td>Alf exclusive or expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf exclusive or expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf exclusive or expression translation.</p>
+<p><strong>String generateAndExpression(org.eclipse.papyrus.uml.alf.alf.AndExpression aAndExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAndExpression</td>
+<td>Alf and expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf and expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf conditonal test expression translation.</p>
+<p><strong>String generateEqualityExpression(org.eclipse.papyrus.uml.alf.alf.EqualityExpression aEqualityExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aEqualityExpression</td>
+<td>Alf equality expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf equality expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf equality expression translation.</p>
+<p><strong>String generateClassificationExpression(org.eclipse.papyrus.uml.alf.alf.ClassificationExpression aClassificationExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aClassificationExpression</td>
+<td>Alf classification expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf classification expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf classifcation expression translation.</p>
+<p><strong>String generateSequenceConstructionOrAccessCompletion(org.eclipse.papyrus.uml.alf.alf.SequenceConstructionOrAccessCompletion aSequenceConstructionOrAccessCompletion)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequenceContructionOrAccessCompletion</td>
+<td>Alf sequence construction, or access completion  to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequence construction, or access completion  translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequence construction, or access completion  translation.</p>
+<p><strong>String generateQualifiedNamePath(org.eclipse.papyrus.uml.alf.alf.QualifiedNamePath aQualifiedNamePath)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aQualifiedNamePath</td>
+<td>Alf qualified name path to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf qualified name path translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf qualified name path translation.</p>
+<p><strong>String generateUnqualifiedName(org.eclipse.papyrus.uml.alf.alf.UnqualifiedName aUnqualifiedName)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aUnqualifiedName</td>
+<td>Alf unqualified name to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf unqualified name translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf unqualified name  translation.</p>
+<p><strong>String generateTemplateBinding(org.eclipse.papyrus.uml.alf.alf.TemplateBinding aTemplateBinding)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aTemplateBinding</td>
+<td>Alf template binding to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf template binding translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf template binding translation.</p>
+<p><strong>String generateRelationalExpression(org.eclipse.papyrus.uml.alf.alf.RelationalExpression aRelationalExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aRelationnalExpression</td>
+<td>Alf relational expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf relationnal expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf relational expression translation.</p>
+<p><strong>String generateShiftExpression(org.eclipse.papyrus.uml.alf.alf.ShiftExpression aShiftExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aShiftExpression</td>
+<td>Alf shift expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf shift expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf shift expression translation.</p>
+<p><strong>String generateAdditiveExpression(org.eclipse.papyrus.uml.alf.alf.AdditiveExpression aAdditiveExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aAdditiveExpression</td>
+<td>Alf additive expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf additive expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf additive expression translation.</p>
+<p><strong>String generateMultiplicativeExpression(org.eclipse.papyrus.uml.alf.alf.MultiplicativeExpression aMultiplicativeExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aMultiplicativeExpression</td>
+<td>Alf multiplicative expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf multiplicative expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf multiplicative expression translation.</p>
+<p><strong>String generateUnaryExpression(org.eclipse.papyrus.uml.alf.alf.UnaryExpression aUnaryExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aUnaryExpression</td>
+<td>Alf unary expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf unary expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf unary expression translation.</p>
+<p><strong>String generatePrimaryExpression(org.eclipse.papyrus.uml.alf.alf.PrimaryExpression aPrimaryExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aPrimaryExpression</td>
+<td>Alf primary expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf primary expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf primary expression translation.</p>
+<p><strong>String generateValueSpecification(org.eclipse.papyrus.uml.alf.alf.ValueSpecification aValueSpecification)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aValueSpecification</td>
+<td>Alf value specification to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf value secification translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf value specification translation.</p>
+<p id="algenerator-generatethisexpression"><strong>String generateThisExpression(org.eclipse.papyrus.uml.alf.alf.ThisExpression aThisExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aThisExpression</td>
+<td>Alf this expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf this expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf this expression translation.</p>
+<p><strong>String generateNullExpression(org.eclipse.papyrus.uml.alf.alf.NullExpression aNullExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aNullExpression</td>
+<td>Alf null expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf null expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf null expression translation.</p>
+<p><strong>String generateParenthesizedExpression(org.eclipse.papyrus.uml.alf.alf.ParenthesizedExpression aParenthesizedExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aParenthesizedExpression</td>
+<td>Alf parenthesizedExpression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf parenthsized expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf parenthesized expression translation.</p>
+<p><strong>String generateNonLiteralValueSpecification(org.eclipse.papyrus.uml.alf.alf.NonLiteralValueSpecification aNonLiteralValueSpecification)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aNonLiteralValueSpecification</td>
+<td>Alf non literal value specification to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf non literal value specification translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf non literal value specification translation.</p>
+<p id="alfgenerator-generateinstancecreationexpression"><strong>String generateInstanceCreationExpression(org.eclipse.papyrus.uml.alf.alf.InstanceCreationExpression aInstanceCreationExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aInstanceCreationExpressionn</td>
+<td>Alf instance creation expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf instance creation expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf instance creation expression translation.</p>
+<p id="alfgenerator-generatequalifiednamewithbinding"><strong>String generateQualifiedNameWithBinding(org.eclipse.papyrus.uml.alf.alf.QualifiedNameWithBinding aQualifiedNameWithBinding)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aQualifiedNameWithBinding</td>
+<td>Alf qualified name with binding to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf qualified name with binding translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf qualified name with binding translation.</p>
+<p><strong>String generateSequenceConstructionCompletion(org.eclipse.papyrus.uml.alf.alf.SequenceConstructionCompletion aSequenceConstructionCompletion)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequenceContructionCompletion</td>
+<td>Alf sequence construction completion to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequence construction completion translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequence construction completion translation.</p>
+<p><strong>String generateLiteral(org.eclipse.papyrus.uml.alf.alf.LITERAL aLITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLITERAL</td>
+<td>Alf literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf literal translation.</p>
+<p><strong>String generateIntegerLiteral(org.eclipse.papyrus.uml.alf.alf.INTEGER_LITERAL aINTEGER_LITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aINTEGER_LITERAL</td>
+<td>Alf integer literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf integer literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf integer literal translation.</p>
+<p><strong>String generateStringLiteral(org.eclipse.papyrus.uml.alf.alf.STRING_LITERAL aSTRING_LITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSTRING_LITERAL</td>
+<td>Alf string literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf string literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf string literal translation.</p>
+<p><strong>String generateBooleanLiteral(org.eclipse.papyrus.uml.alf.alf.BOOLEAN_LITERAL aBOOLEAN_LITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aBOOLEAN_LITERAL</td>
+<td>Alf boolean literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf boolean literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf boolean literal translation.</p>
+<p><strong>String generateNumberLiteral(org.eclipse.papyrus.uml.alf.alf.NUMBER_LITERAL aNUMBER_LITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aNUMBER_LITERAL</td>
+<td>Alf number literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf number literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf number literal translation.</p>
+<p><strong>String generateUnlimitedLiteral(org.eclipse.papyrus.uml.alf.alf.UNLIMITED_LITERAL aUNLIMITED_LITERAL)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aUNLIMITED_LITERAL</td>
+<td>Alf unlimited literal to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf unlimited literal translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf unlimited literal translation.</p>
+<p><strong>String generateSuffixExpression(org.eclipse.papyrus.uml.alf.alf.SuffixExpression aSuffixExpression, String dot_or_arrow)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSuffixExpression</td>
+<td>Alf suffix expression to translate</td>
+</tr>
+<tr class="row-even"><td>dot_or_arrow</td>
+<td>Suffix.</td>
+</tr>
+<tr class="row-odd"><td>return</td>
+<td>Alf suffix expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf suffix expression translation.</p>
+<p><strong>String generatePropertyCallExpression(org.eclipse.papyrus.uml.alf.alf.PropertyCallExpression aPropertyCallExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aPropertyCallExpression</td>
+<td>Alf property call expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf property call expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf property call expression translation.</p>
+<p><strong>String generateLinkOperationExpression(org.eclipse.papyrus.uml.alf.alf.LinkOperationExpression aLinkOperationExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLinkOperationExpression</td>
+<td>Alf link operation expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf link operation expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf link operation expression  translation.</p>
+<p><strong>String generateLinkOperationTuple(org.eclipse.papyrus.uml.alf.alf.LinkOperationTuple aLinkOperationTuple)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLinkOperationTuple</td>
+<td>Alf link operation tuple to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf link operation tuple translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf link operation tuple translation.</p>
+<p><strong>String generateLinkOperationTupleElement(org.eclipse.papyrus.uml.alf.alf.LinkOperationTupleElement aLinkOperationTupleElement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLinkOperationTupleElement</td>
+<td>Alf link operation tuple element to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf link operation tuple element translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf link operation tuple element translation.</p>
+<p><strong>String generateLinkOperationKind(org.eclipse.papyrus.uml.alf.alf.LinkOperationKind aLinkOperationKind)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="66%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLinkOperationKind</td>
+<td>Alf link operation kind to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf link operation kind translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf link operation kind translation.</p>
+<p><strong>String generateSequenceOperationExpression(org.eclipse.papyrus.uml.alf.alf.SequenceOperationExpression aSequenceOperationExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequenceOperationExpression</td>
+<td>Alf sequence operation expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequence operation expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequence operation expression translation.</p>
+<p><strong>String generateSequenceReductionExpression(org.eclipse.papyrus.uml.alf.alf.SequenceReductionExpression aSequenceReductionExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequenceReductionExpression</td>
+<td>Alf sequence reduction expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequence reduction expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequence reduction expression translation.</p>
+<p><strong>String generateSequenceExpansionExpression(org.eclipse.papyrus.uml.alf.alf.SequenceExpansionExpression aSequenceExpansionExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aSequenceExpansionExpression</td>
+<td>Alf sequence expansion expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf sequence expansion expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf sequence expansion epxression translation.</p>
+<p><strong>String generateClassExtentExpression(org.eclipse.papyrus.uml.alf.alf.ClassExtentExpression aClassExtentExpression)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aClassExtentExpression</td>
+<td>Alf class extent expression to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf class extent expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf class extent expression translation.</p>
+<p id="alfgenerator-generatelocalnamedeclarationstatement"><strong>String generateLocalNameDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.LocalNameDeclarationStatement aLocalNameDeclarationStatement)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aLocalNameDeclarartionStatement</td>
+<td>Alf local name declaration statement to translate.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Alf local name declaration statement translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf local name declaration statement translation.</p>
+<p id="alfgenerator-generatenameexpression"><strong>String generateNameExpression(org.eclipse.papyrus.uml.alf.alf.NameExpression aNameExpression, Boolean isNotNew)</strong></p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>aNameExpression</td>
+<td>Alf name expression to translate.</td>
+</tr>
+<tr class="row-even"><td>isNotNew</td>
+<td>is a new name expression ?</td>
+</tr>
+<tr class="row-odd"><td>return</td>
+<td>Alf name expression translation.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Return the Alf name expression translation.</p>
+</div>
+<div class="section" id="athena-alfgenerator">
+<span id="id4"></span><h3>Athena_AlfGenerator<a class="headerlink" href="#athena-alfgenerator" title="Permalink to this headline">¶</a></h3>
+<p>Specialized Alf generator to translate Alf bloc to Athena code. It inherit from <a class="reference internal" href="#alfgenerator">AlfGenerator</a>.</p>
+<p><em>protected</em></p>
+<p><strong>String generateAlfBlock(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatealfblock">AlfGenerator.generateAlfBlock</a></div></blockquote>
+<p><strong>String generateStatement(org.eclipse.papyrus.uml.alf.alf.Statement aStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatestatement">AlfGenerator.generateStatement</a></div></blockquote>
+<p><strong>String generateIfStatement(org.eclipse.papyrus.uml.alf.alf.IfStatement aIfStatement)</strong></p>
+<blockquote>
+<div>see AlfGenerator.generateifStatement</div></blockquote>
+<p><strong>String generateSequentialClausesTemplate(org.eclipse.papyrus.uml.alf.alf.SequentialClauses aSequentialClauses)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatesequentialclausestemplate">AlfGenerator.generateSequentialClausesTemplate</a></div></blockquote>
+<p><strong>String generateConcurrentClausesTemplate(org.eclipse.papyrus.uml.alf.alf.ConcurrentClauses aConcurrentClauses)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateconcurrentclausestemplate">AlfGenerator.generateConcurrentClausesTemplate</a></div></blockquote>
+<p><strong>String generateNonFinalClauseTemplate(org.eclipse.papyrus.uml.alf.alf.NonFinalClause aNonFinalClause)</strong></p>
+<blockquote>
+<div>see <a href="#id6"><span class="problematic" id="id7">AlfGenerator.generateFinalClauseTemplate_</span></a></div></blockquote>
+<p><strong>String generateWhileStatement(org.eclipse.papyrus.uml.alf.alf.WhileStatement aWhileStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatewhilestatement">AlfGenerator.generateWhileStatement</a></div></blockquote>
+<p><strong>String generateInvocationOrAssignementOrDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.InvocationOrAssignementOrDeclarationStatement aInvocationOrAssignementOrDeclarationStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateinvocationorassignementordeclarationstatement">AlfGenerator.generateInvocationOrAssignementOrDeclarationStatement</a></div></blockquote>
+<p><strong>String generateVariableDeclarationCompletion(org.eclipse.papyrus.uml.alf.alf.VariableDeclarationCompletion aVariableDeclarationCompletion)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatevariabledeclarationcompletion">AlfGenerator.generateVariableDeclarationCompletion</a></div></blockquote>
+<p><strong>String generateLocalNameDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.LocalNameDeclarationStatement aLocalNameDeclarationStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatelocalnamedeclarationstatement">AlfGenerator.generateLocalNameDeclarationStatement</a></div></blockquote>
+<p><strong>String generateNameExpression(org.eclipse.papyrus.uml.alf.alf.NameExpression aNameExpression, Boolean isNotNew)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatenameexpression">AlfGenerator.generateNameExpression</a></div></blockquote>
+</div>
+<div class="section" id="cpp-alfgenerator">
+<span id="id5"></span><h3>CPP_AlfGenerator<a class="headerlink" href="#cpp-alfgenerator" title="Permalink to this headline">¶</a></h3>
+<p>Specialized Alf generator to translate Alfbloc to C++ code.  It inherit from <a class="reference internal" href="#alfgenerator">AlfGenerator</a>.</p>
+<p><em>public</em></p>
+<p><strong>CPP_AlfGenerator()</strong></p>
+<blockquote>
+<div>Constrcutor</div></blockquote>
+<p><em>protected</em></p>
+<p><strong>String generateAlfBlock(org.eclipse.papyrus.uml.alf.alf.Block bloc)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatealfblock">AlfGenerator.generateAlfBlock</a></div></blockquote>
+<p><strong>String generateStatement(org.eclipse.papyrus.uml.alf.alf.Statement aStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatestatement">AlfGenerator.generateStatement</a></div></blockquote>
+<p><strong>String generateInlineStatement(org.eclipse.papyrus.uml.alf.alf.InlineStatement aInLineStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateinlinestatement">AlfGenerator.generateInlineStatement</a></div></blockquote>
+<p><strong>String generateIfStatement(org.eclipse.papyrus.uml.alf.alf.IfStatement aIfStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateifstatement">AlfGenerator.generateIfStatement</a></div></blockquote>
+<p><strong>String generateSequentialClausesTemplate(org.eclipse.papyrus.uml.alf.alf.SequentialClauses aSequentialClauses)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatesequentialclausestemplate">AlfGenerator.generateSequentialClausesTemplate</a></div></blockquote>
+<p><strong>String generateConcurrentClausesTemplate(org.eclipse.papyrus.uml.alf.alf.ConcurrentClauses aConcurrentClauses)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateconcurrentclausestemplate">AlfGenerator.generateConcurrentClausesTemplate</a></div></blockquote>
+<p><strong>String generateNonFinalClauseTemplate(org.eclipse.papyrus.uml.alf.alf.NonFinalClause aNonFinalClause)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatenonfinalclausetemplate">AlfGenerator.generateNonFinalClauseTemplate</a></div></blockquote>
+<p><strong>String generateSwitchStatement(org.eclipse.papyrus.uml.alf.alf.SwitchStatement aSwitchStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateswitchstatement">AlfGenerator.generateSwitchStatement</a></div></blockquote>
+<p><strong>String generateSwitchDefaultclause(org.eclipse.papyrus.uml.alf.alf.SwitchDefaultClause aSwitchDefaultClause)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateswitchdefaultclause">AlfGenerator.generateSwitchDefaultclause</a></div></blockquote>
+<p><strong>String generateSwitchClause(org.eclipse.papyrus.uml.alf.alf.SwitchClause aSwitchClause)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateswitchclause">AlfGenerator.generateSwitchClause</a></div></blockquote>
+<p><strong>String generateSwitchCase(org.eclipse.papyrus.uml.alf.alf.SwitchCase aSwitchCase)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateswitchcase">AlfGenerator.generateSwitchCase</a></div></blockquote>
+<p><strong>String generateWhileStatement(org.eclipse.papyrus.uml.alf.alf.WhileStatement aWhileStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatewhilestatement">AlfGenerator.generateWhileStatement</a></div></blockquote>
+<p><strong>String generateDoStatement(org.eclipse.papyrus.uml.alf.alf.DoStatement aDoStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatedostatement">AlfGenerator.generateDoStatement</a></div></blockquote>
+<p><strong>String generateInvocationOrAssignementOrDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.InvocationOrAssignementOrDeclarationStatement aInvocationOrAssignementorDeclarationStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateinvocationorassignementordeclarationstatement">AlfGenerator.generateInvocationOrAssignementOrDeclarationStatement</a></div></blockquote>
+<p><strong>String generateVariableDeclarationCompletion(org.eclipse.papyrus.uml.alf.alf.VariableDeclarationCompletion aVariableDeclarationCompletion)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatevariabledeclarationcompletion">AlfGenerator.generateVariableDeclarationCompletion</a></div></blockquote>
+<p><strong>String generateSuperInvocationExpression(org.eclipse.papyrus.uml.alf.alf.SuperInvocationExpression aSuperInvocationExpression)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatesuperinvocationexpression">AlfGenerator.generateSuperInvocationExpression</a></div></blockquote>
+<p><strong>String generateOperationCallExpressionWithoutDot(org.eclipse.papyrus.uml.alf.alf.OperationCallExpressionWithoutDot aOperationCallExpressionWithoutDot)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateoperationcallexpressionwithoutdot">AlfGenerator.generateOperationCallExpressionWithoutDot</a></div></blockquote>
+<p><strong>String generateThisExpression(org.eclipse.papyrus.uml.alf.alf.ThisExpression aThisExpression)</strong></p>
+<blockquote>
+<div>see <a href="#id8"><span class="problematic" id="id9">AlfGenerator.generateThisExpression_</span></a></div></blockquote>
+<p><strong>String generateInstanceCreationExpression(org.eclipse.papyrus.uml.alf.alf.InstanceCreationExpression aInstanceCreationExpression)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generateinstancecreationexpression">AlfGenerator.generateInstanceCreationExpression</a></div></blockquote>
+<p><strong>String generateQualifiedNameWithBinding(org.eclipse.papyrus.uml.alf.alf.QualifiedNameWithBinding aQualifiedNameWithBinding)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatequalifiednamewithbinding">AlfGenerator.generateQualifiedNameWithBinding</a></div></blockquote>
+<p><strong>String generateLocalNameDeclarationStatement(org.eclipse.papyrus.uml.alf.alf.LocalNameDeclarationStatement aLocalNameDeclarationStatement)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatelocalnamedeclarationstatement">AlfGenerator.generateLocalNameDeclarationStatement</a></div></blockquote>
+<p><strong>String generateNameExpression(org.eclipse.papyrus.uml.alf.alf.NameExpression aNameExpression, Boolean isNotNew)</strong></p>
+<blockquote>
+<div>see <a class="reference internal" href="#alfgenerator-generatenameexpression">AlfGenerator.generateNameExpression</a></div></blockquote>
+</div>
+</div>
+<div class="section" id="how-to-use-an-existing-alf-generator">
+<h2>How to use an existing Alf generator<a class="headerlink" href="#how-to-use-an-existing-alf-generator" title="Permalink to this headline">¶</a></h2>
+<p>You can use an Alf generator in your <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> generator development.
+You have two solution to call an existing Alf generator. But that depend how you develop your <a class="reference internal" href="../../../Glossary.html#term-robotml"><em class="xref std std-term">RobotML</em></a> generator.</p>
+<ul class="simple">
+<li>If you use <a class="reference internal" href="../../../Glossary.html#term-acceleo"><em class="xref std std-term">Acceleo</em></a> template, you should to import the AlfServices into your template.Then call <cite>createAlfBloc</cite> to get an Alf bloc corresponding to your operation body, and call the right operation translation you need.</li>
+</ul>
+<div class="highlight-ocl"><pre>[let behavior : OpaqueBehavior = element.oclAsType(OpaqueBahevior)]
+   [let bloc : alf::Block = createAlfBloc(behavior)]
+      [if((bloc = null) =(false))]
+         [translateAlfBlocTo_Athena(bloc)/]
+       [/if]
+   [/let]
+[/let]</pre>
+</div>
+<ul class="simple">
+<li>If you use JAVA class, you should to refrence the Alf generator API, and call the static methods <cite>createAlfBloc</cite> and the translation operation.</li>
+</ul>
+<div class="highlight-java"><div class="highlight"><pre><span class="n">OpaqueBahevior</span> <span class="n">behavior</span> <span class="o">=</span> <span class="o">(</span><span class="n">OpaqueBehavior</span><span class="o">)</span><span class="n">element</span><span class="o">;</span>
+<span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">papyrus</span><span class="o">.</span><span class="na">uml</span><span class="o">.</span><span class="na">alf</span><span class="o">.</span><span class="na">alf</span><span class="o">.</span><span class="na">Block</span> <span class="n">bloc</span> <span class="o">=</span> <span class="n">AlfServices</span><span class="o">.</span><span class="na">createAlfBloc</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+<span class="k">if</span><span class="o">(</span><span class="n">bloc</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">AlfServices</span><span class="o">.</span><span class="na">translateAlfBlocTo_Athena</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-create-a-new-alf-generator">
+<h2>How to create a new Alf generator<a class="headerlink" href="#how-to-create-a-new-alf-generator" title="Permalink to this headline">¶</a></h2>
+<p>If you use a specific language (not using in the robotml platform), you can create a new Alf generator with this API. You should do the following steps:</p>
+<ol class="arabic simple">
+<li>Create a new class generator <cite>XXX_AlfGenerator</cite>, inherited from <a class="reference internal" href="#alfgenerator">AlfGenerator</a>.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By convention your generator shouk be suffixed <cite>AlfGenerator</cite>.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>Override the needing methods to specify your result language generation.</li>
+<li>Modify the <a class="reference internal" href="#alfservices">AlfServices</a> class to lauch your generator.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">By convention your calling methods should be prefixed by <cite>translateAlfBlocTo_</cite>.</p>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">translateAlfBlocTo_XXX</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">papyrus</span><span class="o">.</span><span class="na">uml</span><span class="o">.</span><span class="na">alf</span><span class="o">.</span><span class="na">alf</span><span class="o">.</span><span class="na">Block</span> <span class="n">bloc</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="k">return</span> <span class="n">AlfServices</span><span class="o">.</span><span class="na">translateAlfBloc</span><span class="o">(</span><span class="n">bloc</span><span class="o">,</span> <span class="k">new</span> <span class="n">XXX_AlfGenerator</span><span class="o">());</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Call your Alf generator on your source code</li>
+</ol>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">how to use an existing Alf generator</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The Alf Generator API</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#alfservices">AlfServices</a></li>
+<li><a class="reference internal" href="#alfblock">AlfBlock</a></li>
+<li><a class="reference internal" href="#ialfgenerator">IAlfGenerator</a></li>
+<li><a class="reference internal" href="#alfgenerator">AlfGenerator</a></li>
+<li><a class="reference internal" href="#athena-alfgenerator">Athena_AlfGenerator</a></li>
+<li><a class="reference internal" href="#cpp-alfgenerator">CPP_AlfGenerator</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-use-an-existing-alf-generator">How to use an existing Alf generator</a></li>
+<li><a class="reference internal" href="#how-to-create-a-new-alf-generator">How to create a new Alf generator</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../../CodeGenerators.html"
+                        title="previous chapter">Code generators</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../RobotMLGenerators/RobotMLGenerators.html"
+                        title="next chapter">The RobotML generators</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/DevGuide/CodeGenerators/AlfGenerators/AlfGenerators_API.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../RobotMLGenerators/RobotMLGenerators.html" title="The RobotML generators"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../../CodeGenerators.html" title="Code generators"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../DevGuide.html" >Developer Guide</a> &raquo;</li>
+          <li><a href="../../CodeGenerators.html" >Code generators</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

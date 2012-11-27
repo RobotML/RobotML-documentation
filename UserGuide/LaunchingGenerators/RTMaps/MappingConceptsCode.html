@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapping between modeling concepts and RTMaps code &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="The generator to the RTMaps middleware" href="RTMapsGeneratorUserGuide.html" />
+    <link rel="next" title="Developer Guide" href="../../../DevGuide.html" />
+    <link rel="prev" title="Limitations and perspectives" href="Limitations.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../DevGuide.html" title="Developer Guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Limitations.html" title="Limitations and perspectives"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../LaunchingGenerators.html" >Launching Generators</a> &raquo;</li>
+          <li><a href="RTMapsGeneratorUserGuide.html" accesskey="U">The generator to the RTMaps middleware</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mapping-between-modeling-concepts-and-rtmaps-code">
+<h1>Mapping between modeling concepts and RTMaps code<a class="headerlink" href="#mapping-between-modeling-concepts-and-rtmaps-code" title="Permalink to this headline">¶</a></h1>
+<p>This chapter will describe more in details how RobotML meta-model concepts are generated
+towards RTMaps concepts, objects and mechanisms.</p>
+<div class="section" id="data-types-input-and-output-ports">
+<h2>Data types, input and output ports<a class="headerlink" href="#data-types-input-and-output-ports" title="Permalink to this headline">¶</a></h2>
+<p>The RobotML meta-model defines a set of data types, mostly mapped from the ROS data types, that can
+be used to characterize objects that will be exchanged via data-flow or service ports.
+The RobotML meta-model also allows the user to define his own specific data types.</p>
+<p>The RTMaps generator transforms this datatypes definitions into C++ types and classes in a generic way.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Primitive datatypes</li>
+</ul>
+<p>Primitive datatypes are mapped directly to existing dataypes in C++, sometimes via
+RTMaps-specific &#8220;typedefs&#8221; as some datatypes declarations may differ from one platform to
+another. See generated file maps_proteus_primitive_datatypes.h&#8221;.</p>
+<div class="highlight-python"><pre>#include "maps_types.h"
+
+/**************************************/
+/* PRIMITIVE DATA TYPES */
+/**************************************/
+typedef bool Bool;
+typedef MAPSUInt8 Byte;
+typedef MAPSUInt8 Char;
+typedef MAPSInt8 Int8;
+typedef MAPSUInt8 UInt8;
+typedef MAPSInt16 Int16;
+typedef MAPSUInt16 UInt16;
+typedef MAPSInt32 Int32;
+typedef MAPSUInt32 UInt32;
+typedef MAPSInt64 Int64;
+typedef MAPSUInt64 UInt64;
+typedef MAPSFloat32 Float32;
+typedef MAPSFloat64 Float64;
+typedef std::string String;
+
+typedef MAPSTimestamp   Time;
+typedef MAPSDelay               Duration;
+...</pre>
+</div>
+<ul class="simple">
+<li>Composed datatypes</li>
+</ul>
+<p>Composed datatypes are datatypes based on collections of primitive datatypes or association of different
+sets of primitive datatypes, or even made of other composed datatypes. The RTMaps generator uses dynamic
+templates from the STL such as std::vector to generated the corresponding C++ classes. Example:
+Generated file <tt class="docutils literal"><span class="pre">Header.h</span></tt> for the composed datatype <tt class="docutils literal"><span class="pre">Header</span></tt>:</p>
+<div class="highlight-python"><pre>class Header {
+        public:
+        UInt32 seq;
+        Time stamp;
+        String frame_id;
+};</pre>
+</div>
+<p>Generated file <tt class="docutils literal"><span class="pre">Image.h</span></tt> for the composed datatype <tt class="docutils literal"><span class="pre">Image</span></tt>:</p>
+<div class="highlight-python"><pre>#include "robotml/Header.h"
+
+class Image {
+        public:
+        Header header;
+        UInt32 height;
+        UInt32 width;
+        String encoding;
+        UInt8 is_bigendian;
+        UInt32 step;
+        std::vector&lt;UInt8&gt; data;
+};</pre>
+</div>
+</div></blockquote>
+<p>As the content of these objects often has to be dynamically allocated or re-allocated, and often differs
+significantly from standard RTMaps datatypes, the RobotML generator defines custom RTMaps dataypes for
+each RobotML datatype definition.</p>
+<p>A custom RTMaps datatype consists in the datatype class, the class name, and the definition of an input
+port filter, defined to accept connections from output ports with such or such type. For instance, the
+definition of the input filter for the Image datatype as define in RobotML is the following:</p>
+<div class="highlight-python"><pre>// The RTMaps input filter for the structure Image
+const MAPSTypeFilterBase MAPSFilterImage = MAPS_FILTER_USER_STRUCTURE(Image);</pre>
+</div>
+<p>This way, RTMaps output ports are defined as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">MAPS_OUTPUT_USER_STRUCTURES_VECTOR</span><span class="p">(</span><span class="s">&quot;video&quot;</span><span class="p">,</span><span class="n">Image</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and RTMaps input ports are defined as follows:</p>
+<div class="highlight-python"><pre>MAPS_INPUT("video",MAPSFilterImage,MAPS::FifoReader)</pre>
+</div>
+<p>As the content of classes may have to be dynamically allocated and re-allocated at runtime,
+the generator needs to implement the most generic way to do so in RTMaps: allocate a pointer
+in each slot of the standard RTMaps output buffers, and let the user (or the generated code)
+allocate the memory (and release it!) whenever necessary.</p>
+<p>In the Birth method, an ugly bunch of code (the user may not need to understand nor modify it)
+goes through each output buffer slot, and allocates dynamically an object with the right datatype.
+All these will be released in the <tt class="docutils literal"><span class="pre">FreeBuffers</span></tt> method, called at diagram execution shutdown,
+once all the components on the diagram have stopped.</p>
+<p>In <tt class="docutils literal"><span class="pre">Birth</span></tt>:</p>
+<div class="highlight-python"><pre>_amer_relative_buffers.Clear();
+MAPSIOMonitor &amp;monitor_amer_relative=Output(0).Monitor();
+MAPSFastIOHandle it_amer_relative;
+it_amer_relative=monitor_amer_relative.InitBegin();
+while (it_amer_relative) {
+        MAPSIOElt &amp;IOElt_amer_relative=monitor_amer_relative[it_amer_relative];
+        IOElt_amer_relative.Data() = (void*) new Amer_Relative[1]; //TODO: replace 1 by port.upper.
+        if (IOElt_amer_relative.Data() == NULL)
+                Error("Not enough memory.");
+        _amer_relative_buffers.Append((Amer_Relative*)IOElt_amer_relative.Data());
+        monitor_amer_relative.InitNext(it_amer_relative);
+}</pre>
+</div>
+<p>In <tt class="docutils literal"><span class="pre">FreeBuffers</span></tt>:</p>
+<div class="highlight-python"><pre>//Let's release the memory we allocated on the output buffers.
+MAPSListIterator it_amer_relative;
+MAPSForallItems(it_amer_relative,_amer_relative_buffers) {
+        delete [] _amer_relative_buffers[it_amer_relative ];
+}
+_amer_relative_buffers.Clear();</pre>
+</div>
+</div>
+<div class="section" id="components-and-components-hierarchy">
+<h2>Components and components hierarchy<a class="headerlink" href="#components-and-components-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>A RobotML model is made of components which can themselves be made of components, which can themselves
+be made of... components, etc.</p>
+<p>The model does not make any difference between a component which contains other components and a
+leaf-component (i.e. a component which does not contain any lower level component)?- a component
+which contains other component can embed a behaviour for itself -. RTMaps does.</p>
+<p>In RTMaps, only leaf-components can embed executable code. Components which contain other components
+are just defined by the components they contain and how they are connected together.
+So, at this day (generator V1.1), a leaf component in the model will be generated to a
+RTMaps component code skeleton (a header .h and an implementation .cpp file).</p>
+<p>Whereas a higher-level component in the model will be generated to a RTMaps &#8220;macro-component&#8221; (an .rtmc file),
+which is actually an XML file containing a sub-diagram with &#8220;input aliases&#8221; and &#8220;output aliases&#8221; which are
+the exported input and output ports of the macro-component, to be connected at the higher-level.</p>
+<div class="figure align-center">
+<img alt="A high-level component (P2_Proximetry) as defined in RobotML." src="../../../_images/P2_proximetry_model.png" />
+<p class="caption">A high-level component (P2_Proximetry) as defined in RobotML.</p>
+</div>
+<div class="figure align-center">
+<img alt="The same high-level component as generated for RTMaps" src="../../../_images/P2_proximetry_rtmaps.png" />
+<p class="caption">The same high-level component as generated for RTMaps</p>
+</div>
+<div class="figure align-center">
+<img alt="The &quot;Amer_Identif&quot; leaf-component as defined in RobotML" src="../../../_images/Amer_Identif_model.png" />
+<p class="caption">The &#8220;Amer_Identif&#8221; leaf-component as defined in RobotML</p>
+</div>
+<p>becomes</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">maps_Amer_Identif</span><span class="o">.</span><span class="n">h</span>
+<span class="n">maps_Amer_Identif</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<p>which after compilation become a component in an RTMaps package:</p>
+<div class="figure align-center">
+<img alt="The &quot;Amer_Identif&quot; leaf-component as an RTMaps component." src="../../../_images/Amer_Identif_pck.png" />
+<p class="caption">The &#8220;Amer_Identif&#8221; leaf-component as an RTMaps component.</p>
+</div>
+</div>
+<div class="section" id="data-exchange-mechanisms">
+<h2>Data exchange mechanisms<a class="headerlink" href="#data-exchange-mechanisms" title="Permalink to this headline">¶</a></h2>
+<p>In RTMaps, several exchanges strategies are available between components as components often execute
+in parallel, in different threads.</p>
+<p>A component can retrieve data on its inputs in a blocking or non-blocking manner, using the output buffer
+it is connected to as a FIFO buffer or LIFO buffer, etc.</p>
+<p>A component with several inputs can be wake-up and execute its tasks following different classical
+patterns such as:</p>
+<blockquote>
+<div><ul class="simple">
+<li>asynchronous arrival of a data sample on any of the inputs: the component will be notified
+as soon as a data sample arrives on any of its input, it can the retrieve the sample and execute code.</li>
+<li>Triggered: the component will be notified when a data sample arrives on its first input, then
+it will read data available on the other inputs in a non-blocking manner (resampling).</li>
+<li>Resampling: the component will read data on all its inputs in a non-blocking manner. It will
+then be synchronized by something else, like a software timer for instance.</li>
+<li>Synchronized: the component will be notified when data samples that have been acquired at the
+same time are available on all of its inputs (and not data samples that are made available
+at the same time to the component inputs): this is useful for data fusion algorithms where
+it is necessary to process data that has been measured at the same time, whatever the latencies
+induces by the different processing channels on the different tracks. This way, it is
+possible to resynchronize the different data streams downstream the diagram, whatever the
+intermediate latencies.</li>
+</ul>
+</div></blockquote>
+<p>In the RobotML meta-model, such mechanisms cannot be specified. They are specific to RTMaps.
+The objective for future versions is to provide a way to specify those mechanisms in the &#8220;deployment&#8221;
+phase, between model definition phase and code generation phase, once the generation target has
+been chosen and the PROTEUS tools can propose a way to specify target-specific parameters.</p>
+<p>For now however, the generator implements the most generic way by default: the component is
+notified each time a new sample is made available on any of its inputs. Appropriate callbacks
+are called from the generated Core() method, allowing the programmer to include its own code
+upon data sample reception events.</p>
+<p>From that behaviour, the programmer may be able (provided that he implements the necessary
+internal buffers, data samples storage and so on...)  to re-implement all the other mechanisms,
+even if this would certainly be very tedious.</p>
+<p>This is done via a &#8220;multiple? StartReading&#8221; call in the Core method on all the available inputs:</p>
+<div class="highlight-python"><pre>int input_that_answered;
+MAPSIOElt* ioelt_in = StartReading(_nb_inputs, _inputs,         &amp;input_that_answered);
+if (ioelt_in == NULL)
+        return;
+
+MAPSTimestamp timestamp_in = ioelt_in-&gt;Timestamp();
+
+switch (input_that_answered) {
+        case 0: //We received an element from port laser_scan.
+                {
+                int count = ioelt_in-&gt;VectorSize() / sizeof(LaserScan);
+                LaserScan* data_in = (LaserScan*)ioelt_in-&gt;Data();
+                LaserScan_Received_on_laser_scan_InPort(data_in,count,                          ioelt_in-&gt;Timestamp());
+                }
+                break;
+        case 1: //We received an element from port proxy_left_right.
+                {
+                int count = ioelt_in-&gt;VectorSize() / sizeof(Proxi_Left_Right);
+                Proxi_Left_Right* data_in = (Proxi_Left_Right*)ioelt_in-                                &gt;Data();
+                                                                                                                Proxi_Left_Right_Received_on_proxy_left_right_InPort(data_in,count,             ioelt_in-&gt;Timestamp());
+                }
+                break;
+        default:
+                Error("Unknown input.");
+}
+//      Start of user code Core processing
+//      End of user code</pre>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Mapping between modeling concepts and RTMaps code</a><ul>
+<li><a class="reference internal" href="#data-types-input-and-output-ports">Data types, input and output ports</a></li>
+<li><a class="reference internal" href="#components-and-components-hierarchy">Components and components hierarchy</a></li>
+<li><a class="reference internal" href="#data-exchange-mechanisms">Data exchange mechanisms</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Limitations.html"
+                        title="previous chapter">Limitations and perspectives</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../../DevGuide.html"
+                        title="next chapter">Developer Guide</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/UserGuide/LaunchingGenerators/RTMaps/MappingConceptsCode.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../DevGuide.html" title="Developer Guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Limitations.html" title="Limitations and perspectives"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../LaunchingGenerators.html" >Launching Generators</a> &raquo;</li>
+          <li><a href="RTMapsGeneratorUserGuide.html" >The generator to the RTMaps middleware</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

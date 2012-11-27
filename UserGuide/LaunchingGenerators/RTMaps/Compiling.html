@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Compiling the necessary packages &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="The generator to the RTMaps middleware" href="RTMapsGeneratorUserGuide.html" />
+    <link rel="next" title="Running the generated diagrams" href="RunningDiagrams.html" />
+    <link rel="prev" title="The generated folder tree content" href="GeneratedContent.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RunningDiagrams.html" title="Running the generated diagrams"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GeneratedContent.html" title="The generated folder tree content"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../LaunchingGenerators.html" >Launching Generators</a> &raquo;</li>
+          <li><a href="RTMapsGeneratorUserGuide.html" accesskey="U">The generator to the RTMaps middleware</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="compiling-the-necessary-packages">
+<h1>Compiling the necessary packages<a class="headerlink" href="#compiling-the-necessary-packages" title="Permalink to this headline">¶</a></h1>
+<p>RTMaps runs code in components which are actually instances of C++ classes. Now such components code has been generated, it is time to compile it
+into a shared library which can then be dynamically loaded in the RTMaps environment. They are called <em>packages</em> of components.</p>
+<p>In order to compile the package containing the generated components, proceed as follows:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Under Windows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open the <tt class="docutils literal"><span class="pre">maps_sdk_vc2005.sln</span></tt> in Visual C++ 2005. The solution contains a project called <tt class="docutils literal"><span class="pre">rtmaps_[modelname]</span></tt></li>
+<li>Switch the current configuration to <em>Release</em> instead of <em>Debug</em></li>
+<li>Build the project</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<div class="figure align-center">
+<img alt="The generated project for Visual C++ 2005." src="../../../_images/visual_project.png" />
+<p class="caption">The generated project for Visual C++ 2005.</p>
+</div>
+<div class="figure align-center">
+<img alt="The compilation result in Visual C++." src="../../../_images/visual_compilation.png" />
+<p class="caption">The compilation result in Visual C++.</p>
+<div class="legend">
+<blockquote>
+<div><ul>
+<li><p class="first">Under Linux:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open a terminal</li>
+<li>From path <tt class="docutils literal"><span class="pre">.../rtmaps-generated-files/user_sdk/[modelname].u/</span></tt>, type <tt class="docutils literal"><span class="pre">make</span></tt></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="figure align-center">
+<img alt="Compilation under Linux." src="../../../_images/make_terminal.png" />
+<p class="caption">Compilation under Linux.</p>
+</div>
+<p>This creates a file called <tt class="docutils literal"><span class="pre">rtmaps_[modelname].pck</span></tt> in folder <tt class="docutils literal"><span class="pre">rtmaps-generated-files\user_sdk\packages\[linux_x86]</span></tt>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="GeneratedContent.html"
+                        title="previous chapter">The generated folder tree content</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RunningDiagrams.html"
+                        title="next chapter">Running the generated diagrams</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/UserGuide/LaunchingGenerators/RTMaps/Compiling.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RunningDiagrams.html" title="Running the generated diagrams"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GeneratedContent.html" title="The generated folder tree content"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../LaunchingGenerators.html" >Launching Generators</a> &raquo;</li>
+          <li><a href="RTMapsGeneratorUserGuide.html" >The generator to the RTMaps middleware</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

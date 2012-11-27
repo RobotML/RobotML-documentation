@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Your First Scenario - attack an airport - Problem model creation &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Your First Scenario - attack an airport" href="../ATKScenario.html" />
+    <link rel="next" title="Your First Scenario - attack an airport - Deployment" href="Deployment.html" />
+    <link rel="prev" title="Your First Scenario - attack an airport - Launch RobotML tools" href="LaunchRobotMLTools.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Deployment.html" title="Your First Scenario - attack an airport - Deployment"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LaunchRobotMLTools.html" title="Your First Scenario - attack an airport - Launch RobotML tools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../ExamplesOfUse.html" >Examples of Use</a> &raquo;</li>
+          <li><a href="../ATKScenario.html" accesskey="U">Your First Scenario - attack an airport</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="your-first-scenario-attack-an-airport-problem-model-creation">
+<h1>Your First Scenario - attack an airport - Problem model creation<a class="headerlink" href="#your-first-scenario-attack-an-airport-problem-model-creation" title="Permalink to this headline">¶</a></h1>
+<p>Now we go to create a RobotML project and model our problem.</p>
+<div class="section" id="create-a-robotml-project">
+<h2>Create a RobotML project<a class="headerlink" href="#create-a-robotml-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="register-our-svn-reository">
+<h3>Register our SVN reository<a class="headerlink" href="#register-our-svn-reository" title="Permalink to this headline">¶</a></h3>
+<p>With the <strong>Window</strong> menu, open the <strong>SVN repository exploring</strong> perspective.
+Press <strong>Add a new SVN location</strong> button <img alt="add_svn_location" src="../../../_images/new_location.png" /> in the <strong>Project explorer</strong> view.</p>
+<p>Enter the url SVN repository given by the <strong>RobotML portal</strong> site in the <strong>Add SVN repository</strong> window.</p>
+<img alt="Add SVN repository" class="align-center" src="../../../_images/new_svn_location.png" />
+<p>Enter the <strong>RobotML portal</strong> authentification.</p>
+<img alt="SVN authentification" class="align-center" src="../../../_images/svn_authentification.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Can save the authentification informations for next time.</p>
+</div>
+<p>Next clic on finish. The new SNV repository will be added in the <strong>Project explorer</strong> view.</p>
+<div class="figure align-center">
+<img alt="New SVN repositry added" src="../../../_images/svn_location_added.png" style="width: 800px; height: 600px;" />
+</div>
+</div>
+<div class="section" id="checking-out-our-svn-repository-and-create-the-robotml-project">
+<h3>Checking out our SVN repository and create the RobotML project<a class="headerlink" href="#checking-out-our-svn-repository-and-create-the-robotml-project" title="Permalink to this headline">¶</a></h3>
+<img alt="SVN Checkout command" class="align-left" src="UserGuide/ExamplesOfUse/ATKScenario/../ATKScenario_images/svn_checkout.png" />
+<p>In the <strong>SVN repository exploring</strong> perspective, go in the <strong>SVN repositories</strong> view. Select the new location added and open it. Select the <strong>trunk</strong> node,
+and do right clic to select the <strong>Checkout</strong> command.
+Select <em>Check out as a project configured using new Project Wizard</em>.</p>
+<img alt="SVN checking out" class="align-center" src="../../../_images/svn_checkout_name.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Should checking out the HEAD revision.</p>
+</div>
+<p>At next, select the <strong>RobotML project</strong> in the <strong>Papyrus</strong> category.</p>
+<img alt="New project" class="align-center" src="../../../_images/new_project.png" />
+<p>Name your RobotML project as &#8220;ATK_Scenario&#8221;, and clic <strong>Finish</strong>.</p>
+<img alt="Name project" class="align-center" src="../../../_images/name_project.png" />
+<p>With the <strong>Window</strong> menu, select the <strong>Java</strong> perspective. We should to view the new <strong>ATK_Scenario</strong> project in the <strong>Project explorer</strong> view.
+This projct contains the new RobotML project created.</p>
+<img alt="Project added into workspace" class="align-center" src="UserGuide/ExamplesOfUse/ATKScenario/../ATKScenario_images/added_project_into_wokspace.png" />
+</div>
+<div class="section" id="modeling-our-problem">
+<h3>Modeling our problem<a class="headerlink" href="#modeling-our-problem" title="Permalink to this headline">¶</a></h3>
+<p>Now we have to checkout our SVN repository. We go to model our problem, but now we have a problem:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">what:</th><td class="field-body">How to deasign our scenario?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">how:</th><td class="field-body">We should to separate on any part.</td>
+</tr>
+</tbody>
+</table>
+<p>We go to deasign our model on 4 parts:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="23%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Project
+level</th>
+<th class="head">Model name</th>
+<th class="head">Model description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>0</td>
+<td>ATK_N0</td>
+<td>Contain required model object
+(datatype, external library).</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>ATK_N1</td>
+<td>Contain the basic model object</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>ATK_N2</td>
+<td>Contain the system object
+model.</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>ATK_N3</td>
+<td>Contain the robot object model</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>ATK_N4</td>
+<td>Contain the scenary oject
+model.</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">what:</th><td class="field-body">Why do this?</td>
+</tr>
+<tr class="field-even field"><th class="field-name">how:</th><td class="field-body">Because if we want, <strong>we could shared the model element with other model</strong>, and it&#8217;s <strong>easiest to debug a small model</strong>.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="model-creation">
+<h4>Model creation<a class="headerlink" href="#model-creation" title="Permalink to this headline">¶</a></h4>
+<p>In first time we have created the model level 0. Now we go to create the other levels.</p>
+<div class="section" id="adding-a-new-model-in-the-project">
+<h5>Adding a new model in the project<a class="headerlink" href="#adding-a-new-model-in-the-project" title="Permalink to this headline">¶</a></h5>
+<p>In the <strong>Project explorer</strong> view, select the project node and do right clic to select the <em>New/Other...</em> submenu.
+Choose <strong>RobotML Model</strong> in the <strong>Papyrus</strong> category.</p>
+<img alt="New model" class="align-center" src="../../../_images/new_model.png" />
+<p>Next name the new model as <strong>ATK_N1</strong>, and clic on finish.</p>
+<img alt="Name model" class="align-center" src="../../../_images/name_model.png" />
+<p>The new model is added to the workspace.</p>
+<div class="figure align-center">
+<img alt="model added into workspace" src="../../../_images/added_model_into_workspace.png" style="width: 800px; height: 600px;" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We should repeat this operation to create the other model (ATK_N2, ATK_N3 and ATK_N4).</p>
+</div>
+<div class="section" id="adding-required-object-in-the-model">
+<h6>Adding required object in the model<a class="headerlink" href="#adding-required-object-in-the-model" title="Permalink to this headline">¶</a></h6>
+<p>In the <strong>Project explorer</strong> view, open the <strong>ATK_N0</strong> RobotML model, and with the menu <strong>Window/Open perspective...</strong> open the <strong>Model explorer</strong> view.
+Select the root node model and rename it as <strong>RequiredObjectModel</strong>.
+Select root model node and do rigth clic. In the context menu, select <strong>Add Child/new package</strong>. Name it <strong>DataTypes</strong>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To deasign the model, it&#8217;s more easy to work with diagram. Don&#8217;t create element with menu if this is possible (except package and enumeration values).</p>
+</div>
+</div>
+</div>
+<div class="section" id="create-model-s-datatype">
+<h5>Create model&#8217;s DataType<a class="headerlink" href="#create-model-s-datatype" title="Permalink to this headline">¶</a></h5>
+<p>Selet the <strong>DataTypes</strong> node and do right clic. In the context menu, <strong>Add diagram/new DataType diagram</strong>. name it <strong>DataType_diagram</strong>.</p>
+<p>Now all action to add datatypes elements should to be done in this diagram. For this we should to use the <strong>RobotML tool panel</strong>, locate on the right side of the diagram.</p>
+<img alt="RobotML tool panel for datatype diagram" class="align-center" src="../../../_images/RobotML_datatype_tool_panel.png" />
+</div>
+<div class="section" id="create-basic-datatype">
+<h5>Create basic datatype<a class="headerlink" href="#create-basic-datatype" title="Permalink to this headline">¶</a></h5>
+<p>Select the <strong>DataType component</strong> in the <strong>RobotML tool panel</strong> and drag it on the diagram. Go it the <strong>Properties</strong> view, and rename the new datatype as <strong>Long</strong>. Add default value as <strong>0</strong> with a <strong>Literal Integer</strong>.</p>
+<img alt="Datatype's properties" class="align-center" src="../../../_images/datatype_properties.png" />
+<p>Add the following basic datatype:</p>
+<ul class="simple">
+<li>Logical</li>
+<li>Pointer</li>
+<li>Real</li>
+<li>Int</li>
+</ul>
+</div>
+<div class="section" id="create-enumeration">
+<h5>Create enumeration<a class="headerlink" href="#create-enumeration" title="Permalink to this headline">¶</a></h5>
+<p>In the <strong>RobotML tool panel</strong>, select the <strong>Enumeration component</strong> and drag it on the diagram. Go on the <strong>Property</strong> view and name the new enumeration <strong>EntityType</strong>.
+In th <strong>RobotML tool panel</strong>, select the <strong>Enumeration literal</strong> and drag it in the created enumeration. Select it and name it <strong>ABSTRACT_ENTITY</strong>.</p>
+<img alt="Enumeration datatypes" class="align-center" src="../../../_images/enumeration_properties.png" />
+<p>In the <strong>Model explorer</strong> view, select the <strong>EntityType</strong> node and expand it. Select the <strong>ABSTRACT_ENTITY</strong> node and do right clic. Select <strong>Add child / new LiteralValue</strong> in the context menu. Name the lietral as <strong>ABSTRACT_ENTITY_VALUE</strong> and put his value at <strong>0</strong>.</p>
+<img alt="Properties of the enumeration's literal value" class="align-center" src="../../../_images/enumeration_value_properties.png" />
+<p>Repeat the operation to complete the <strong>EntityType</strong> enumeration as <em>AIR(0), GROUND(2), SEA(3), SUB(4), SPACE(5)</em>.</p>
+<p>Create the enumeration referenced in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+</div>
+<div class="section" id="create-composed-datatype">
+<h5>Create composed datatype<a class="headerlink" href="#create-composed-datatype" title="Permalink to this headline">¶</a></h5>
+<p>In the <strong>RobotML tool panel</strong>, select the <strong>DatatType component</strong> and drag it on the diagram. Go it the <strong>Properties</strong> view, and rename the new datatype as <strong>SensorTechno</strong>.
+In the <strong>RobotML tool panel</strong>, selcet the <strong>Attribute component</strong> and drag it in the new datatype created. Select the new attribute and edit their properties in the <strong>Property</strong> view.
+Name it as <strong>id</strong>, and select <strong>Long</strong> for the type value. Add a another attribute to the datatype. his name is <strong>range</strong> and is type is <strong>Real</strong>.</p>
+<img alt="Datatype's attribute properties" class="align-center" src="../../../_images/datatype_attr_properties.png" />
+<p>Create the composed datatypes referenced in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+</div>
+<div class="section" id="create-our-external-librairy">
+<h5>Create our external librairy<a class="headerlink" href="#create-our-external-librairy" title="Permalink to this headline">¶</a></h5>
+<p>In the <strong>Model explorer</strong> view, select the root model node. Do right clic and select <strong>Add child / new package...</strong> to add the <strong>Librairies</strong> package.
+Select the <strong>Librairies</strong> package and do right clic and add a new component diagram selection <strong>Add diagram / new RobotML component diagram...</strong> in the context menu.
+Name the diagram as <strong>ExternalLibrairies_ComponentDiagram</strong>.
+In the new Diagram select <strong>Component</strong> element in the <strong>RobotML tool panel</strong> and drag it on the diagram. Name the component as <strong>libExternalFunction</strong>.
+In the <strong>Property</strong> view, select <strong>Profil</strong> and assign the <strong>AlgorithmLibrary</strong> profil.</p>
+<img alt="External librairy profil setting" class="align-center" src="../../../_images/external_librairy_profil.png" />
+</div>
+<div class="section" id="create-our-external-librairy-s-functions">
+<h5>Create our external librairy&#8217;s functions<a class="headerlink" href="#create-our-external-librairy-s-functions" title="Permalink to this headline">¶</a></h5>
+<p>In our scenario we have two kinds of function:</p>
+<ul class="simple">
+<li>A simple function</li>
+<li>An interaction</li>
+<li>A processing</li>
+</ul>
+<p><em>A simple function</em></p>
+<p>In the <strong>ExternalLibrairies_ComponentDiagram</strong> view, select the <strong>Operation</strong> element in the <strong>RobotML tool panel</strong> and drag it on the <strong>libExternalFunction</strong> component. A new operation has added in the external librairy component, select it and rename as <strong>manageSASystem</strong>.
+Go on the profil tab and assign the <strong>Algorithm</strong> profil.</p>
+<p>Edit the properties and add the function arguments on clicking on <a href="#id1"><span class="problematic" id="id2">|add_parameter|</span></a> button <em>(See the</em> <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a> <em>to know the parameters)</em>.</p>
+<p>Create the external function referenced in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+<p><em>An interaction</em>
+The interaction is a simple function but it only called on the activation component&#8217;s states. See <em class="xref std std-ref">Machine State</em> to known how modelling it.</p>
+<p><em>A processing</em></p>
+<p>The processing is a pool of functions and it will be executed sequentially. It authorized adding action code in the modèle. A processing is called by an interaction.
+To add a processing select <strong>libExternalFunction</strong> component in the <strong>model explorer</strong>. Press right click and add a new <strong>OpaqueBehavior</strong>.</p>
+<p>Edit the properties to change name, add an language definition, and link this processing to an interaction. To modeling processing, we choose the <em class="xref std std-term">Alf</em> language definition. This language is known by all plateform&#8217;s generators and could be known by the custom generators (see <em class="xref std std-ref">Alf  .
+Generators API</em>). The action description code is write on the &#8220;body&#8221; property section. To link the processing with an interaction, clic on <a href="#id3"><span class="problematic" id="id4">|add_specification|</span></a> button in the <strong>Specification</strong> property section.</p>
+<img alt="Processing properties" class="align-center" src="UserGuide/ExamplesOfUse/ATKScenario/../ATKScenario_imaes/processing_properties.png" />
+<p>Create all the processing defined in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ok, now we have define all datatypes and functions needed, we go to create the base components.</p>
+</div>
+<div class="section" id="adding-the-basic-model-objects">
+<h6>Adding the basic model objects<a class="headerlink" href="#adding-the-basic-model-objects" title="Permalink to this headline">¶</a></h6>
+<p>As we see on upside, the basic model objects are define in the level 1 of the scenario model. So go to create the level 1 of the model, and named it ATK_N1.</p>
+</div>
+</div>
+<div class="section" id="create-the-base-components">
+<h5>Create the base components<a class="headerlink" href="#create-the-base-components" title="Permalink to this headline">¶</a></h5>
+<p>In the scenary we can found 4 base compenents:</p>
+<ul class="simple">
+<li>Automat : The element can be autonomous</li>
+<li>Function : The element is used as function  (ex : management)</li>
+<li>Equipment : The element is used as equipement (ex : jammer)</li>
+<li>Simulation object : The element is a simulation publicobject</li>
+</ul>
+<p>Show the <strong>RobotML</strong> perspective, and select the <strong>BasicModelObject</strong> node in the <strong>Model explorer</strong>. Do right clic and choose <strong>new child/Add new package..</strong>
+Names the new package as <strong>Component base</strong>, and do right clic on it. Choose <strong>add new diagram/Add a class diagram</strong>, named it <strong>baseComponent_classDiagram</strong>.</p>
+<p>In the <strong>RobotML tool panel</strong> select the <strong>Class component</strong> and drag it on the diagram to create to <strong>Automat</strong> component. Edit the component properties and assign the <strong>System</strong> profile to <strong>automat component</strong>
+The automat has some action to do, go to <em class="xref std std-ref">Adding a state machine</em> add some dynamic at the component;
+Create the other base component,  as the following picture. Use <strong>Generalization tool</strong> on <strong>RobotML tool panel</strong> to assign the inheritance.</p>
+<img alt="Base components class diagram" class="align-center" src="../../../_images/base_components_inherit.png" />
+<p><em>Add a state machine to a component</em>
+The easiest method to add a state machine to a component is create a <strong>State Machine diagram</strong>. So select our <strong>Automat</strong> component and do right clic. Choose add a new <strong>State machine diagram</strong>.
+In the scenario, our automat has 3 states:</p>
+<ul class="simple">
+<li>Init, this state is only on the simulation startup.</li>
+<li>Running, only the component is initilazed and simulation is running.</li>
+<li>Killed, only in the simulation shutdown (never used).</li>
+</ul>
+<p>With the <strong>RobotML tool panel</strong>:</p>
+<ul class="simple">
+<li>Select the <strong>Initial state</strong> element and drag it on the diagram. Edit their properties and named it <strong>INIT</strong>.</li>
+<li>Select <strong>State</strong> element and drag it on the diagram. Edit their properties and named it <strong>RUNNING</strong>.</li>
+<li>Select the <strong>Final state</strong> element and drag it on the diagram. Edit their properties and named it <strong>KILLED</strong>.</li>
+<li>Select the <strong>Transition</strong> element and draw the transition between &#8220;INIT / RUNNING&#8221; and &#8220;RUNNING / KILLED&#8221; states.</li>
+</ul>
+<img alt="Automat state machine digram" class="align-center" src="UserGuide/ExamplesOfUse/ATKScenario/../ATKScenario_images/SateMachineDiagram.png" />
+<p><em>Add transtion&#8217;s guard and effect</em>
+Normally we have already added the usally function in the model. If it is not do, then</p>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><em class="xref std std-ref">Create our external librairy&#8217;s functions</em></p>
+</div>
+<p>In the <strong>State machine diagram</strong> created, select the transition between this INIT and RUNNING states. Edit the properties, and show the <strong>RobotML</strong> tab.
+Assign the <strong>InitGuard</strong> operation to the transition guard. this operation define our condition to autorized the running state activation.</p>
+<img alt="Transition property" class="align-center" src="../../../_images/transition_property.png" />
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you should to add an effect to a transition, then do the same action on the effect property.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">RobotML not permit to a state machine to be inherited. The state machine must be clone in the child component. You can use the copy/paste function to do it.</p>
+</div>
+</div>
+<div class="section" id="create-the-basics-components">
+<h5>Create the  basics components<a class="headerlink" href="#create-the-basics-components" title="Permalink to this headline">¶</a></h5>
+<p>Show the <strong>RobotML</strong> perspective, and select the <strong>BasicModelObject</strong> node in the <strong>Model explorer</strong>. Do right clic and choose <strong>new child/Add new package..</strong>
+Names the new package as <strong>basic components</strong>, and do right clic on it. Choose <strong>add new diagram/Add a component diagram</strong>, named it <strong>basicComponents_componentDiagram</strong>.</p>
+<p>In the <strong>RobotML tool panel</strong> select the <strong>Component</strong> element, and drag it on the diagram. Named this component as <strong>Esm</strong></p>
+<p><em>Adding port</em>
+To add a port to the component, select the <strong>Dataflow port</strong> element in the <strong>RobotML tool panel</strong>, and drag it on the component. The new added port is symbolized by a black arrow. Named this port as <strong>status_in</strong> and edit their property.
+In the property view, choose <strong>StatusList</strong> for the port type. By default the dataflow port direction is <strong>in</strong>. In the <strong>RobotML</strong> tab, we can change it. The available values are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="29%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>In</td>
+<td>Input port</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Out</td>
+<td>Output port</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>In / Out</td>
+<td>Input and ouput port</td>
+</tr>
+</tbody>
+</table>
+<img alt="RobotML tab's property for the dataflow." class="align-center" src="UserGuide/ExamplesOfUse/ATKScenario/../ATKScenario_images/robotml_dataflow.png" />
+<p><em>Adding property</em>
+To add a property to the component, select the <strong>property</strong> element in <strong>RobotML tool panel</strong>, and drag it on the component. The new property is symbilzed by a rectangle. Named this property as <strong>esmDef</strong>, and edit their property.
+In the property view,choose <strong>esmDefinitions</strong> for the property type.</p>
+<p><em>Inheritance</em>
+Now we had a <strong>Esm</strong> component but in the real life, this component is considerate as an equipement. We had also define the <strong>Equipment</strong> component base, we don&#8217;t go to rewrite it!
+Then we go to use the inheritance method. We go to define <strong>Esm</strong> as child of the <strong>Equipment</strong> component base.
+So select the <strong>BasicModelObject</strong> node, and do right clic to chosse <strong>add new diagram/add a class diagram</strong>. Named the new diagram <strong>BasicModelObject_Classdiagram</strong>.
+In the <strong>Model explorer</strong> select the <strong>Equipment</strong> component base drag it on the diagram. Do the same action with the <strong>Esm</strong> component. In the <strong>RobotMl tool panel</strong> select the <strong>Generalization</strong> tool and link the <strong>Esm</strong> component to <strong>Equipment</strong>.</p>
+<p>Now create all basics components referenced in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>, and assign the inheritance as the following class diagram.</p>
+<img alt="Basics components class diagram." class="align-center" src="../../../_images/basics_components_class_diagram.png" />
+</div>
+<div class="section" id="create-the-systems-components">
+<h5>Create the systems components<a class="headerlink" href="#create-the-systems-components" title="Permalink to this headline">¶</a></h5>
+<p>Now we go to define the systems components present in our scenario:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="27%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>MMS</td>
+<td>Mission  system management</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Protection</td>
+<td>Protection system management</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Sensors</td>
+<td>Sensors system management</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Navigation</td>
+<td>Navigation system management</td>
+</tr>
+</tbody>
+</table>
+<p>So Create a new RobotMl model in the project view, and named it as <strong>SystemObjectModel</strong>, add a new <strong>SystemComponents</strong> package.
+Add a new <strong>Component diagram</strong> to the <strong>SystemComponents</strong> package, and create the fours system with the <strong>Component</strong> element of the <strong>RobotML tool panel</strong>.</p>
+<p>Edit the properties&#8217;s component and assign ports, inherit and property as it defined in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+</div>
+<div class="section" id="create-the-robots-components">
+<h5>Create the robots components<a class="headerlink" href="#create-the-robots-components" title="Permalink to this headline">¶</a></h5>
+<p>In the scenario, we have two robots components entities:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="30%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>SASystem</td>
+<td>Ground / Air robot</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>Aircraft</td>
+<td>Aircraft robot</td>
+</tr>
+</tbody>
+</table>
+<p>Create the new <strong>RobotObjectModel</strong> RobotML model, and add the <strong>RobotComponents</strong> package.
+Add a new <strong>Component diagram</strong> to the <strong>RobotMLComponents</strong> package, and create the fours system with the <strong>Component</strong> element of the <strong>RobotML tool panel</strong>.</p>
+<p>Edit the properties&#8217;s component and assign ports, inherit and property as it defined in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+</div>
+<div class="section" id="create-the-scenary-component">
+<h5>Create the scenary component<a class="headerlink" href="#create-the-scenary-component" title="Permalink to this headline">¶</a></h5>
+<p>The scenary component is the root element of the simulation. It define the simulation&#8217;s envrionment, and contains the instances simulation.</p>
+<p>Define the new <strong>ScenaryObjectModel</strong> RobotML model, and add the <strong>ScenaryComponents</strong> package.
+Create a <strong>Component diagram</strong> and create the <strong>Root</strong> component with the <strong>Component</strong> element of the <strong>RobotML tool panel</strong>.</p>
+<p>Edit their properties and as assign ports, inherit and property as it define in the <a class="reference internal" href="Annex.html#annex"><em>Annex</em></a>.</p>
+</div>
+<div class="section" id="link-the-components">
+<h5>Link the components<a class="headerlink" href="#link-the-components" title="Permalink to this headline">¶</a></h5>
+<p>Now all our components are created, but they need to communicate to have some dynamic. So with the <strong>Link</strong> element of the <strong>RobotML tool panel</strong>, go the draw the component communications in the different model level.</p>
+</div>
+</div>
+<div class="section" id="static-validation-model">
+<h4>Static validation model<a class="headerlink" href="#static-validation-model" title="Permalink to this headline">¶</a></h4>
+<p>When we finish the scenary modelling operation, we should to validate our model statically. The validation can to be run on all the model our just a sub tree section. To validate, select a node and do right clic. Choose <strong>Validation / Validate model</strong> or <strong>Validation / Validate subtree</strong>.
+When the validation been running, the error status is display on the <strong>Model explorer</strong>. Show the <strong>Error log</strong> view to known the model errors or warning.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A model with not error and warning is strongest, and reduce the generation errors.</p>
+</div>
+</div>
+<div class="section" id="the-deployment">
+<h4>The deployment<a class="headerlink" href="#the-deployment" title="Permalink to this headline">¶</a></h4>
+<p>The deployment is use to generate the sources code files to destination of a middleware or a simulator. For our scenary, our destination is the <a class="reference internal" href="../../../Glossary.html#term-vle"><em class="xref std std-term">VLE</em></a> simulator.</p>
+<div class="section" id="create-a-new-deployment">
+<h5>Create a new deployment<a class="headerlink" href="#create-a-new-deployment" title="Permalink to this headline">¶</a></h5>
+<p>To create a new deployment, open the model level 4, and select the root level node. Do right clic, and select <strong>add new diagram / new deployment diagram</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Your First Scenario - attack an airport - Problem model creation</a><ul>
+<li><a class="reference internal" href="#create-a-robotml-project">Create a RobotML project</a><ul>
+<li><a class="reference internal" href="#register-our-svn-reository">Register our SVN reository</a></li>
+<li><a class="reference internal" href="#checking-out-our-svn-repository-and-create-the-robotml-project">Checking out our SVN repository and create the RobotML project</a></li>
+<li><a class="reference internal" href="#modeling-our-problem">Modeling our problem</a><ul>
+<li><a class="reference internal" href="#model-creation">Model creation</a><ul>
+<li><a class="reference internal" href="#adding-a-new-model-in-the-project">Adding a new model in the project</a><ul>
+<li><a class="reference internal" href="#adding-required-object-in-the-model">Adding required object in the model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-model-s-datatype">Create model&#8217;s DataType</a></li>
+<li><a class="reference internal" href="#create-basic-datatype">Create basic datatype</a></li>
+<li><a class="reference internal" href="#create-enumeration">Create enumeration</a></li>
+<li><a class="reference internal" href="#create-composed-datatype">Create composed datatype</a></li>
+<li><a class="reference internal" href="#create-our-external-librairy">Create our external librairy</a></li>
+<li><a class="reference internal" href="#create-our-external-librairy-s-functions">Create our external librairy&#8217;s functions</a><ul>
+<li><a class="reference internal" href="#adding-the-basic-model-objects">Adding the basic model objects</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-the-base-components">Create the base components</a></li>
+<li><a class="reference internal" href="#create-the-basics-components">Create the  basics components</a></li>
+<li><a class="reference internal" href="#create-the-systems-components">Create the systems components</a></li>
+<li><a class="reference internal" href="#create-the-robots-components">Create the robots components</a></li>
+<li><a class="reference internal" href="#create-the-scenary-component">Create the scenary component</a></li>
+<li><a class="reference internal" href="#link-the-components">Link the components</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#static-validation-model">Static validation model</a></li>
+<li><a class="reference internal" href="#the-deployment">The deployment</a><ul>
+<li><a class="reference internal" href="#create-a-new-deployment">Create a new deployment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LaunchRobotMLTools.html"
+                        title="previous chapter">Your First Scenario - attack an airport - Launch RobotML tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Deployment.html"
+                        title="next chapter">Your First Scenario - attack an airport - Deployment</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/UserGuide/ExamplesOfUse/ATKScenario/ProblemModelCreation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Deployment.html" title="Your First Scenario - attack an airport - Deployment"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LaunchRobotMLTools.html" title="Your First Scenario - attack an airport - Launch RobotML tools"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../ExamplesOfUse.html" >Examples of Use</a> &raquo;</li>
+          <li><a href="../ATKScenario.html" >Your First Scenario - attack an airport</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

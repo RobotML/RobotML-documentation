@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How-to : MORSE and ROS &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../index.html" />
+    <link rel="up" title="Examples of Use" href="../ExamplesOfUse.html" />
+    <link rel="next" title="Your First Scenario - attack an airport" href="ATKScenario.html" />
+    <link rel="prev" title="Examples of Use" href="../ExamplesOfUse.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ATKScenario.html" title="Your First Scenario - attack an airport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ExamplesOfUse.html" title="Examples of Use"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../ExamplesOfUse.html" accesskey="U">Examples of Use</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-morse-and-ros">
+<h1>How-to : MORSE and ROS<a class="headerlink" href="#how-to-morse-and-ros" title="Permalink to this headline">¶</a></h1>
+<p>Pierrick Koch - <a class="reference external" href="https://www.greyc.fr/">GREYC</a> -
+<a class="reference external" href="http://www.cnrs.fr/">CNRS</a></p>
+<p><a class="reference external" href="http://anr-proteus.fr/">anr-proteus.fr</a></p>
+<p>Objectif: First step with ROS and MORSE.</p>
+<hr class="docutils" />
+<div class="section" id="ros">
+<h2>ROS<a class="headerlink" href="#ros" title="Permalink to this headline">¶</a></h2>
+<p>Robot Operating System (ROS) can be seen as 2 main parts:</p>
+<ul class="simple">
+<li>A communication
+<a class="reference external" href="http://en.wikipedia.org/wiki/Middleware">middleware</a>, with related
+APIs (C++, Python, Java),</li>
+<li>A set of Robotic software (hardware abstraction, drivers, libs).</li>
+</ul>
+<p><a class="reference external" href="http://ros.org/wiki/roscore">roscore</a>: run a
+<a class="reference external" href="http://ros.org/wiki/Master">master</a>
+<a class="reference external" href="http://ros.org/wiki/Nodes">node</a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">roscore</span>
+</pre></div>
+</div>
+<p><em>TIP</em>: to stop <tt class="docutils literal"><span class="pre">roscore</span></tt>: press Ctrl+C in the terminal</p>
+<p>Basic commands:</p>
+<p><a class="reference external" href="http://ros.org/wiki/roscd">roscd</a>: change directory within ROS
+environment</p>
+<div class="highlight-python"><pre>Usage: roscd [package]</pre>
+</div>
+<p><a class="reference external" href="http://ros.org/wiki/roslaunch">roslaunch</a>: launching ROS nodes via
+<tt class="docutils literal"><span class="pre">.launch</span></tt> files</p>
+<div class="highlight-python"><pre>Usage: roslaunch [options] [package] &lt;filename&gt; [arg_name:=value...]</pre>
+</div>
+<p>cf. <a class="reference external" href="http://ros.org/wiki/ROS/Tutorials">Tutorials</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="rostopic">
+<h2>rostopic<a class="headerlink" href="#rostopic" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>rostopic
+rostopic is a command-line tool for printing information about ROS Topics.
+
+Commands:
+  rostopic bw    display bandwidth used by topic
+  rostopic echo  print messages to screen
+  rostopic find  find topics by type
+  rostopic hz    display publishing rate of topic
+  rostopic info  print information about active topic
+  rostopic list  list active topics
+  rostopic pub   publish data to topic
+  rostopic type  print topic type
+
+Type rostopic &lt;command&gt; -h for more detailed usage, e.g. 'rostopic echo -h'</pre>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="rostopic-exemple">
+<h2>rostopic: exemple<a class="headerlink" href="#rostopic-exemple" title="Permalink to this headline">¶</a></h2>
+<p>Publish &amp; print a message on ROS bus:</p>
+<div class="highlight-python"><pre>rostopic pub /test std_msgs/String "Bonjour Proteus"
+rostopic echo /test</pre>
+</div>
+<p><a class="reference external" href="http://ros.org/wiki/rostopic">|rostopic|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse">
+<h2>MORSE<a class="headerlink" href="#morse" title="Permalink to this headline">¶</a></h2>
+<p>Developped at LAAS/CNRS in Toulouse (France), MORSE is a generic robotic
+simulation platform based on Blender. Blender is a free and open source
+3D modelisation platform. Which integrates differents methods for 3D
+rendering, animating, and a game engine used by MORSE for the
+simulation, as well as the physic engine Bullet. MORSE allow to build a
+robotic simulation by using Blender GUI / API.</p>
+<p>Blender 2.5 introduced a new API allowing to interact with all
+scene-data through the Blender Python API, aka. <tt class="docutils literal"><span class="pre">bpy</span></tt>.</p>
+<p><a class="reference external" href="http://www.blender.org/development/release-logs/blender-256-beta/data-access">|blender-data-api|</a></p>
+<p><a class="reference external" href="http://download.blender.org/release/">|blender-roadmap|</a></p>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h3>MORSE<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://morse.openrobots.org">|morse|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-glsl">
+<h3>MORSE GLSL<a class="headerlink" href="#morse-glsl" title="Permalink to this headline">¶</a></h3>
+<p>MORSE is
+<a class="reference external" href="http://www.openrobots.org/morse/doc/latest/user/installation.html#hardware">meant</a>
+to run with a graphic card compatible <a class="reference external" href="http://en.wikipedia.org/wiki/GLSL">OpenGL Shading
+Language</a></p>
+<div class="section" id="ati-amd-radeon-amd">
+<h4>ATI/AMD Radeon <a class="reference external" href="http://support.amd.com/us/gpudownload/linux/Pages/radeon_linux.aspx">|AMD|</a><a class="headerlink" href="#ati-amd-radeon-amd" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="x00-xx00-x1x00-hd2x00-hd3x00">
+<h5>9x00, Xx00, X1x00, HD2x00, HD3x00 &amp; +<a class="headerlink" href="#x00-xx00-x1x00-hd2x00-hd3x00" title="Permalink to this headline">¶</a></h5>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span></tt>
+<tt class="docutils literal"><span class="pre">`xserver-xorg-video-radeon</span></tt> &lt;<a class="reference external" href="http://apt.ubuntu.com/p/xserver-xorg-video-radeon">http://apt.ubuntu.com/p/xserver-xorg-video-radeon</a>&gt;`_</p>
+</div>
+</div>
+<div class="section" id="nvidia-nvidia">
+<h4>nVidia <a class="reference external" href="http://www.nvidia.com/object/unix.html">|nvidia|</a><a class="headerlink" href="#nvidia-nvidia" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="geforce-fx-6x00-7x00-8x00-9x00-gtx-2x0">
+<h5>Geforce FX, 6x00, 7x00, 8x00, 9x00, GTX 2x0 &amp; +<a class="headerlink" href="#geforce-fx-6x00-7x00-8x00-9x00-gtx-2x0" title="Permalink to this headline">¶</a></h5>
+<p><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span></tt>
+<tt class="docutils literal"><span class="pre">`nvidia-current</span></tt> &lt;<a class="reference external" href="http://apt.ubuntu.com/p/nvidia-current">http://apt.ubuntu.com/p/nvidia-current</a>&gt;`_</p>
+<p>cf. <a class="reference external" href="http://www.blender.org/features-gallery/requirements/">Blender System
+Requirements</a>
+<a class="reference external" href="http://www.blender.org/development/release-logs/blender-248/realtime-glsl-materials/">Blender 2.48 Realtime GLSL
+Materials</a></p>
+<p>Use the tool <tt class="docutils literal"><span class="pre">/usr/bin/jockey-gtk</span></tt> to install additional drivers. You
+can use <tt class="docutils literal"><span class="pre">lspci|grep</span> <span class="pre">VGA</span></tt> to know your card&#8217;s name.</p>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-config">
+<h2>MORSE config<a class="headerlink" href="#morse-config" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Coordinates: <a class="reference external" href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Understanding_Coordinates">main
+droite</a></li>
+</ul>
+<div class="figure align-center">
+<img alt="right" src="../../_images/200px-Rechte-hand-regel.jpg" />
+<p class="caption">right</p>
+</div>
+<ul class="simple">
+<li>Units: metric, angle: degree in UI, radian in simulation</li>
+<li>ROS: <a class="reference external" href="http://ros.org/reps/rep-0103.html">ROS Standard Units of Measure and Coordinate
+Conventions</a></li>
+</ul>
+<div class="figure align-center">
+<img alt="metric" src="../../_images/screenshot-morse-metric.png" />
+<p class="caption">metric</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-ros">
+<h2>MORSE &amp; ROS<a class="headerlink" href="#morse-ros" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Naming convention of
+<a class="reference external" href="http://www.openrobots.org/morse/doc/latest/user/middlewares/ros.html#generation-of-ros-node-and-topics">topics</a></li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">/Robot/Composant</span></tt> alphanumeric CamelCase</p>
+<div class="highlight-python"><pre>rostopic list -v
+
+Published topics:
+ * /ATRV/CameraMain [sensor_msgs/Image] 1 publisher
+ * /rosout [rosgraph_msgs/Log] 1 publisher
+ * /ATRV/Pose_sensor [nav_msgs/Odometry] 1 publisher
+ * /rosout_agg [rosgraph_msgs/Log] 1 publisher
+ * /ATRV/Odometry [geometry_msgs/Twist] 1 publisher
+ * /ATRV/Sick [sensor_msgs/LaserScan] 1 publisher
+
+Subscribed topics:
+ * /rosout [rosgraph_msgs/Log] 1 subscriber
+ * /ATRV/Motion_Controller [geometry_msgs/Twist] 1 subscriber</pre>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-cli">
+<h2>MORSE CLI<a class="headerlink" href="#morse-cli" title="Permalink to this headline">¶</a></h2>
+<p>Once installed, MORSE is launch by the command
+<tt class="docutils literal"><span class="pre">morse</span> <span class="pre">{check,edit,run}</span> <span class="pre">[scene]</span></tt>, it accept differents parameters:</p>
+<ul class="simple">
+<li>.blend file (simulation scene)</li>
+<li>.py file (scene builder script)</li>
+</ul>
+<p>ie:</p>
+<div class="highlight-python"><pre>morse edit my_builder_script.py
+
+morse edit my_saved_scene.blend</pre>
+</div>
+<p>... respectively result in:</p>
+<ol class="arabic simple">
+<li>edit a scene build through a script in Blender GUI.</li>
+<li>edit a scene saved in a .blend file in Blender GUI.</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-simulation-loop">
+<h2>MORSE: simulation loop<a class="headerlink" href="#morse-simulation-loop" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.openrobots.org/morse/doc/latest/dev/dev_overview.html#morse-execution-loop">|morse-main-loop|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="morse-scene-builder-api">
+<h2>MORSE: scene builder API<a class="headerlink" href="#morse-scene-builder-api" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.openrobots.org/morse/doc/latest/dev/builder.html">|morse-builder|</a></p>
+<p>cf.
+<a class="reference external" href="http://www.openrobots.org/morse/doc/latest/dev/builder.html">openrobots.org/morse/doc/latest/dev/builder.html</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-intro">
+<h2>Demo: intro<a class="headerlink" href="#demo-intro" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="robot-made-of-one-controler-v">
+<h2>robot made of one controler (v, ω)<a class="headerlink" href="#robot-made-of-one-controler-v" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!python
+from morse.builder import *
+
+# Add the robot
+simplebot = Robot('atrv')
+
+# Add a motion controler
+motion = Actuator('v_omega')
+motion.translate(z=0.3)
+# Connect the controler to the robot
+simplebot.append(motion)
+
+# Configure the controler with the ROS middleware
+motion.configure_mw('ros')
+
+# Setup the environment
+env = Environment('indoors-1/indoor-1')
+env.aim_camera([1.0470, 0, 0.7854])</pre>
+</div>
+<p>(<a class="reference external" href="https://github.com/anr-proteus/proteus/blob/master/proteus_demo/data/wifibot.py">code</a>)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-intro-2">
+<h2>Demo: intro (2)<a class="headerlink" href="#demo-intro-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="commands-to-run">
+<h3>commands to run<a class="headerlink" href="#commands-to-run" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="start-a-ros-master-node">
+<h4>start a ROS master node<a class="headerlink" href="#start-a-ros-master-node" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">roscore</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="start-morse-with-a-builder-script-in-another-terminal">
+<h4>start MORSE with a builder script (in another Terminal)<a class="headerlink" href="#start-morse-with-a-builder-script-in-another-terminal" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><pre>morse edit /usr/local/share/morse/examples/scenarii/ros_example.py</pre>
+</div>
+<div class="section" id="press-p-in-the-3d-view-to-start-the-simulation-game-engine">
+<h5>⌨ Press &#8220;<tt class="docutils literal"><span class="pre">P</span></tt>&#8221; in the 3D view to start the simulation (Game Engine)<a class="headerlink" href="#press-p-in-the-3d-view-to-start-the-simulation-game-engine" title="Permalink to this headline">¶</a></h5>
+</div>
+<div class="section" id="use-ctrl-mouse-and-z-q-a-s-d-w-to-move-the-camera">
+<h5>⌨ Use &#8220;<tt class="docutils literal"><span class="pre">CTRL</span></tt>&#8221; + mouse, and &#8220;<tt class="docutils literal"><span class="pre">Z,</span> <span class="pre">Q/A,</span> <span class="pre">S,</span> <span class="pre">D/W</span></tt>&#8221; to move the camera<a class="headerlink" href="#use-ctrl-mouse-and-z-q-a-s-d-w-to-move-the-camera" title="Permalink to this headline">¶</a></h5>
+</div>
+</div>
+<div class="section" id="publish-a-message-on-the-controler-topic-in-another-terminal">
+<h4>publish a message on the controler topic (in another Terminal)<a class="headerlink" href="#publish-a-message-on-the-controler-topic-in-another-terminal" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><pre>rostopic pub -1 /ATRV/Motion_Controller geometry_msgs/Twist [1,0,0] [0,0,1]</pre>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-intro-video">
+<h2>Demo: intro (video)<a class="headerlink" href="#demo-intro-video" title="Permalink to this headline">¶</a></h2>
+<iframe src="http://player.vimeo.com/video/22116926?portrait=0" width="800" height="500" frameborder="0" allowfullscreen></iframe><p>(<a class="reference external" href="http://vimeo.com/22116926">video</a>)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-advanced">
+<h2>Demo: advanced<a class="headerlink" href="#demo-advanced" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="obstacles-avoidance-w-laser">
+<h3>obstacles avoidance w/ laser<a class="headerlink" href="#obstacles-avoidance-w-laser" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>mkdir -p ~/work/ros-addons
+rosinstall ~/work/ros-addons /opt/ros/electric/ \
+    http://anr-proteus.github.com/proteus.rosinstall
+source ~/work/ros-addons/setup.bash
+roscd proteus_demo &amp;&amp; git pull &amp;&amp; cd data
+morse run wifibot.py</pre>
+</div>
+</div>
+<div class="section" id="run-the-master-node-in-another-terminal">
+<h3>run the master node (in another Terminal)<a class="headerlink" href="#run-the-master-node-in-another-terminal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">roscore</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="launch-our-node-to-control-the-robot-in-another-terminal">
+<h3>launch our node to control the robot (in another Terminal)<a class="headerlink" href="#launch-our-node-to-control-the-robot-in-another-terminal" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>source ~/work/ros-addons/setup.bash
+roslaunch proteus_demo AvoidObstacleLaser.launch</pre>
+</div>
+<p><em>TIP</em>: if <tt class="docutils literal"><span class="pre">rosinstall</span></tt> is not recognized, install it as:</p>
+<div class="highlight-python"><pre>sudo pip install -U rosinstall</pre>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-advanced-video">
+<h2>Demo: advanced (video)<a class="headerlink" href="#demo-advanced-video" title="Permalink to this headline">¶</a></h2>
+<iframe src="http://player.vimeo.com/video/24550587?portrait=0" width="800" height="500" frameborder="0" allowfullscreen></iframe><p>(<a class="reference external" href="http://vimeo.com/24550587">video</a>)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-advanced-code">
+<h2>Demo: advanced (code)<a class="headerlink" href="#demo-advanced-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>!python
+# callback for each laser scan
+def handle_sick(msg):
+    mid = len(msg.ranges) // 2
+    cmd = Twist()
+    # stop if an object is less than 2m in a 30deg angle
+    halt=False
+    for distance_to_object in msg.ranges[mid-15:mid+15]:
+        if distance_to_object &lt; 2:
+            halt=True
+            break
+    if halt:
+        # rotate on the wider scanned side
+        if sum(msg.ranges[:mid]) &gt; sum(msg.ranges[mid:]):
+            cmd.angular.z = -1
+        else:
+            cmd.angular.z = 1
+    else:
+        cmd.linear.x = 1
+    # publie the command to the controler (Twist msg)
+    topic.publish(cmd)
+
+if __name__ == '__main__':
+    rospy.init_node('wander')
+    topic=rospy.Publisher('/ATRV/Motion_Controller', Twist)
+    rospy.Subscriber('/ATRV/Sick', LaserScan, handle_sick)
+    rospy.spin()
+
+# http://ros.org/doc/api/sensor_msgs/html/msg/LaserScan.html
+# http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html</pre>
+</div>
+<p>(<a class="reference external" href="https://github.com/anr-proteus/proteus/blob/master/proteus_demo/nodes/AvoidObstacleLaser.py">code</a>)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="demo-orocos">
+<h2>Demo: Orocos<a class="headerlink" href="#demo-orocos" title="Permalink to this headline">¶</a></h2>
+<p>The example&#8217;s code is available on
+<a class="reference external" href="https://github.com/anr-proteus/proteus/tree/master/proteus_orocos_obstaclelaser">GitHub</a></p>
+<div class="highlight-python"><pre>roscd proteus_demo/data
+morse run wifibot.py
+
+rosmake proteus_orocos_obstaclelaser
+roslaunch proteus_orocos_obstaclelaser AvoidObstacleLaser.launch</pre>
+</div>
+<p><a class="reference external" href="https://github.com/anr-proteus/proteus/tree/master/proteus_orocos_obstaclelaser">|morse-orocos|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="rviz-video">
+<h2>RViz (video)<a class="headerlink" href="#rviz-video" title="Permalink to this headline">¶</a></h2>
+<iframe src="http://player.vimeo.com/video/23244699?portrait=0" width="800" height="375" frameborder="0" allowfullscreen></iframe><div class="highlight-python"><pre>rosrun rviz rviz</pre>
+</div>
+<div class="section" id="launch-rviz-with-a-configuration-file">
+<h3>launch rviz with a configuration file<a class="headerlink" href="#launch-rviz-with-a-configuration-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>roscd proteus_demo/data
+rosrun rviz rviz -d rviz.vcg</pre>
+</div>
+<p>(<a class="reference external" href="http://vimeo.com/23244699">video</a>)</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="outdoor-video">
+<h3>Outdoor (video)<a class="headerlink" href="#outdoor-video" title="Permalink to this headline">¶</a></h3>
+<iframe src="http://player.vimeo.com/video/26054198?portrait=0" width="800" height="350" frameborder="0" allowfullscreen></iframe><div class="highlight-python"><pre>roscd proteus_demo/data
+morse run wifibot.py</pre>
+</div>
+<p>(<a class="reference external" href="http://vimeo.com/26054198">video</a>)</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exploration-bosch-demo-w-stage">
+<h2>Exploration (Bosch demo w/ Stage)<a class="headerlink" href="#exploration-bosch-demo-w-stage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>sudo apt-get install ros-electric-bosch-common
+roslaunch explore_stage explore.launch
+
+roscd explore_stage
+rosrun rviz rviz -d explore.vcg</pre>
+</div>
+<p><a class="reference external" href="http://ros.org/wiki/explore_stage">|exploration|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="exploration-bosch-demo-w-morse">
+<h2>Exploration (Bosch demo w/ MORSE)<a class="headerlink" href="#exploration-bosch-demo-w-morse" title="Permalink to this headline">¶</a></h2>
+<iframe src="http://www.youtube.com/embed/videoseries?list=PL289431A5B18BD997&amp;hd=1&amp;rel=0" width="800" height="500" frameborder="0" allowfullscreen></iframe></div>
+<hr class="docutils" />
+<div class="section" id="rtmaps">
+<h2>RTMaps<a class="headerlink" href="#rtmaps" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://intempora.com">|rtmaps|</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="tips">
+<h2>TIPS<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<p>MORSE create cache files in the current directory,</p>
+<div class="highlight-python"><pre>rm scene.*.blend</pre>
+</div>
+<p>allow you to delete those files.</p>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Blender Cookie: <a class="reference external" href="http://cgcookie.com/blender/">cgcookie.com/blender</a></p>
+<p>Blend Swap: <a class="reference external" href="http://www.blendswap.com/">blendswap.com</a> (ie. <a class="reference external" href="http://www.blendswap.com/3D-models/vehicles/rover/">Rover
+model</a> )</p>
+<p>Blender Wiki: <a class="reference external" href="http://wiki.blender.org/">wiki.blender.org</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="build-a-robot">
+<h2>Build a robot<a class="headerlink" href="#build-a-robot" title="Permalink to this headline">¶</a></h2>
+<iframe src="http://www.youtube.com/embed/videoseries?list=PLDC1FC34E5AC69429&amp;hd=1&amp;rel=0" width="800" height="500" frameborder="0" allowfullscreen></iframe></div>
+<hr class="docutils" />
+<div class="section" id="that-s-all-folks">
+<h2>That&#8217;s all Folks!<a class="headerlink" href="#that-s-all-folks" title="Permalink to this headline">¶</a></h2>
+<p>short link to this presentation:
+<a class="reference external" href="http://bit.ly/proteus2">bit.ly/proteus2</a></p>
+<div class="figure align-center">
+<img alt="proteus-morse-demo" src="http://bit.ly/proteus2.qrcode" />
+</div>
+<p>1 page doc: <a class="reference external" href="http://bit.ly/proteus2md">bit.ly/proteus2md</a></p>
+<p>sources on GitHub: <a class="reference external" href="http://bit.ly/proteus-src">bit.ly/proteus-src</a></p>
+<p><em>made with</em> <a class="reference external" href="https://github.com/adamzap/landslide">landslide</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How-to : MORSE and ROS</a><ul>
+<li><a class="reference internal" href="#ros">ROS</a></li>
+<li><a class="reference internal" href="#rostopic">rostopic</a></li>
+<li><a class="reference internal" href="#rostopic-exemple">rostopic: exemple</a></li>
+<li><a class="reference internal" href="#morse">MORSE</a><ul>
+<li><a class="reference internal" href="#id2">MORSE</a></li>
+<li><a class="reference internal" href="#morse-glsl">MORSE GLSL</a><ul>
+<li><a class="reference internal" href="#ati-amd-radeon-amd">ATI/AMD Radeon |AMD|</a><ul>
+<li><a class="reference internal" href="#x00-xx00-x1x00-hd2x00-hd3x00">9x00, Xx00, X1x00, HD2x00, HD3x00 &amp; +</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nvidia-nvidia">nVidia |nvidia|</a><ul>
+<li><a class="reference internal" href="#geforce-fx-6x00-7x00-8x00-9x00-gtx-2x0">Geforce FX, 6x00, 7x00, 8x00, 9x00, GTX 2x0 &amp; +</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#morse-config">MORSE config</a></li>
+<li><a class="reference internal" href="#morse-ros">MORSE &amp; ROS</a></li>
+<li><a class="reference internal" href="#morse-cli">MORSE CLI</a></li>
+<li><a class="reference internal" href="#morse-simulation-loop">MORSE: simulation loop</a></li>
+<li><a class="reference internal" href="#morse-scene-builder-api">MORSE: scene builder API</a></li>
+<li><a class="reference internal" href="#demo-intro">Demo: intro</a></li>
+<li><a class="reference internal" href="#robot-made-of-one-controler-v">robot made of one controler (v, ω)</a></li>
+<li><a class="reference internal" href="#demo-intro-2">Demo: intro (2)</a><ul>
+<li><a class="reference internal" href="#commands-to-run">commands to run</a><ul>
+<li><a class="reference internal" href="#start-a-ros-master-node">start a ROS master node</a></li>
+<li><a class="reference internal" href="#start-morse-with-a-builder-script-in-another-terminal">start MORSE with a builder script (in another Terminal)</a><ul>
+<li><a class="reference internal" href="#press-p-in-the-3d-view-to-start-the-simulation-game-engine">⌨ Press &#8220;<tt class="docutils literal"><span class="pre">P</span></tt>&#8221; in the 3D view to start the simulation (Game Engine)</a></li>
+<li><a class="reference internal" href="#use-ctrl-mouse-and-z-q-a-s-d-w-to-move-the-camera">⌨ Use &#8220;<tt class="docutils literal"><span class="pre">CTRL</span></tt>&#8221; + mouse, and &#8220;<tt class="docutils literal"><span class="pre">Z,</span> <span class="pre">Q/A,</span> <span class="pre">S,</span> <span class="pre">D/W</span></tt>&#8221; to move the camera</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#publish-a-message-on-the-controler-topic-in-another-terminal">publish a message on the controler topic (in another Terminal)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo-intro-video">Demo: intro (video)</a></li>
+<li><a class="reference internal" href="#demo-advanced">Demo: advanced</a><ul>
+<li><a class="reference internal" href="#obstacles-avoidance-w-laser">obstacles avoidance w/ laser</a></li>
+<li><a class="reference internal" href="#run-the-master-node-in-another-terminal">run the master node (in another Terminal)</a></li>
+<li><a class="reference internal" href="#launch-our-node-to-control-the-robot-in-another-terminal">launch our node to control the robot (in another Terminal)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo-advanced-video">Demo: advanced (video)</a></li>
+<li><a class="reference internal" href="#demo-advanced-code">Demo: advanced (code)</a></li>
+<li><a class="reference internal" href="#demo-orocos">Demo: Orocos</a></li>
+<li><a class="reference internal" href="#rviz-video">RViz (video)</a><ul>
+<li><a class="reference internal" href="#launch-rviz-with-a-configuration-file">launch rviz with a configuration file</a></li>
+<li><a class="reference internal" href="#outdoor-video">Outdoor (video)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exploration-bosch-demo-w-stage">Exploration (Bosch demo w/ Stage)</a></li>
+<li><a class="reference internal" href="#exploration-bosch-demo-w-morse">Exploration (Bosch demo w/ MORSE)</a></li>
+<li><a class="reference internal" href="#rtmaps">RTMaps</a></li>
+<li><a class="reference internal" href="#tips">TIPS</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#build-a-robot">Build a robot</a></li>
+<li><a class="reference internal" href="#that-s-all-folks">That&#8217;s all Folks!</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../ExamplesOfUse.html"
+                        title="previous chapter">Examples of Use</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ATKScenario.html"
+                        title="next chapter">Your First Scenario - attack an airport</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/UserGuide/ExamplesOfUse/HowToMorseAndRos.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ATKScenario.html" title="Your First Scenario - attack an airport"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ExamplesOfUse.html" title="Examples of Use"
+             >previous</a> |</li>
+        <li><a href="../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../ExamplesOfUse.html" >Examples of Use</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

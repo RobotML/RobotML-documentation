@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Annex &mdash; PROTEUS 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="PROTEUS 0.2 documentation" href="../../../index.html" />
+    <link rel="up" title="Your First Scenario - attack an airport" href="../ATKScenario.html" />
+    <link rel="next" title="How-to : CycabTK Simulator" href="../HowToCycabTK.html" />
+    <link rel="prev" title="Your First Scenario - attack an airport - Problem ready" href="ProblemReady.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../HowToCycabTK.html" title="How-to : CycabTK Simulator"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ProblemReady.html" title="Your First Scenario - attack an airport - Problem ready"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../ExamplesOfUse.html" >Examples of Use</a> &raquo;</li>
+          <li><a href="../ATKScenario.html" accesskey="U">Your First Scenario - attack an airport</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="annex">
+<span id="id1"></span><h1>Annex<a class="headerlink" href="#annex" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All code in this are writen on Alf.</p>
+</div>
+<div class="section" id="list-of-enumeration-for-the-scenario-atk">
+<h2>List of enumeration for the scenario ATK<a class="headerlink" href="#list-of-enumeration-for-the-scenario-atk" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">enum</span> <span class="n">NetworkID</span> <span class="p">{</span>
+   <span class="n">INVALID_NETWORK</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+   <span class="n">IFDL</span><span class="p">(</span><span class="mi">20001</span><span class="p">),</span>
+   <span class="n">LBWDL</span><span class="p">(</span><span class="mi">20002</span><span class="p">),</span>
+   <span class="n">HBWDL</span><span class="p">(</span><span class="mi">20003</span><span class="p">),</span>
+    <span class="n">TCAS</span><span class="p">(</span><span class="mi">20004</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="n">SensorType</span> <span class="p">{</span>
+   <span class="n">INVALID_SENSOR_TYPE</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+   <span class="n">MAW</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+   <span class="n">ESM</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+   <span class="n">RDR</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+   <span class="n">SAR</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span>
+   <span class="n">EOIR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="n">SensorFunction</span> <span class="p">{</span>
+   <span class="n">INVALID_SENSOR_FUNCTION</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+   <span class="n">IMAGE</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+   <span class="n">SEQUENCE_OF_IMAGE</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span>
+   <span class="n">SEARCH_AND_TRACK</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="n">EquipementType</span> <span class="p">{</span>
+   <span class="n">PLATFORM</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+   <span class="n">EQP_COMMS</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-composed-datatypes-for-the-scenario-atk">
+<h2>List of composed datatypes for the scenario ATK<a class="headerlink" href="#list-of-composed-datatypes-for-the-scenario-atk" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="n">datatype</span> <span class="n">SensorDefinition</span> <span class="p">{</span>
+   <span class="k">public</span> <span class="n">type</span> <span class="o">:</span> <span class="n">SensorType</span><span class="p">;</span>
+   <span class="k">public</span> <span class="n">workWithEntities</span> <span class="o">:</span> <span class="n">Logical</span>
+   <span class="k">public</span> <span class="n">workWithEntitiesTypes</span> <span class="o">:</span> <span class="n">longs</span>
+   <span class="k">public</span> <span class="n">technos</span> <span class="o">:</span> <span class="n">SensorTechnos</span>
+   <span class="k">public</span> <span class="n">useLineOfSight</span> <span class="o">:</span> <span class="n">logical</span>
+   <span class="k">public</span> <span class="n">fieldOfRegard</span> <span class="o">:</span> <span class="n">SensorAngularBounds</span>
+   <span class="k">public</span> <span class="n">fieldofView</span> <span class="o">:</span> <span class="n">SensorAngularDelta</span>
+   <span class="k">public</span> <span class="n">intervisitype</span> <span class="o">:</span> <span class="n">Long</span>
+   <span class="k">public</span> <span class="n">resolution</span> <span class="o">:</span> <span class="n">Vector3</span>
+   <span class="k">public</span> <span class="n">toBeAcquireDuration</span> <span class="o">:</span> <span class="n">Long</span>
+   <span class="k">public</span> <span class="n">tobeLostDuration</span> <span class="o">:</span> <span class="n">Long</span>
+   <span class="k">public</span> <span class="n">canBeJammed</span> <span class="o">:</span> <span class="n">Logical</span>
+   <span class="k">public</span> <span class="n">historyLenght</span> <span class="o">:</span> <span class="n">Long</span>
+   <span class="k">public</span> <span class="n">isEmitter</span> <span class="o">:</span> <span class="n">Logica</span>
+   <span class="k">public</span> <span class="n">id</span> <span class="o">:</span> <span class="n">Long</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-the-external-librairy-s-functions">
+<h2>List of the external librairy&#8217;s functions<a class="headerlink" href="#list-of-the-external-librairy-s-functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">public</span> <span class="o">&lt;&lt;</span><span class="n">Algorithm</span><span class="o">&gt;&gt;</span> <span class="n">function</span> <span class="n">initRadarStep</span><span class="p">(</span><span class="n">in</span> <span class="n">time</span> <span class="o">:</span> <span class="n">Long</span><span class="p">,</span> <span class="n">in</span> <span class="n">timestep</span> <span class="o">:</span> <span class="n">Long</span><span class="p">,</span> <span class="n">in</span> <span class="n">NID</span> <span class="o">:</span> <span class="kt">long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list-of-the-processing">
+<h2>List of the processing<a class="headerlink" href="#list-of-the-processing" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="list-of-the-components">
+<h2>List of the components<a class="headerlink" href="#list-of-the-components" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Aircraft</span> <span class="o">:</span> <span class="n">Model</span>
+<span class="p">{</span>
+   <span class="k">public</span> <span class="o">&lt;&lt;</span><span class="n">dataflowport</span><span class="o">&gt;&gt;</span> <span class="n">port</span> <span class="n">in</span> <span class="n">time</span> <span class="o">:</span> <span class="n">Long</span>
+   <span class="k">private</span> <span class="n">property</span> <span class="n">SID</span> <span class="o">:</span> <span class="n">Long</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Annex</a><ul>
+<li><a class="reference internal" href="#list-of-enumeration-for-the-scenario-atk">List of enumeration for the scenario ATK</a></li>
+<li><a class="reference internal" href="#list-of-composed-datatypes-for-the-scenario-atk">List of composed datatypes for the scenario ATK</a></li>
+<li><a class="reference internal" href="#list-of-the-external-librairy-s-functions">List of the external librairy&#8217;s functions</a></li>
+<li><a class="reference internal" href="#list-of-the-processing">List of the processing</a></li>
+<li><a class="reference internal" href="#list-of-the-components">List of the components</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ProblemReady.html"
+                        title="previous chapter">Your First Scenario - attack an airport - Problem ready</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../HowToCycabTK.html"
+                        title="next chapter">How-to : CycabTK Simulator</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../../_sources/UserGuide/ExamplesOfUse/ATKScenario/Annex.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../HowToCycabTK.html" title="How-to : CycabTK Simulator"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ProblemReady.html" title="Your First Scenario - attack an airport - Problem ready"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">PROTEUS 0.2 documentation</a> &raquo;</li>
+          <li><a href="../../../UserGuide.html" >PROTEUS User Guide</a> &raquo;</li>
+          <li><a href="../../ExamplesOfUse.html" >Examples of Use</a> &raquo;</li>
+          <li><a href="../ATKScenario.html" >Your First Scenario - attack an airport</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Serge Stinckwich, Pierrick Koch, Bruno Patin.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
