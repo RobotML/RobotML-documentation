@@ -10,3 +10,4 @@ Contents:
    Platform Installation <UserGuide/PlatformInstallation.rst>
    Examples of Use <UserGuide/ExamplesOfUse>
    Launching the generations towards execution targets <UserGuide/LaunchingGenerators.rst>
+   Generating documentation <UserGuide/GeneratingDocumentation.rst>
