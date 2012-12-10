@@ -31,4 +31,4 @@ group:
 	
 If the platform is able to provide generated code source, there is a need to also install the different associated frameworks. It is the goal of the :term:`RobotML-sdk` (see :ref:`Install RobotML-sdk <UG-PI-IPD>` to know how to install it).
 
-For :term:`users <user>` willing to know more, it is possible to see how to create the platform in their classical :term:`eclipse` using specific update sites one after the other following :ref:`Revisit of Platform Installation <DG-IFD-RPI>`\ . 
+For :term:`users <user>` willing to know more, it is possible to see how to create the platform in their classical :term:`eclipse` using specific update sites one after the other following :ref:`RobotML plateform installation from update site <DG-IFD-RPI>`\ . 

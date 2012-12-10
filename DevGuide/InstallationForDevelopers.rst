@@ -7,7 +7,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   Revisit of Platform Installation <InstallationForDevelopers/RevisitOfPlatformInstallation>
+   RobotML plateform installation from update site <InstallationForDevelopers/RobotMLPlateformInstallationFromUpdateSite>
    Revisit of RobotML-sdk Installation <InstallationForDevelopers/RevisitOfDistributionInstallation>
    VirtualBox <InstallationForDevelopers/VirtualBox>
    SVN <InstallationForDevelopers/SVN>

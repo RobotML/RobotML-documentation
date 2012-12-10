@@ -39,7 +39,7 @@ Glossary
 	**DEVS** stands for **D**\ iscrete **EV**\ vent system **S**\ pecification. It is a mathematical approach of how to model system and to simulate them. More information can be found on `DEVS wikipedia webpage <http://en.wikipedia.org/wiki/DEVS>`_
 
    eclipse
-	**eclipse** is the platform on which the :term:`RobotML` tooling was built. More information on it can be found on `eclipse project website <http://http://www.eclipse.org/>`_\ .
+	**eclipse** is the platform on which the :term:`RobotML` tooling was built. More information on it can be found on `eclipse project website <http://www.eclipse.org/>`_\ .
 
    EUROP / EURON
 	`EUROP / EURON <http://www.robotics-platform.eu/>`_ stands for EUROpean Platform / EUropean RObotics Network.
@@ -66,7 +66,7 @@ Glossary
 	**OS** stands for **O**\ perating **S**\ ystem. It is the software that makes everything run on a computer
 
    papyrus
-	**Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.papyrusuml.org>`_\ .
+	**Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
 
    portal
 	The portal is the commonplace where the robotic community will be able to upload and download data

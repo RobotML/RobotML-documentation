@@ -1,7 +1,7 @@
 .. _DG-IFD-RPI:
 
-Revisit of Platform Installation
-================================
+:term:`RobotML` plateform installation from update site
+=======================================================
 
 Introduction
 ------------
@@ -13,7 +13,7 @@ Directives provided here allow to install the complete platform, modelling, gene
 How to install Modelling components
 -----------------------------------
 
-	1. Install the latest version of eclipse Indigo: you have to download it from `Indigo eclipse website <http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/indigor>`_\ , then, if java is installed and thus whatever the OS
+	1. Install the latest version of eclipse Juno: you have to download it from `Juno eclipse website <http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/junosr1>`_\ , then, if java is installed and thus whatever the OS
 	2. Install the latest version of Papyrus, Xtext and Acceleo
 	
 		a. Open the modelling panel: on the menu, choose *help* then in it choose *Install modeling components*
@@ -52,7 +52,7 @@ How to install mandatory components for RobotML platflorm
    *Definition of update site panel accessible from add button*
 
 		a. A name is interesting to give to this update site. RobotML name is not mandatory but is useful if you have to edit it in order to recognise your update site easily in the list of them.
-		b. Location is mandatory and is *http://proteus.bourges.univ-orleans.fr/modelling_platform/org.eclipse.papyrus.proteus.update.site*. Copy/Paste to the Location field.
+		b. Location is mandatory and is *http://proteus.bourges.univ-orleans.fr/modelling_platform/org.eclipse.papyrus.robotml.update.site*. Copy/Paste to the Location field.
 
 	3. Select :term:`RobotML` Modeling Tools and follow procedure (the complete procedure is similar to any similar things)
 
