@@ -14,14 +14,24 @@ User Guide
 New TOC
 =======
 
-	Introduction   
+	Introduction
+
 	Modelling Components
+
 	- What is it ?
+
 	- How to install ?
+
 	Runtime components
+
 	- What are they?
+
 	- How to install ?
+
 	Generation
+
 	- How to use ?
+
 	- Different targets
+
 	Your first scenario
