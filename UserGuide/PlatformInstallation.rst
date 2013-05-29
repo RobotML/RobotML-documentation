@@ -6,5 +6,5 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-   Install RobotML platform <PlatformInstallation/InstallRobotmlTooling>
-   Install RobotML-sdk <PlatformInstallation/InstallProteusDistribution>
+   Install RobotML Platform <PlatformInstallation/InstallRobotmlTooling>
+   Install RobotML-SDK <PlatformInstallation/InstallProteusDistribution>
