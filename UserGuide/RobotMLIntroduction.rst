@@ -1,4 +1,4 @@
-RobotML Introduction
+Introduction
 --------------------
 
-TBD (from R2.1.7 / Saadia)
+TBD (Bruno)

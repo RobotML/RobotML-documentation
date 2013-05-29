@@ -1,5 +1,5 @@
-QuickStart PROTEUS
-==================
+QuickStart
+==========
 
 Contents:
 
