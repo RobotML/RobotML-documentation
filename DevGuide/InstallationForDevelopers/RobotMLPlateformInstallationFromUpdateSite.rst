@@ -10,7 +10,6 @@ As it was discussed in the :ref:`RobotML tooling installation page <UG-PI-IRT>`\
 
 Directives provided here allow to install the complete platform for modelling, code generation and validation. 
 
-
 How to install Modelling components
 -----------------------------------
 
