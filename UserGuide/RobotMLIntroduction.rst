@@ -1,4 +1,4 @@
-RobotML Introduction
+Introduction
 --------------------
 
-TBD
+TBD (Bruno)
