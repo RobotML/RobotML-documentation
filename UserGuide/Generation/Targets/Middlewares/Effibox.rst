@@ -1,78 +1,97 @@
 Effibox
 =======
 
-Contents:
-
 .. toctree::
    :maxdepth: 3
 
-TODO: traduction et mise en forme !!!
+TODO mise en forme
 
-Traduction RobotML → aroccam :
-Application aroccam générée
-Le traducteur crée une application aroccam complète, contenant :
-	les abonnements aux capteurs utilisés dans la modélisation
-	l'ensemble des classes du modèle qui concernent le middleware
-	les datatypes standards et les datatypes personnalisés
-Concernant l'organisation des fichiers de l'application, voici un exemple d'application générée :
+Generation RobotML to Effibox
+
+Effibox generated application
+
+The generator creates a complete Effibox application containing:
+- subscriptions to the sensors used in the modeling
+- all model classes assigned to the middleware
+- standard datatypes and custom datatypes
+Below is an example of a generated application tree:
 
 .. figure:: Effibox_images/tree.png
    :width: 300px
    :align: center
  
-Dans le répertoire « src » figure l'ensemble des fichiers sources c++ :
-	RoboCabApplication.*pp est la classe principale
-	Les structures de données (standard et personnalisées) sont rangées dans un sous-répertoire Datatypes
-	Les composants du modèle sont rangés dans un sous-répertoire Software
-Correspondance entre le modèle et le code généré :
-Les composants :
-Un composant proteus est traduis comme une classe c++. Les constituants du composant sont déclarés comme attributs de classe :
-	instance de chaque sous composant
-	inputs ports
-	outputs ports
-	connexions internes et externes entre composants
-	machine d'état et transitions
-Les ports :
-Output port :
-Chaque output port est traduit par un objet de communication Aroccam nommé TaskBuffer. A cet objet on associe une ou plusieurs fonctions de traitement. A chaque fois qu'une donnée est ajoutée au TaskBuffer (méthode push), toutes les fonctions de traitement associées sont exécutées en parallèle.
+In the "src" directory are placed all the c + + source files:
+ -. RoboCabApplication * pp is the main class
+- Data structures (standard and custom) are stored in a subdirectory Datatypes
+ - The components of the model are stored in a subdirectory Software
+
+Correspondence between the model and the generated code:
+Components:
+Component "RobotML" is translating as a C++ class. The elements of the component are declared as class attributes:
+- Instance of each sub-component
+- Input ports
+- Outputs ports
+- Internal and external connections between components
+- State machines and transitions
+
+Ports:
+
+Output Ports:
+
+Each output port is translated by an Effibox communication object named TaskBuffer.
+In this object is assigned to one or more processing functions.
+Each time data is added to TaskBuffer (push method), all associated processing functions are executed in parallel.
 
 Input port :
-un input port est traduis comme une méthode de la classe correspondant au composant. Cette méthode peut être associé à un output port comme fonction de traitement. Elle est ainsi automatiquement appelé sur un événement transmis par le output port connecté.
-Connexions :
-Interne :
-A l'intérieur d'un macro-composant, plusieurs sous-composants peuvent voir leurs ports d'entrée/sortie connectées entre elles. La connexion consiste simplement à associer un input port à un output port, grâce à la méthode addFunctionToExecute de la classe TaskBuffer (voir output port).
-Exemple :
+An input port is translated as a method of the class corresponding to the component.
+This method can be associated with an output port as a processing function.
+Then, it's automatically called when an event is transmitted by the output port connected.
+
+Connections:
+Internal:
+Within a macro-component, several sub-components may have their input/output ports / interconnected.
+The connection is simply an association with an input port and an output port, thanks to addFunctionToExecute method in TaskBuffer class (see output port).
+
+Example :
 //inner components connexions
 pathPlanner.pathDef->addFunctionToExecute(boost::bind(&LocalisationModule::pathDefIn, &localisation, _1));
 
-Externe :
-Dans un macro-composant, une connexion externe est un lien entre une entrée d'un composant interne et une entrée du macro-composant, ou bien entre une sortie d'un composant interne et une sortie du macro-composant.
-	Une connexion externe de type « entrée-entrée » est traduite en codant l'input port du macro-composant comme une méthode « tremplin » qui appelle la méthode correspondant à l'input port du sous-composant.
-	Une connexion externe de type « sortie-sortie » est traduite en codant l'output port du macro-composant comme un pointeur vers l'input port du composant interne.
-State Machine :
-Les noms d'états sont traduis dans une structure enum. Les transitions sont implémentées comme des méthodes. Si une méthode contient déjà un contenu c++ dans la modélisation, ce contenu est copié.
+External:
+In a macro-component, an external connection is a connection between an input of an internal component and an input of the macro-component,
+or between an output of an internal component and an output of the macro-component.
+ - An external connection "input-input" is translated by encoding the input port of the macro-component as a method that calls the method corresponding to the input port of the subcomponent.
+ - An external connection "output-output" is translated by encoding the output port of the macro-component as a pointer to the input port of the internal component.
 
-Limitation :
-	seuls les contenus c++ des fonctions de transition sont copiés. Si le contenus est écrit dans un autre langage il sera ignoré.
-	Le changement d'état n'a pour le moment pas été correctement implémenté.
+State Machines :
+State names are translate into a structure enum. Transitions are implemented as methods. If a method has already a c++ content in modeling, this content is copied.
+
+Limits :
+- Only the contents of c++ transition functions are copied. If the content is written in another language, it will be ignored.
+- The change of state is currently not implemented correctly.
+
 Datatypes :
-	Datatypes proteus : les datatypes proteus sont convertis en structures c++, utilisant des type standards du langage c++. Ainsi il peut y avoir des différences entre les datatypes de la modélisation et les datatypes après traduction.
-	Datatypes utilisateurs : les datatypes définis par l'utilisateur sont construits de la même manière, en se basant sur les datatypes proteus traduis.
-Algorithmes externes :
-Non gérés par le traducteur pour le moment.
-Service Port
-Non gérés par le traducteur pour le moment.
-Déploiement :
--	Tous les composants contenant les stéréotypes suivants sont générés comme abonnement capteur : CameraSystem, GPSSystem, InertialMeasurementUnitSystem, InertialNavigationSystem, OdometrySystem (voir paragraphe suivant).
--	Tous les composants alloués sur la plateforme AROCCAM sont générés en temps que composant, quels que soient leur stéréotype.
-Connexions aux capteurs :
-Les connexions aux capteurs sont traduites comme des abonnements aroccam. Ils se retrouvent dans le fichier xml de description de l'application aroccam, le ficher .awp.
-Les fonctions de traitement associés aux capteurs sont codées dans la classe principale de l'application. Dans chaque fonction, les types aroccam sont convertis en type RoboML. C'est ici que sont connectés les flux de données sur les entrées des composants instanciés.
+- RobotML datatypes: the RobotML datatypes are converted into C++ structures using standard C + + language. Thus there may be differences between the datatypes and datatypes modeling after translation.
+- User datatypes: the user-defined datatypes are built the same way, based on the RobotML translate datatypes.
 
-Certaines contraintes sont à respecter pour que les connexions des données capteurs fonctionne correctement :
-- Il faut qu'une Imu transmette le datatype Imu
-- Il faut qu'une Gps transmette le datatype NavSatFix
-- Il faut qu'un capteur odometrie transmette un CarLikeOdometry pour le vipalab ou bien un DifferentialOdometry pour le cas du wifibot
-- Il faut qu'une Camera transmette une Image.
-- Il faut qu'un télémètre laser transmette un LidarScan
+External algorithms:
+Not supported by the generator for the moment.
+
+Port Service
+Not supported by the generator for the moment.
+
+Deployment plan :
+- All components containing the following stereotypes are generated as a sensor subscription: CameraSystem, GPSSystem, InertialMeasurementUnitSystem, InertialNavigationSystem, OdometrySystem, Robot (see next paragraph).
+- All components allocated on the platform are generated as an Effibox component, whatever their stereotype.
+
+Sensor connections:
+The sensor connections are translated as Effibox subscriptions.
+They are stored in the xml file describing the Effibox application .awp file.
+Processing functions associated with the sensors are encoded in the main application class. In each function, Effibox types are converted to RoboML type. Here dataflows are connected to inputs of instantiated components.
+
+To make the sensor data connections to your RobotML components works properly, you must respect some contraints into the model:
+- A RobotML IMU sensor must transmit the datatype Imu in an output dataflow.
+- A RobotML Gps sensor must transmit the datatype NavSatFix in an output dataflow.
+- A RobotML Camera sensor must transmit the datatype Image in an output dataflow.
+- A RobotML Lidar sensor must transmit the datatype LidarScan in an output dataflow.
+- A RobotML Odometry sensor must transmit the datatype CarLikeOdometry (Vipalab for example) or DifferentialOdometry (wifibot for example) in an output dataflow.
 
