@@ -1,23 +1,23 @@
 .. _DG-IFD-RPI:
 
-:term:`RobotML` plateform installation from update site
-=======================================================
+:term:`RobotML` platform installation from update site
+======================================================
 
 Introduction
 ------------
 
 As it was discussed in the :ref:`RobotML tooling installation page <UG-PI-IRT>`\ , The RobotML platform is constituted of many components. As a developer or for your information as an advanced user, you can be interested to discover it. Here follows the detailed description of how to install its many components one after the other.
 
-Directives provided here allow to install the complete platform, modelling, generation and validation, on every :term:`OS` that supports JAVA and C/C++ compilation. However, when needed there could be indication specifying limits on this assumption. 
+Directives provided here allow to install the complete platform for modelling, code generation and validation. 
 
 How to install Modelling components
 -----------------------------------
 
 	1. Install the latest version of eclipse Juno: you have to download it from `Juno eclipse website <http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/junosr1>`_\ , then, if java is installed and thus whatever the OS
-	2. Install the latest version of Papyrus, Xtext and Acceleo
+	2. Install the latest version of Papyrus
 	
 		a. Open the modelling panel: on the menu, choose *help* then in it choose *Install modeling components*
-		b. select :term:`papyrus`, :term:`Xtext` and :term:`Acceleo` components:
+		b. select :term:`papyrus` component:
 		
 .. figure::   RevisitOfPlatformInstallation_images/ModelingComponents.png
    :align:   center
@@ -28,7 +28,7 @@ How to install Modelling components
 
 .. note::
 
-   The modelling panel is in fact just a shortcut to the classical eclipse installation methodology. After installing the eclipse indigo flavour, you can click on *Help then Install New Software* then add the different needed update site linked to the three different component quoted above (The :ref:`glossary <G>` provides more information on where to find the specific needed information for each of them).
+   The modelling panel is in fact just a shortcut to the classical eclipse installation methodology. After installing eclipse Juno, you can click on *Help then Install New Software* then add the different needed update site linked to the three different component quoted above (The :ref:`glossary <G>` provides more information on where to find the specific needed information for each of them).
 
 How to install mandatory components for RobotML platflorm
 ---------------------------------------------------------
@@ -51,10 +51,10 @@ How to install mandatory components for RobotML platflorm
 
    *Definition of update site panel accessible from add button*
 
-		a. A name is interesting to give to this update site. RobotML name is not mandatory but is useful if you have to edit it in order to recognise your update site easily in the list of them.
-		b. Location is mandatory and is *http://proteus.bourges.univ-orleans.fr/modelling_platform/org.eclipse.papyrus.robotml.update.site*. Copy/Paste to the Location field.
+		a. You should add a name to your update site. RobotML name is not mandatory but is useful if you have to edit it in order to recognise your update site easily in the list.
+		b. Location is mandatory and is *http://proteus.bourges.univ-orleans.fr/modelling_platform/org.eclipse.papyrus.robotml.update.site*.
 
-	3. Select :term:`RobotML` Modeling Tools and follow procedure (the complete procedure is similar to any similar things)
+	3. Select :term:`RobotML` Modeling Tools and follow the procedure
 
 .. figure:: RevisitOfPlatformInstallation_images/SelectionOfRobotMLComponents.png
    :align:   center
@@ -66,7 +66,7 @@ How to install mandatory components for RobotML platflorm
 Install SVN
 -----------
 
-:term:`SVN` is extremely important to the project as it is one of the :term:`portal`\ /\ :term:`RobotML` platform connection link. In order to install it on the platform, there are two steps (notwithstanding classical update site operations):
+:term:`SVN` is extremely important to the project as it is one of the :term:`portal`\ /\ :term:`RobotML` platform connection link. In order to install it, there are two steps:
 
 	1. Find the latest version of Eclipse update site
 
