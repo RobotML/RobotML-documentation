@@ -443,7 +443,3 @@ Create a new deployment
 To create a new deployment, open the model level 4, and select the root level node. Do right clic, and select **add new diagram / new deployment diagram**.
 
 .. TODO 
-
-
-
-   

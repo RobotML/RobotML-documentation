@@ -13,6 +13,7 @@ Contents:
    What will be the model created from the scenario <ATKScenario/ProblemModelCreation>
    On which framework to deploy the model <ATKScenario/Deployment>
    Problem now ready for Solution providers <ATKScenario/ProblemReady>
+   Athena generation specificities <ATKScenario/AthenaGenerationSpecificities>
    Annex <ATKScenario/Annex>
    
    
