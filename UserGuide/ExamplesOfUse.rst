@@ -1,3 +1,5 @@
+.. _UG-EU:
+
 Examples of Use
 ===============
 

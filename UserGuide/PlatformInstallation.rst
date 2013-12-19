@@ -1,3 +1,5 @@
+.. _UG-PI:
+
 Platform Installation
 =====================
 

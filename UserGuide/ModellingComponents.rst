@@ -1,3 +1,5 @@
+.. _UG-MC:
+
 Platform Installation
 =====================
 

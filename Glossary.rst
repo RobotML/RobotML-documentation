@@ -56,9 +56,6 @@ Glossary
    module
 	A **module** in our context is exclusively, as delivered from a portal, software. 
 
-   OARP
-	**OARP** stands for **O**\ pen **A**\ cces **R**\ obotic **P**\ latforms
-
    OROCOS
 	It stands for **O**\ pen **RO**\ bot **CO**\ ntrol **S**\ oftware. It is a component based architecture and its goal is to allow clear separation of behaviour implementation and architecture concerns. Another goal is to provide standard behaviour components for decision issues. More information can be found on `OROCOS website <http://www.orocos.org>`_\ .
 

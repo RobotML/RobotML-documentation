@@ -3,6 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. _I:
+
 Welcome to RobotML and associated tools documentation!
 ======================================================
 
@@ -15,11 +17,9 @@ Welcome to RobotML and associated tools documentation!
 
    User guide <UserGuide>
 
-   Developer Guide <DevGuide>
-
-   Open Access Robotic Platforms <OARP>
-
    Community Web portal <PortailWeb>
+
+   Developer Guide <DevGuide>
    
    Glossary <Glossary>
 

@@ -1,4 +1,6 @@
-Introduction
---------------------
+.. _UG-IRMLM:
+
+Introduction to RobotML modeller
+--------------------------------
 
 TBD (Bruno)
