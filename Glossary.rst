@@ -57,16 +57,22 @@ Glossary
 	`LIRMM <http://www.lirmm.fr>`_ stands for **L**\ aboratoire d'\ **I**\ nformatique, de **R**\ obotique et de **M**\ icroelectronique de **M**\ ontpellier
 
    MARTE
-    **MARTE** (**M**\ odeling and **A**\ nalysis of **R**\ eal **T**\ ime and **E**\ mbedded systems) is the OMG standard for modeling real-time and embedded applications with UML2.
+    **MARTE** (**M**\ odeling and **A**\ nalysis of **R**\ eal **T**\ ime and **E**\ mbedded systems) is the :term:`OMG` standard for modeling real-time and embedded applications with UML2.
    
    MBD
     **MBD** (**M**\ odel-**B**\ ased **D**\ esign) is a mathematical and visual method of addressing problems associated with designing complex control, signal processing and communication systems. It is used in many motion control, industrial equipment, aerospace, and automotive applications. Model-based design is a methodology applied in designing embedded software.
+    
+   MDA
+    **MDA** (**M**\ odel-**D**\ riven **A**\ rchitecture) is a software design approach for the development of software systems. It provides a set of guidelines for the structuring of specifications, which are expressed as models. Model-driven architecture is a kind of domain engineering, and supports model-driven engineering of software systems. It was launched by the Object Management Group (:term:`OMG`) in 2001.
 
    model
 	A model provides an abstract view of the situation someone wants to convey to another person. This view if embodied using a Domain Specific Language can be used for other purposes such as documentation, generation of elements able to insert in a software application and so on and so forth
 
    module
 	A **module** in our context is exclusively, as delivered from a portal, software. 
+
+   OMG
+    **OMG** (**O**\ bject **M**\ anagement **G**\ roup) is an international, open membership, not-for-profit computer industry standards consortium. :term:`OMG` Task Forces develop enterprise integration standards for a wide range of technologies and an even wider range of industries. :term:`OMG`'s modeling standards enable powerful visual design, execution and maintenance of software and other processes. Originally aimed at standardizing distributed object-oriented systems, the company now focuses on modeling (programs, systems and business processes) and model-based standards.
 
    OROCOS
 	It stands for **O**\ pen **RO**\ bot **CO**\ ntrol **S**\ oftware. It is a component based architecture and its goal is to allow clear separation of behaviour implementation and architecture concerns. Another goal is to provide standard behaviour components for decision issues. More information can be found on `OROCOS website <http://www.orocos.org>`_\ .
