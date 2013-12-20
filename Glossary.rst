@@ -40,7 +40,13 @@ Glossary
 
    eclipse
 	**eclipse** is the platform on which the :term:`RobotML` tooling was built. More information on it can be found on `eclipse project website <http://www.eclipse.org/>`_\ .
-
+   
+   EMF
+    **EMF** (**E**\ clipse **M**\ odeling **F**\ ramework) is an Eclipse-based modeling framework and code generation facility for building tools and other applications based on a structured data model.
+   
+   EPL
+    **EPL** (**E**\ clipse **P**\ ublic **L**\ icense) is an open source software license used by the `Eclipse Foundation<http://www.eclipse.org>`_ for its software.
+   
    EUROP / EURON
 	`EUROP / EURON <http://www.robotics-platform.eu/>`_ stands for EUROpean Platform / EUropean RObotics Network.
 
@@ -49,6 +55,12 @@ Glossary
 
    LIRMM
 	`LIRMM <http://www.lirmm.fr>`_ stands for **L**\ aboratoire d'\ **I**\ nformatique, de **R**\ obotique et de **M**\ icroelectronique de **M**\ ontpellier
+
+   MARTE
+    **MARTE** (**M**\ odeling and **A**\ nalysis of **R**\ eal **T**\ ime and **E**\ mbedded systems) is the OMG standard for modeling real-time and embedded applications with UML2.
+   
+   MBD
+    **MBD** (**M**\ odel-**B**\ ased **D**\ esign) is a mathematical and visual method of addressing problems associated with designing complex control, signal processing and communication systems. It is used in many motion control, industrial equipment, aerospace, and automotive applications. Model-based design is a methodology applied in designing embedded software.
 
    model
 	A model provides an abstract view of the situation someone wants to convey to another person. This view if embodied using a Domain Specific Language can be used for other purposes such as documentation, generation of elements able to insert in a software application and so on and so forth
@@ -63,7 +75,7 @@ Glossary
 	**OS** stands for **O**\ perating **S**\ ystem. It is the software that makes everything run on a computer
 
    papyrus
-	**Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
+    **Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
 
    portal
 	The portal is the commonplace where the robotic community will be able to upload and download data
@@ -118,15 +130,23 @@ Glossary
    sensor
 	Equipment that detects, measures, and/or records physical phenomena, and indicates objects and activities by means of energy or particles emitted, reflected, or modified by the objects and activities.
 
-
    SVN
 	**SVN** stands for `SubVersioN <http://subversion.apache.org>`_\ . It is a Version Control software that allows developers to synchronise source code in a distributed fashion. In the context of :term:`RobotML` platform, there is on the :term:`portal` a SVN erver allowing :term:`user`\s to share their experiences
-
+   
+   Subclipse
+    **Subclipse** is an Eclipse Team Provider plug-in providing support for Subversion within the Eclipse IDE. The software is released under the Eclipse Public License (:term:`EPL`) 1.0 open source license.
+   
+   SysML
+    **SysML** (**S**\ ystems **M**\ odeling **L**\ anguage) is a general-purpose modeling language for systems engineering applications. It supports the specification, analysis, design, verification and validation of a broad range of systems and systems-of-systems.
+   
    user
 	A user is someone able to connect to the :term:`portal` in order to download from it the elements he/she would like to use
 
    VLE
-	**VLE** stands for **V**\ irtual **L**\ aboratory **E**\ nvironment. It is an implementation of the :term:`DEVS` theory allowing its users to have a safe approach of their system models. More information can be found on `VLE website <http://www/vle-project.org>`_\ .
+	**VLE** stands for **V**\ irtual **L**\ aboratory **E**\ nvironment. It is an implementation of the :term:`DEVS` theory allowing its users to have a safe approach of their system models. More information can be found on `VLE website <http://www/vle-project.org>`_
+   
+   UML
+    **UML** (**U**\ nified **M**\ odeling **L**\ anguage) is a standardized (ISO/IEC 19501:2005), general-purpose modeling language in the field of software engineering. The Unified Modeling Language includes a set of graphic notation techniques to create visual models of object-oriented software-intensive systems
 
    Xtext
 	**Xtext** allows to define syntax, grammar. It is the basis of source coloured editor (in the platform case it is useful for the :term:`ATHENA` code edition)

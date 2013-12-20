@@ -4,7 +4,7 @@ Developer Guide
 ###############
 
 Presentation
-============
+************
 
 This section will descrbe how to install and use the RobotML DSL.
 
@@ -13,8 +13,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   Architecture application <DevGuide/ArchitectureApplication>
-   Modeller <DevGuide/Modeller>
-   Generator <DevGuide/Generator>
+   Architecture application <DevGuide/Architecture application/ArchitectureApplication>
+   Modeller <DevGuide/Modeller/modeller>
+   Generator <DevGuide/Generator/Generator>
    Runtime <DevGuide/Runtime>
    
