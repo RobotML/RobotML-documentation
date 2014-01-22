@@ -5,6 +5,8 @@
 Generator
 #########
 
+.. _DevGuideGeneratorAcceleo:
+
 About Acceleo
 *************
 

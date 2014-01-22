@@ -22,6 +22,19 @@ Welcome to RobotML and associated tools documentation!
    Developer Guide <DevGuide>
    
    Glossary <Glossary>
+   
+   
+Developer Guide
+===============
+
+.. toctree::
+   :maxdepth: 1
+   
+   Architecture application <DevGuide/Architecture application/ArchitectureApplication>
+   Modeller <DevGuide/Modeller/modeller>
+   Generator <DevGuide/Generator/Generator>
+   Platform Installation <DevGuide/Platform installation/PlatformInstallation>
+   Runtime <DevGuide/Runtime>
 
 Documentation How-to
 ====================

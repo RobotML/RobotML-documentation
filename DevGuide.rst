@@ -16,5 +16,6 @@ Contents:
    Architecture application <DevGuide/Architecture application/ArchitectureApplication>
    Modeller <DevGuide/Modeller/modeller>
    Generator <DevGuide/Generator/Generator>
+   Platform Installation <DevGuide/Platform installation/PlatformInstallation>
    Runtime <DevGuide/Runtime>
    
