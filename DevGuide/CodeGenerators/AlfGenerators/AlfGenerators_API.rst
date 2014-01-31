@@ -1,4 +1,4 @@
-.. _Alf_Gen_API :
+.. _Alf_Gen_API:
 
 =====================
 The Alf Generator API
@@ -13,7 +13,7 @@ For your needs, you can create a specific :term:`Alf<alf>` generator language on
 Overview
 ########
 
-.. image:: ../ATK_Scenario_images/alf_API_Overview.png
+.. image:: ../AlfGenerators_images/alf_API_Overview.png
    :align: center
    :alt: Alf API overview.
    
@@ -285,6 +285,8 @@ Return the Alf concurrent clauses translation.
 Return the Alf non final clause translation.
 
 **String generateFinalClauseTemplate(org.eclipse.papyrus.uml.alf.alf.FinalClause aFinalClause)**
+
+.. _AlfGenerator.generateFinalClauseTemplate:
 
    +----------------------+--------------------------------+
    | aFianalClause        | Alf final clause to translate. |
@@ -774,7 +776,7 @@ Return the Alf primary expression translation.
 
 Return the Alf value specification translation.
 
-.. _Algenerator.generateThisExpression:
+.. _AlfGenerator.generateThisExpression:
 
 **String generateThisExpression(org.eclipse.papyrus.uml.alf.alf.ThisExpression aThisExpression)**
 
