@@ -14,15 +14,20 @@ Welcome to RobotML and associated tools documentation!
    :maxdepth: 2
 
    Introduction to RobotML <IntroductionToRobotML>
-
    RobotML Platform Installation <RobotMLPlatformInstallation>
-
+   RobotML Meta-model <RobotMLMetamodel>
+   RobotML Modelling Platform <RobotMLModellingPlatform>
+   RobotML Code Generators <RobotMLCodeGenerators>
+   RobotML Community Web portal <RobotMLWebPortal>
    Glossary <Glossary>
 
-   User guide <UserGuide>
+Old stuff to refactor
+=====================
 
-   Community Web portal <PortailWeb>
+.. toctree::
+   :maxdepth: 1
 
+   User Guide <UserGuide>
    Developer Guide <DevGuide>
       
 Developer Guide

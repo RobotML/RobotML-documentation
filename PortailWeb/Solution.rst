@@ -1,5 +1,0 @@
-Solution Definition
--------------------
-
-
-TBD

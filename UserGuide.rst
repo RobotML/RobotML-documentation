@@ -6,7 +6,6 @@ User Guide
 .. toctree::
    :maxdepth: 2
 
-   Introduction <UserGuide/RobotMLIntroduction>
    RobotML Installation <UserGuide/PlatformInstallation.rst>
    RobotML for dummies <UserGuide/ExamplesOfUse>
    RobotML modeller <UserGuide/RobotMLModeller>
