@@ -6,7 +6,7 @@ Developer Guide
 Presentation
 ************
 
-This section will descrbe how to install and use the RobotML DSL.
+This section will describe how to install and use the RobotML Domain Specific-Language.
 
 Contents:
 

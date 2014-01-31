@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'PROTEUS.tex', u'PROTEUS Documentation',
+  ('index', 'RobotML.tex', u'RobotML Documentation',
    u'Serge Stinckwich', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'proteus', u'PROTEUS Documentation',
+    ('index', 'RobotML', u'RobotML Documentation',
      [u'Serge Stinckwich'], 1)
 ]
 
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'PROTEUS', u'PROTEUS Documentation',
-   u'Serge Stinckwich', 'PROTEUS', 'One line description of project.',
+  ('index', 'RobotML', u'RobotML Documentation',
+   u'Serge Stinckwich', 'RobotML', 'One line description of project.',
    'Miscellaneous'),
 ]
 

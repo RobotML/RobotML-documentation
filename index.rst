@@ -13,17 +13,18 @@ Welcome to RobotML and associated tools documentation!
 .. toctree::
    :maxdepth: 2
 
-   QuickStart
+   Introduction to RobotML <IntroductionToRobotML>
+
+   RobotML Platform Installation <RobotMLPlatformInstallation>
+
+   Glossary <Glossary>
 
    User guide <UserGuide>
 
    Community Web portal <PortailWeb>
 
    Developer Guide <DevGuide>
-   
-   Glossary <Glossary>
-   
-   
+      
 Developer Guide
 ===============
 
