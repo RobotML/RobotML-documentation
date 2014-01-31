@@ -18,7 +18,7 @@ Overview
    :alt: Alf API overview.
    
    
-.. _AlfServcies:
+.. _AlfServices:
 
 AlfServices
 ***********
