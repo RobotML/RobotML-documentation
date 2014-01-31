@@ -1,7 +1,7 @@
-Sphinx and PROTEUS documentation
+Sphinx and RobotML documentation
 --------------------------------
 
-Documentation of this project is created thanks to the `Sphinx tool <http://sphinx.pocoo.org>`_. This tooling is using python as its underlying framework. It means that it is indepedant of the platform on which you will work (It is more or less true, if you have any problems do send a mail to `Serge Stinckwhich <mailto:serge.stinckwhich@greyc.fr>`_ in order to ask questions or provide bugs).
+Documentation of this project is created thanks to the `Sphinx tool <http://sphinx.pocoo.org>`_. This tooling is using Python as its underlying framework. It means that it is indepedant of the platform on which you will work (It is more or less true, if you have any problems do send a mail to `Serge Stinckwhich <mailto:serge.stinckwhich@gmail.com>`_ in order to ask questions or provide bugs).
 
 It is possible to download the complete Sphinx documentation in acrobat format following `http://sphinx.pocoo.org/sphinx.pdf <http://sphinx.pocoo.org/sphinx.pdf>`_.
 

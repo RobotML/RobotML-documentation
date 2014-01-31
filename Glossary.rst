@@ -81,7 +81,7 @@ Glossary
 	**OS** stands for **O**\ perating **S**\ ystem. It is the software that makes everything run on a computer
 
    Papyrus
-    **Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
+  **Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
 
    Portal
 	The portal is the commonplace where the robotic community will be able to upload and download data
@@ -89,7 +89,7 @@ Glossary
    PRISME
 	`PRISME <http://www.ensi-bourges.fr/recherche/institut-prisme>`_ stands for institut **P**\ luridisciplaire de **R**\ echerche en **I**\ ngenierie des **S**\ ystemes **M**\ ecanique, **E**\ nergetique de Bourges
 
-   problem
+   Problem
 	A *problem* is
 	
 		1. the definition of the architecture of one or more robots and their environment (in our case, using the proteus main tool);

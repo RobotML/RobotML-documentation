@@ -17,7 +17,7 @@ RobotML Documentation
    RobotML Platform Installation <RobotMLPlatformInstallation/index.rst>
    RobotML Meta-model <RobotMLMetamodel/index.rst>
    RobotML Modeling Platform <RobotMLModelingPlatform/index.rst>
-   RobotML Code Generators <RobotMLCodeGenerators>
+   RobotML Code Generators <RobotMLCodeGenerators/index.rst>
    RobotML Community Web portal <RobotMLWebPortal/index.rst>
    Glossary <Glossary>
 

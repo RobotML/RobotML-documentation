@@ -1,5 +1,3 @@
-.. _Alf_Gen_API:
-
 =====================
 The Alf Generator API
 =====================
@@ -13,7 +11,7 @@ For your needs, you can create a specific :term:`Alf<alf>` generator language on
 Overview
 ########
 
-.. image:: ../AlfGenerators_images/alf_API_Overview.png
+.. image:: ../images/alf_API_Overview.png
    :align: center
    :alt: Alf API overview.
    
