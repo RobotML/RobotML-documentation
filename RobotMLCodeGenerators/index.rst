@@ -1,11 +1,5 @@
-.. _DevGuideGenerator:
-
-:ref:`Return<DevGuide>`
-
-Generator
-#########
-
-.. _DevGuideGeneratorAcceleo:
+RobotML Code Generator
+######################
 
 About Acceleo
 *************
@@ -19,6 +13,3 @@ Acceleo tutorials
 
 Go to `Acceleo tutorials page <http://www.acceleo.org/doc/obeo/fr/acceleo-2.6-tutoriel-utilisateur.pdf>`_.
 
------------
-
-:ref:`Up<DevGuideGenerator>` 

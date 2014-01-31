@@ -1,5 +1,0 @@
-RobotML meta-model
-------------------
-
-
-TBD

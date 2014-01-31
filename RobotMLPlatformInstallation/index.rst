@@ -1,5 +1,3 @@
-.. _RobotMLPlatformInstallation:
-
 RobotML Platform Installation
 =============================
 
@@ -7,7 +5,7 @@ RobotML Platform Installation
    :maxdepth: 1
 
 Modeller
-========
+########
 
 You need to download the `Eclipse Modelling tools <http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplersr1>`_.
 Then extract the modeller on your computer and launch it.
@@ -77,7 +75,7 @@ Click next and accept the condition to finish the installation.
 Ok the extension as been install on your platform.
 
 Generator
-=========
+#########
 
 Acceleo
 *******
@@ -101,11 +99,11 @@ RTMaps
 In **Help** menu, select **Install new software...**, and choose the **Papyrus update site**. Uncheck the **group item** option.
 In the filter field, enter **RTMaps** and select the binary element. You can now validate the installation.
 
-.. image:: images/rtmpas_installation.png
+.. image:: images/rtmaps_installation.png
    :align: center
-   :alt: Install RTMaps RobtoML generator
+   :alt: Install RTMaps RobotML generator
    
-.. seealso:: :ref:`RTMaps presentation<>` 
+.. seealso:: :ref:`RTMaps presentation<>`
 
 OROCOS
 ******
@@ -119,7 +117,7 @@ In the filter field, enter **OROCOS** and select the binary element. You can now
 
 .. image:: images/orrocos_installation.png
    :align: center
-   :alt: Install Orrocos RobtoML generator
+   :alt: Install Orrocos RobotML generator
    
 .. seealso:: :ref:`Orrocos presentation<>`
 

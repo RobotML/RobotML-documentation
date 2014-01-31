@@ -1,7 +1,5 @@
 .. _DevGuideArchitectureApplication:
 
-:ref:`Retourn<DevGuide>`
-
 Architecture application
 ########################
 

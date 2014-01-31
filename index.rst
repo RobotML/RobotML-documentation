@@ -11,12 +11,12 @@ RobotML Documentation
 **Contents**\ :
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Introduction to RobotML <IntroductionToRobotML/index.rst>
    RobotML Platform Installation <RobotMLPlatformInstallation/index.rst>
    RobotML Meta-model <RobotMLMetamodel/index.rst>
-   RobotML Modelling Platform <RobotMLModellingPlatform>
+   RobotML Modeling Platform <RobotMLModelingPlatform/index.rst>
    RobotML Code Generators <RobotMLCodeGenerators>
    RobotML Community Web portal <RobotMLWebPortal/index.rst>
    Glossary <Glossary>
@@ -32,8 +32,8 @@ Old stuff to refactor
 .. toctree::
    :maxdepth: 1
 
-   User Guide <UserGuide>
-   Developer Guide <DevGuide>   
+   User Guide <UserGuide/index.rst>
+   Developer Guide <DevGuide/index.rst>  
    Architecture application <DevGuide/Architecture application/ArchitectureApplication>
    Modeller <DevGuide/Modeller/modeller>
    Generator <DevGuide/Generator/Generator>

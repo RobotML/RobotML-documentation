@@ -1,7 +1,5 @@
 .. _PlatformInstallation:
 
-:ref:`Return<DevGuide>`
-
 Platform Installation
 #####################
 
