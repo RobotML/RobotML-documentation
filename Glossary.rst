@@ -27,7 +27,7 @@ Glossary
    ATHENA
 	**ATHENA** is a language associated with generators to go towards specific simulator code. It was developed thanks to an open consortium during its infancy but in its later flavour is totally owned by Dassault Aviation and used in collaborative project to help integrate development of diverse contributors into a unique application (as an example do consider `http://www.pegase-project.eu <http://www.pegase-project.eu>`_\ )
 
-  ARROCAM
+   ARROCAM
   N/A
 
    BRICS
@@ -54,7 +54,7 @@ Glossary
 	`EUROP / EURON <http://www.robotics-platform.eu/>`_ stands for EUROpean Platform / EUropean RObotics Network.
 
    git
-   **git** is a distributed revision control and source code management (SCM) system.
+  **git** is a distributed revision control and source code management (SCM) system.
 
    GDR Robotique
 	**GDR** stands for **G**\ roupement **De**\  **R**\ echerche. It is a community backed up by the French research group CNRS that groups the different laboratories concerned by Robotic research topics. It is associated to a club grouping interested Industrial partners. A `Portal <http://www.gdr-robtique.org>`_ exists that  allows interested readers to access this community.
@@ -63,13 +63,13 @@ Glossary
 	`LIRMM <http://www.lirmm.fr>`_ stands for **L**\ aboratoire d'\ **I**\ nformatique, de **R**\ obotique et de **M**\ icroelectronique de **M**\ ontpellier
 
    MARTE
-    **MARTE** (**M**\ odeling and **A**\ nalysis of **R**\ eal **T**\ ime and **E**\ mbedded systems) is the :term:`OMG` standard for modeling real-time and embedded applications with UML2.
+  **MARTE** (**M**\ odeling and **A**\ nalysis of **R**\ eal **T**\ ime and **E**\ mbedded systems) is the :term:`OMG` standard for modeling real-time and embedded applications with UML2.
    
    MBD
-    **MBD** (**M**\ odel-**B**\ ased **D**\ esign) is a mathematical and visual method of addressing problems associated with designing complex control, signal processing and communication systems. It is used in many motion control, industrial equipment, aerospace, and automotive applications. Model-based design is a methodology applied in designing embedded software.
+  **MBD** (**M**\ odel-**B**\ ased **D**\ esign) is a mathematical and visual method of addressing problems associated with designing complex control, signal processing and communication systems. It is used in many motion control, industrial equipment, aerospace, and automotive applications. Model-based design is a methodology applied in designing embedded software.
     
    MDA
-    **MDA** (**M**\ odel-**D**\ riven **A**\ rchitecture) is a software design approach for the development of software systems. It provides a set of guidelines for the structuring of specifications, which are expressed as models. Model-driven architecture is a kind of domain engineering, and supports model-driven engineering of software systems. It was launched by the Object Management Group (:term:`OMG`) in 2001.
+  **MDA** (**M**\ odel-**D**\ riven **A**\ rchitecture) is a software design approach for the development of software systems. It provides a set of guidelines for the structuring of specifications, which are expressed as models. Model-driven architecture is a kind of domain engineering, and supports model-driven engineering of software systems. It was launched by the Object Management Group (:term:`OMG`) in 2001.
 
    model
 	A model provides an abstract view of the situation someone wants to convey to another person. This view if embodied using a Domain Specific Language can be used for other purposes such as documentation, generation of elements able to insert in a software application and so on and so forth
@@ -78,7 +78,7 @@ Glossary
 	A **module** in our context is exclusively, as delivered from a portal, software. 
 
    OMG
-    **OMG** (**O**\ bject **M**\ anagement **G**\ roup) is an international, open membership, not-for-profit computer industry standards consortium. :term:`OMG` Task Forces develop enterprise integration standards for a wide range of technologies and an even wider range of industries. :term:`OMG`'s modeling standards enable powerful visual design, execution and maintenance of software and other processes. Originally aimed at standardizing distributed object-oriented systems, the company now focuses on modeling (programs, systems and business processes) and model-based standards.
+  **OMG** (**O**\ bject **M**\ anagement **G**\ roup) is an international, open membership, not-for-profit computer industry standards consortium. :term:`OMG` Task Forces develop enterprise integration standards for a wide range of technologies and an even wider range of industries. :term:`OMG`'s modeling standards enable powerful visual design, execution and maintenance of software and other processes. Originally aimed at standardizing distributed object-oriented systems, the company now focuses on modeling (programs, systems and business processes) and model-based standards.
 
    OROCOS
 	It stands for **O**\ pen **RO**\ bot **CO**\ ntrol **S**\ oftware. It is a component based architecture and its goal is to allow clear separation of behaviour implementation and architecture concerns. Another goal is to provide standard behaviour components for decision issues. More information can be found on `OROCOS website <http://www.orocos.org>`_\ .
@@ -126,7 +126,7 @@ Glossary
    ROS
 	`ROS <http://www.ros.org>`_ stands for Robot Operation System. its goal is to provide a standard framework allowing to make modules into application. In the :term`RobotML` platform context it has been chosen as the default communication bus.
 
-  RTMaps
+   RTMaps
   N/A
 
    simulator
@@ -149,10 +149,10 @@ Glossary
 	**SVN** stands for `SubVersioN <http://subversion.apache.org>`_\ . It is a Version Control software that allows developers to synchronise source code in a distributed fashion. In the context of :term:`RobotML` platform, there is on the :term:`portal` a SVN erver allowing :term:`user`\s to share their experiences
    
    Subclipse
-    **Subclipse** is an Eclipse Team Provider plug-in providing support for Subversion within the Eclipse IDE. The software is released under the Eclipse Public License (:term:`EPL`) 1.0 open source license.
+  **Subclipse** is an Eclipse Team Provider plug-in providing support for Subversion within the Eclipse IDE. The software is released under the Eclipse Public License (:term:`EPL`) 1.0 open source license.
    
    SysML
-    **SysML** (**S**\ ystems **M**\ odeling **L**\ anguage) is a general-purpose modeling language for systems engineering applications. It supports the specification, analysis, design, verification and validation of a broad range of systems and systems-of-systems.
+  **SysML** (**S**\ ystems **M**\ odeling **L**\ anguage) is a general-purpose modeling language for systems engineering applications. It supports the specification, analysis, design, verification and validation of a broad range of systems and systems-of-systems.
    
    user
 	A user is someone able to connect to the :term:`portal` in order to download from it the elements he/she would like to use
@@ -161,7 +161,7 @@ Glossary
 	**VLE** stands for **V**\ irtual **L**\ aboratory **E**\ nvironment. It is an implementation of the :term:`DEVS` theory allowing its users to have a safe approach of their system models. More information can be found on `VLE website <http://www/vle-project.org>`_
    
    UML
-    **UML** (**U**\ nified **M**\ odeling **L**\ anguage) is a standardized (ISO/IEC 19501:2005), general-purpose modeling language in the field of software engineering. The Unified Modeling Language includes a set of graphic notation techniques to create visual models of object-oriented software-intensive systems
+  **UML** (**U**\ nified **M**\ odeling **L**\ anguage) is a standardized (ISO/IEC 19501:2005), general-purpose modeling language in the field of software engineering. The Unified Modeling Language includes a set of graphic notation techniques to create visual models of object-oriented software-intensive systems
 
    Xtext
 	**Xtext** allows to define syntax, grammar. It is the basis of source coloured editor (in the platform case it is useful for the :term:`ATHENA` code edition)
