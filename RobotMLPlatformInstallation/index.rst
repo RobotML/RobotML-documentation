@@ -1,9 +1,10 @@
-.. _PlatformInstallation:
+.. _RobotMLPlatformInstallation:
 
-:ref:`Return<DevGuide>`
+RobotML Platform Installation
+=============================
 
-Platform Installation
-#####################
+.. toctree::
+   :maxdepth: 1
 
 Modeller
 ========
@@ -33,9 +34,8 @@ Install the "Papyrus UML" components.
 RobotML
 *******
 
-To install :term:`RobotML`, :term:`Papyrus` is required. See :ref:`Papyrus installation<Papyrusinstallation>` to install it.
+To install :term:`RobotML`, :term:`Papyrus`is required. See :ref:`Papyrus installation<Papyrusinstallation>` to install it.
 In **Help** menu, select **Install new software...**, and choose the **Papyrus update site**. Uncheck the **group item** option.
-
 In the filter field, enter **RobotML** and select the binary element. You can now validate the installation.
 
 .. _RobotMLExtensionInstallation:
@@ -107,15 +107,15 @@ In the filter field, enter **RTMaps** and select the binary element. You can now
    
 .. seealso:: :ref:`RTMaps presentation<>` 
 
-Orrocos
-*******
+OROCOS
+******
 
-:term:`Orrocos` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on yout platform.
+:term:`OROCOS` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on yout platform.
 
 .. seealso:: :ref:`Papyrus installation<Papyrusinstallation>` and :ref:`RobotML installation<RobotMLInstallation`
 
 In **Help** menu, select **Install new software...**, and choose the **Papyrus update site**. Uncheck the **group item** option.
-In the filter field, enter **Orrocos** and select the binary element. You can now validate the installation.
+In the filter field, enter **OROCOS** and select the binary element. You can now validate the installation.
 
 .. image:: images/orrocos_installation.png
    :align: center

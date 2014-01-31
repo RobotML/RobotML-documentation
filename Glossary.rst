@@ -38,8 +38,8 @@ Glossary
    DEVS
 	**DEVS** stands for **D**\ iscrete **EV**\ vent system **S**\ pecification. It is a mathematical approach of how to model system and to simulate them. More information can be found on `DEVS wikipedia webpage <http://en.wikipedia.org/wiki/DEVS>`_
 
-   eclipse
-	**eclipse** is the platform on which the :term:`RobotML` tooling was built. More information on it can be found on `eclipse project website <http://www.eclipse.org/>`_\ .
+   ECLIPSE
+	**ECLIPSE** is the platform on which the :term:`RobotML` tooling was built. More information on it can be found on `eclipse project website <http://www.eclipse.org/>`_\ .
    
    EMF
     **EMF** (**E**\ clipse **M**\ odeling **F**\ ramework) is an Eclipse-based modeling framework and code generation facility for building tools and other applications based on a structured data model.
@@ -80,10 +80,10 @@ Glossary
    OS
 	**OS** stands for **O**\ perating **S**\ ystem. It is the software that makes everything run on a computer
 
-   papyrus
+   Papyrus
     **Papyrus** is the toolset on which the :term:`RobotML` language has been based. More information can be found on `papyrus website <http://www.eclipse.org/modeling/mdt/papyrus/>`_\ .
 
-   portal
+   Portal
 	The portal is the commonplace where the robotic community will be able to upload and download data
 
    PRISME
@@ -101,7 +101,7 @@ Glossary
 	A provider is someone able to connect to the :term:`portal` in order to upload to it the elements he/she can provide
 
    PROTEUS
-	It is the project that allowed the creation of all the data, tools, resources described by this documentation. **PROTEUS** stands for **P**\ latform for **RO**\ botic modelling and **T**\ ransformations for **E**\ nd-**U**\ sers and **S**\ cientific communities (There is alse a french reading of this acronym: **P**\ lateforme pour la **R**\ obotique **O**\ rganisant les **T**\ ransferts **E**\ ntre **U**\ tilisateurs et **S**\ cientifiques). More information are to be found on `PROTEUS website <http://www.anr-proteus.fr>`_
+	It is the project that allowed the creation of all the data, tools, resources described by this documentation. **PROTEUS** stands for **P**\ latform for **RO**\ botic modelling and **T**\ ransformations for **E**\ nd-**U**\ sers and **S**\ cientific communities (There is also a french reading of this acronym: **P**\ lateforme pour la **R**\ obotique **O**\ rganisant les **T**\ ransferts **E**\ ntre **U**\ tilisateurs et **S**\ cientifiques). More information are to be found on `PROTEUS website <http://www.anr-proteus.fr>`_.
 
    RCP
 	it stands for *R*\ ich *C*\ lient *P*\ latform. It is the tool used in order to create the :term:`RobotML` platform.

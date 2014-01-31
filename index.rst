@@ -5,21 +5,26 @@
 
 .. _I:
 
-Welcome to RobotML and associated tools documentation!
-======================================================
+RobotML Documentation
+=====================
 
 **Contents**\ :
 
 .. toctree::
    :maxdepth: 2
 
-   Introduction to RobotML <IntroductionToRobotML>
-   RobotML Platform Installation <RobotMLPlatformInstallation>
-   RobotML Meta-model <RobotMLMetamodel>
+   Introduction to RobotML <IntroductionToRobotML/index.rst>
+   RobotML Platform Installation <RobotMLPlatformInstallation/index.rst>
+   RobotML Meta-model <RobotMLMetamodel/index.rst>
    RobotML Modelling Platform <RobotMLModellingPlatform>
    RobotML Code Generators <RobotMLCodeGenerators>
-   RobotML Community Web portal <RobotMLWebPortal>
+   RobotML Community Web portal <RobotMLWebPortal/index.rst>
    Glossary <Glossary>
+
+More information on RobotML meta-model and tools on the website that is accessible either `directly <http://www.anr-proteus.fr>`_ or through the `french GDR robotique website <http://www.gdr-robotique.fr>`_.
+
+.. warning::
+   Documentation is written solely in English due to lack of resources that would have allowed at least a French version. The reason for this choice is the importance of dissemination and cooperation at the European Level (see projects such as :term:`BRICS`\ ).
 
 Old stuff to refactor
 =====================
@@ -28,14 +33,7 @@ Old stuff to refactor
    :maxdepth: 1
 
    User Guide <UserGuide>
-   Developer Guide <DevGuide>
-      
-Developer Guide
-===============
-
-.. toctree::
-   :maxdepth: 1
-   
+   Developer Guide <DevGuide>   
    Architecture application <DevGuide/Architecture application/ArchitectureApplication>
    Modeller <DevGuide/Modeller/modeller>
    Generator <DevGuide/Generator/Generator>
@@ -51,14 +49,6 @@ Documentation How-to
    Sphinx and documentation <DocumentationHowTo/SphinxAndProteusDocumentation>
    Bugs and questions <DocumentationHowTo/BugsAndQuestions>
    
-.. warning::
-   Documentation is written solely in English due to lack of resources that would have allowed at least a French version. The reason for this choice is the importance of dissemination and cooperation at the European Level (see projects such as :term:`BRICS`\ ).
-   
-More information
-================
-
-Many more information can be found on the Portal that is accessible either `directly <http://www.anr-proteus.fr>`_ or through the `french GDR robotique website <http://www.gdr-robotique.fr>`_.
-
 Indices and tables
 ==================
 

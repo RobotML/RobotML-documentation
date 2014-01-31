@@ -1,7 +1,5 @@
 .. _DevGuideModeller:
 
-:ref:`return<DevGuide>`
-
 Modeller
 ########
 
@@ -28,14 +26,13 @@ Papyrus tutorials
 
 Go to `Papyrus tutorials page <http://www.eclipse.org/papyrus/usersTutorials/usersTutorialsIndex.php>`_.
 
-
 DSL detailed
 ************
 
 One of the objectives of the :term:`PROTEUS` project is to provide domain specific languages (and related
-tools like editors, consistency checkers, etc.) suitable to specify missions, environments and robot
+tools like editors, consistency checkers, etc) suitable to specify missions, environments and robot
 behaviours that have been specified by robotics experts involved in the project. The discussions
-within the :term:`PROTEUS` project have led to the decision of defining three :term:`DSL`s:
+within the :term:`PROTEUS` project have led to the decision of defining three :term:`DSL` s.
 
 1 The :ref:`Architecture DSL<architecture_dsl>` which will ease the definition of specific robotic architectures (reactive,
 deliberative, hybrid) and specific components that form those architectures (sensors, actuators, planners).
@@ -101,13 +98,13 @@ oticHardware package (Figure 7).
 
 .. image:: images/robotic_system_package.png
    :align: center
-   :alt: Figure 3 : Robotic sytem packages
+   :alt: Robotic sytem packages
 
 The System concept corresponds to the component concept. The term system is more appropriate
 to describe a robotic component, this is due to the fact that the term system is more meaningful for
 a robotician than the term component. A System is composed of properties, ports and connectors.
 
-.. image:: images/robotic_system_packae_properties.png
+.. image:: images/robotic_system_package_properties.png
    :align: center
    :alt: Robotic system package: details of properties
 
@@ -119,7 +116,7 @@ subsystem. The **BasicProperty** is typed by a **data type** and thus correspond
    :align: center
    :alt: Robotic system package: details of ports
  
- Figure 5 Shows the details of the concept of **port**. A **port** formalizes an interaction point of a
+Figure 5 Shows the details of the concept of **port**. A **port** formalizes an interaction point of a
 **system**. It is a special kind of **properties** that has a type and a **communication policy**. A
 **ServicePort** is a **port** that is specific to client/server communications. **DataFlowPorts** enable data
 flow-oriented communication between systems, where messages that flow across ports represent
@@ -133,7 +130,7 @@ Detail of the robotic software package:
 Figure 6 shows the details of the robotic software package. A software could be a driver which is
 the software system part of a DeviceSystem.
 
-.. image:: images/robottic_software_package.png
+.. image:: images/robotic_software_package.png
    :align: center
    :alt: Details of the robotic software package
    
@@ -160,17 +157,11 @@ The **environment** is the highest possible "container" for the **physical** obj
 considered as part of the architecture of a robotic system. Figure 8 shows the **robotic environment**
 package which enables the specification of different types of environments.
 
-.. image:: images/robotic_envrironment_package.png
+.. image:: images/robotic_environment_package.png
    :align: center
    :alt: The robotic environment package
    
-
-   
-
-
-
 See `RobotML API documentation <http://www.google.fr>`_.
-
 
 Installation
 ************
