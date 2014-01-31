@@ -1,5 +1,5 @@
 RobotML Code Generators
-#######################
+***********************
 
 RobotML is using :term:`Acceleo` as a code generator transforming models into code (:term:`MDA` approach).
 
@@ -12,31 +12,33 @@ They are include in the :term:`RobotML<robotml>` platform, and using :term:`Acce
 
 List of the RobotML platform generators:
 
-* AROCCAM <ARROCAMGenerator/index.rst>
-* CycabTk <CycabTK/index.rst>
-* MORSE <MORSE/index.rst>
-* OROCOS <OROCOS/index.rst>
-* RTMaps <RTMAPS/index.rst>
-* VLE <VLE/index.rst>
-* Alf generator API <AlfGenerator/index.rst>
+.. toctree::
+   :maxdepth: 1
+
+	AROCCAM <ARROCAMGenerator/index.rst>
+	CycabTk <CycabTKGenerator/index.rst>
+	MORSE <MORSEGenerator/index.rst>
+	OROCOS <OROCOSGenerator/index.rst>
+	RTMaps <RTMAPSGenerator/index.rst>
+	VLE <VLEGenerator/index.rst>
+	Alf generator API <AlfGenerator/index.rst>
 
 RobotML generator <CodeGenerators/RobotMLGenerators/RobotMLGenerators>
   	Naming conventions <NamingConventions>
 	Standard sensors structures <StandardSensorsStructures>
 
-
 How to create a new RobotML generator
-#####################################
+=====================================
 
 In your **Project explorer** view, do right clic and select **New/Project..**. In the **New project** window, choose **Acceleo prject** in the **Acceleo model to text** category, and clic on **Next**.
 
-.. image:: ../new_project_window.png
+.. image:: images/new_project_window.png
    :align: center
    :alt: New project window
    
 In the window **Create a new Acceleo generator project**, name your project, and select the 1.5 JAVA version (J2SE-1.5). Clic on **Next**.
 
-.. image:: ../RobotMLGenerators_images/new_generator_project.png
+.. image:: images/new_generator_project.png
    :align: center
    :alt: New Acceleo generator project window creation.
    
@@ -52,14 +54,14 @@ Select your module type:
 
 Clic on **Finish**
 
-.. image:: ../RobotMLGenerators_images/module_properties.png
+.. image:: images/module_properties.png
    :align: center
    :alt: Module properties  
    
 Your new RobotMLGenerators will added in your **Project explorer**. Now
 
 Adding a new module to an existing RobotML generator
-####################################################
+====================================================
 
 On your **Acceleo generator project**, do right clic, and select **new/Other...**. Chosse **Acceleo module file** in the category **Acceleo model to text**, and clic **Next**.
 
@@ -68,7 +70,7 @@ Name your module, select the metamodel should to use, and select the module type
 .. seealso:: How to create a new RobotML generator
 
 Adding your new generator in the RobotML generator interface
-############################################################
+============================================================
 
 Import the **RobotML generator project** in your workspace (org.eclipse.robotml.generators.generator.ui).
 Open the file *MANIFEST.MF* and slect the **Dependencies** tab. In the **Required plug-in** section, add your generator plug-in.
@@ -127,12 +129,12 @@ The following example show how to declare generators:
 
 
 Create a user interface for a RobotMl generator
-###############################################
+===============================================
 
 In your **Acceleo generator project**,, do right clic, and select **Acceleo/Create Acceleo UI launcher**. Name you UI project, clic on **Next**.
 Select the project who will be called by your interface.
 
-.. image:: ../RobotMLGenerators_images/project_list_ui.png
+.. image:: images/project_list_ui.png
    :align: center
    :alt: Project list for the user interface.
    
@@ -142,12 +144,12 @@ Give a label to your generator.
 
 Choose your working file filter. Your generator interface will be visible only if the selection match this file filter. Clic on **Finish**.
 
-.. image:: ../RobotMLGenerators_images/interface_properties.png
+.. image:: images/interface_properties.png
    :align: center
    :alt: User interface properties.
    
 Implement a RobotML generator in your user interface
-####################################################
+====================================================
 
 In your Acceleo User interface project, open the file `GenerateAll.java`, and modifiy the method doGenerate() as following:
 
@@ -175,13 +177,13 @@ In your Acceleo User interface project, open the file `GenerateAll.java`, and mo
    }
 
 Validate a new RobotML generator
-################################
+================================
 
 In your **project explorer** view, select your :term:`RobotML<robotml>` generator, and do right clic. Choose, **Run as.../Eclipse application**. A new eclipse applciation start.
 In this new envioronment, import the needed files to execute your generator, then select a imported file, do right clic. The contextual menu, should contain your gnerator label. Select it to execute your generator.
 
 Exception
-#########
+=========
 
 In exception, if you using particular metamodel, it's necessary to register it befor using.
 For example : if you use the :term:`DSL<dsl>` Athena, you should to initialized it with the following methods in your user interface code.

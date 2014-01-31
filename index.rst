@@ -8,13 +8,12 @@
 RobotML Documentation
 =====================
 
-**Contents**\ :
-
 .. toctree::
    :maxdepth: 1
 
    Introduction to RobotML <IntroductionToRobotML/index.rst>
    RobotML Platform Installation <RobotMLPlatformInstallation/index.rst>
+   How to Use the RobotML Platform <HowToUseRobotML/index.rst>
    RobotML Meta-model <RobotMLMetamodel/index.rst>
    RobotML Modeling Platform <RobotMLModelingPlatform/index.rst>
    RobotML Code Generators <RobotMLCodeGenerators/index.rst>
@@ -25,20 +24,6 @@ More information on RobotML meta-model and tools on the website that is accessib
 
 .. warning::
    Documentation is written solely in English due to lack of resources that would have allowed at least a French version. The reason for this choice is the importance of dissemination and cooperation at the European Level (see projects such as :term:`BRICS`\ ).
-
-Old stuff to refactor
-=====================
-
-.. toctree::
-   :maxdepth: 1
-
-   User Guide <UserGuide/index.rst>
-   Developer Guide <DevGuide/index.rst>  
-   Architecture application <DevGuide/Architecture application/ArchitectureApplication>
-   Modeller <DevGuide/Modeller/modeller>
-   Generator <DevGuide/Generator/Generator>
-   Platform Installation <DevGuide/Platform installation/PlatformInstallation>
-   Runtime <DevGuide/Runtime>
 
 Documentation How-to
 ====================

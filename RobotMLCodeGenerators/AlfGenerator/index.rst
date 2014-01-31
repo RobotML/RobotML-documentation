@@ -11,7 +11,7 @@ For your needs, you can create a specific :term:`Alf<alf>` generator language on
 Overview
 ########
 
-.. image:: ../images/alf_API_Overview.png
+.. image:: images/alf_API_Overview.png
    :align: center
    :alt: Alf API overview.
    
