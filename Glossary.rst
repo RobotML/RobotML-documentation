@@ -17,18 +17,16 @@ Glossary
 	An algorithm is a recette describing elementary behaviour of module that can be found in robotic systems (see `wikipedia <http://en.wikipedia.org/wiki/Algorithm>`_ for more information)
 
    Application
-	It is a computing entity able to work upon a hardware that provides computing capabilities.
-	It is also a computing entity capable of providing life to another software. 
-	At the bottom level, it is the OS of the computer.
+	It is a computing entity able to work upon a hardware that provides computing capabilities. It is also a computing entity capable of providing life to another software. At the bottom level, it is the OS of the computer.
 
    ANR
 	**ANR** stands for **A**\ gence **N**\ ationale de la **R**\ echerche. More information can be found on `ANR website <http://www.agence-nationale-recherche.fr>`_
 
    ATHENA
-	**ATHENA** is a language associated with generators to go towards specific simulator code. It was developed thanks to an open consortium during its infancy but in its later flavour is totally owned by Dassault Aviation and used in collaborative project to help integrate development of diverse contributors into a unique application (as an example do consider `http://www.pegase-project.eu <http://www.pegase-project.eu>`_\ )
+	**ATHENA** is a language associated with generators to go towards specific simulator code. It was developed thanks to an open consortium during its infancy but in its later flavour is totally owned by Dassault Aviation and used in collaborative project to help integrate development of diverse contributors into a unique application (as an example do consider `http://www.pegase-project.eu <http://www.pegase-project.eu>`_\ ).
 
    ARROCAM
-  N/A
+  ARROCAM is ...
 
    BRICS
 	**BRICS** stands for **B**\ est p\ **R**\ actice in robot \ **ICS***\ . It is an European project which goals are overlapping PROTEUS project. More information can be found followin `http://www.best-of-robotics.org/ <http://www.best-of-robotics.org/>`_\ )
