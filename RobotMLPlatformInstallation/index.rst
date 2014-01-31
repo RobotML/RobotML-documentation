@@ -115,16 +115,16 @@ OROCOS
 In **Help** menu, select **Install new software...**, and choose the **Papyrus update site**. Uncheck the **group item** option.
 In the filter field, enter **OROCOS** and select the binary element. You can now validate the installation.
 
-.. image:: images/orrocos_installation.png
+.. image:: images/orocos_installation.png
    :align: center
-   :alt: Install Orrocos RobotML generator
+   :alt: Install OROCOS RobotML generator
    
 .. seealso:: :ref:`Orrocos presentation<>`
 
-Arrocam
+ARROCAM
 *******
 
-:term:`Arrocam` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on yout platform.
+:term:`ARROCAM` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on your platform.
 
 .. seealso:: :ref:`Papyrus installation<Papyrusinstallation>` and :ref:`RobotML installation<RobotMLInstallation`
 
