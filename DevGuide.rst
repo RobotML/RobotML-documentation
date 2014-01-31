@@ -1,10 +1,7 @@
 .. _DevGuide:
 
 Developer Guide
-###############
-
-Presentation
-************
+===============
 
 This section will describe how to install and use the RobotML Domain Specific-Language.
 
@@ -17,5 +14,4 @@ Contents:
    Modeller <DevGuide/Modeller/modeller>
    Generator <DevGuide/Generator/Generator>
    Platform Installation <DevGuide/Platform installation/PlatformInstallation>
-   Runtime <DevGuide/Runtime>
    

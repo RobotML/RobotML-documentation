@@ -1,6 +1,6 @@
-.. _QS:
+.. _RobotMLPlatformInstallation:
 
-RobotMLPlatformInstallation
+RobotML Platform Installation
 =============================
 
 Contents:
@@ -9,4 +9,3 @@ Contents:
    :maxdepth: 1
 
    Describe how to install RobotML Platform here
-   

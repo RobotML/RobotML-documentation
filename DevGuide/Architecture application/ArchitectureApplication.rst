@@ -2,15 +2,11 @@
 
 :ref:`Retourn<DevGuide>`
 
-Arhitecture application
-#######################
+Architecture application
+########################
 
 Generality
 **********
-
-.. image:: ./images/architecture_application.png
- :align: center
- :alt: Architecture application
 
 Repository architecture
 ***********************
