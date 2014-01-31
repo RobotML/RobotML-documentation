@@ -45,7 +45,7 @@ RobotML extension is not include as feature of :term:`Papyrus`. You need to buil
 RobotML extension building
 ''''''''''''''''''''''''''
 
-Create a new workspace named as *RobotML_Extension*. Import from :term:`Git` the projet following project:
+Create a new workspace named as *RobotML_Extension*. Import from :term:`git` the projet following project:
 - org.eclipse.papyrus.robotml.extension
 - org.eclipse.papyrus.robotml.extension.feature
 - org.eclipse.papyrus.robotml.extension.update
