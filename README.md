@@ -1,6 +1,6 @@
 RobotML-documentation
 =====================
 
-The different parts of RobotML are linked to documentation. This project allows to create, manage and maintain documentation.
+This is the repository for the RobotML meta-model and platform tools. The document are created with the reStructuredText markup language and html files are generated with Sphinx documentation generator: http://sphinx-doc.org/
 
 The online html documentation is available here: http://robotml.github.com/
