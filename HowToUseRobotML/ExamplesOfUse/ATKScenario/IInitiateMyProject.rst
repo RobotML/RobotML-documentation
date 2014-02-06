@@ -15,7 +15,7 @@ Account register
 
 On the portal's home page, clic on 'Regiter account' link.
 
-.. image:: ../ATKScenario_images/home_page_register.png
+.. image:: ../ATKScenario_images/RobotMLPortalRegister.png
    :align: center
    :alt: Register account link
    

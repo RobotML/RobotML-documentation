@@ -9,7 +9,7 @@ Launch **RobotML platform** with the desktop icon |robotml_icon|.
 
 We should to choose our workspace, and clic OK.
 
-.. image:: ../ATKScenario_images/choose_workspace.png
+.. image:: ../ATKScenario_images/Choose_workspace.png
    :align: center
    :alt: Choose workspace
    
