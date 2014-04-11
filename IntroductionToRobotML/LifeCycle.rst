@@ -3,18 +3,6 @@
 Life cycle
 ----------
 
-Rationale
-^^^^^^^^^
-
-PROTEUS project was based on a vision. A vision where those providing :term:`problem`\ s and those proposing :term:`solution`\ s would find a way to cooperate in order to leverage as best as possible in products or new research topics the knowledge so created. In order to reach such a goal a commonplace was deemed necessary as well as the design of associated tools allowing interactions with this commonplace embodied y a portal. Next schematic is presenting the different participants to the promoted cooperation.
-
-.. figure:: ./LifeCycle_images/D0.11-P0.8-P0.1-ProteusWorkflow-2.png
-   :align: center
-   :width: 500
-   :alt: Proteus Rationale graphical presentation
-
-   *PROTEUS Rationale*
-
 Roles
 ^^^^^
 
