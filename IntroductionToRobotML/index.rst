@@ -31,18 +31,20 @@ This goal is based upon the idea promoted in the following schematic.
 
    *PROTEUS Rationale*
 
-The sections that follow are detailing this schematic and 
+The sections that follow are detailing this schematic. 
+The *Life Cycle* section details how the interactions are embodied in real life and 
+the :term:`RobotML` explains how the different developed tools and parts instantiate this life cycle.
 
 .. toctree::
    :maxdepth: 1
 
    Life cycle <LifeCycle>
-   Supporting Life cycle through associated tools <LifeCycleSupportingTools>
-   Downloading and installing <DownloadingAndInstalling>
-   
+   RobotML development and Life cycle <LifeCycleSupportingTools>   
 
 
 .. note:: It is of more importance to read the description of the :ref:`Life cycle <QS-L>` and the following pages.
+
+
 
 Some history
 ************

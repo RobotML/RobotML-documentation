@@ -39,6 +39,15 @@ Glossary
    Cycab-Tk
      Cycab-Tk is one of the existing Environment simulator target that exists for the :term:`RobotML` JUNO flavour.
      This middle-ware is developped by a community under :term:`INRIA` direction. More information is available following `gforge.inria.fr/projects/cycabtk/ <https://gforge.inria.fr/projects/cycabtk/>`_      
+
+   developper
+      The **developper** is someone intervening on the :term:`RobotML` platfrom development and thus that interacts with the development's repositories.
+
+   DEVS
+      **DEVS** stands for **D**\ iscrete **EV**\ vent system **S**\
+      pecification. It is a mathematical approach of how to model system and to
+      simulate them. More information can be found on
+      `DEVS wikipedia webpage <http://en.wikipedia.org/wiki/DEVS>`_
    
    DSL
       **DSL** stands for **D**\ omain **S**\ pecific **L**\ anguage. Quotation
@@ -46,12 +55,6 @@ Glossary
       *It is a programming language or specification language dedicated to a particular problem domain, a particular problem representation technique, and/or a particular solution technique.*
       More information can be found following
       `http://en.wikipedia.org/wiki/Domain-specific_language <http://en.wikipedia.org/wiki/Domain-specific_language>`_
-
-   DEVS
-      **DEVS** stands for **D**\ iscrete **EV**\ vent system **S**\
-      pecification. It is a mathematical approach of how to model system and to
-      simulate them. More information can be found on
-      `DEVS wikipedia webpage <http://en.wikipedia.org/wiki/DEVS>`_
 
    ECLIPSE
       **ECLIPSE** is the platform on which the :term:`RobotML` tooling was
@@ -167,17 +170,13 @@ Glossary
    problem
       A *problem* is
 
-         1. the definition of the architecture of one or more robots and their
-         environment (in our case, using the proteus main tool);
-         2. the definition inside the robot(s) architecture of one or multiple components in which it
-         is necessary to develop *solutions*; 
-         3. the definition of  *probes* that allow *simulation* exploitation; 4. the definition of the *metrics* and
-         their associated validity domain in order to measure the *solution* quality
-         and compare it to other *solutions*.    
+      1. the definition of the architecture of one or more robots and their environment (in our case, using the proteus main tool);
+      2. the definition inside the robot(s) architecture of one or multiple components in which it is necessary to develop *solutions*; 
+      3. the definition of  *probes* that allow *simulation* exploitation;
+      4. the definition of the *metrics* and their associated validity domain in order to measure the *solution* quality and compare it to other *solutions*.    
 
    provider
-      A provider is someone able to connect to the :term:`portal` in order to
-      upload to it the elements he/she can provide
+      A provider is someone able to connect to the :term:`portal` in order to upload to it the elements he/she can provide
 
    PROTEUS
       It is the project that allowed the creation of all the data, tools,
@@ -229,12 +228,8 @@ Glossary
    
    solution
       
-      1. In a *problem* context, A *solution* is an *algorithm* itself possibly
-      integrating an *architecture* that allows during the execution of a
-      *simulator* to extract values from the defined *metrics* that remains in
-      their validity domain.
-      2. Subpart of interest in the software system of a
-      robot. Its implementation is provided by a *Solution Provider*.
+      1. In a *problem* context, A *solution* is an *algorithm* itself possibly integrating an *architecture* that allows during the execution of a *simulator* to extract values from the defined *metrics* that remains in their validity domain.
+      2. Subpart of interest in the software system of a robot. Its implementation is provided by a *Solution Provider*.
 
    scenario
       A **Scenario** is a context defined loosely where its reader will
@@ -271,7 +266,7 @@ Glossary
    
    user
       A user is someone able to connect to the :term:`portal` in order to
-      download from it the elements he/she would like to use
+      download from it the elements he/she would like to use namely the :term:`RobotML` platform
 
    VLE
       **VLE** stands for **V**\ irtual **L**\ aboratory **E**\ nvironment. It is
