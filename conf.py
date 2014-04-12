@@ -183,8 +183,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'RobotML.tex', u'RobotML Documentation',
-   u'Serge Stinckwich', 'manual'),
+  ('index', 'RobotML.tex', 'RobotML Documentation',
+   'Nicolas Brodnan, Saadia Dhouib, Nicolas Dulac, Bruno Patin, Serge Stinckwich', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

@@ -8,7 +8,7 @@
 This page introducess the :term:`RobotML` platform (see section below)
 as well as the the way to build the documentation you are reading (see :ref:`DHT`).
 There is, following, a section dedicated to indices and tables (see :ref:`IT`)
-and finally a list of websites linked to the platform (see :ref:`LW`).
+and finally a list of websites linked to the platform (see :ref:`LW`). 
 
 .. _RMLD:
 
@@ -18,7 +18,7 @@ RobotML Documentation
 RobotML is a language associated to a platform linked to PAPYRUS tool and build
 upon ECLIPSE framework. The goal of this language is to ease development of
 robotics application and to facilitate exchanges between roboticians and
-end-users.
+end-users. 
 
 :term:`RobotML` documentation is decomposed in many parts. 
 A presentation of its rationale is done in its introduction, 

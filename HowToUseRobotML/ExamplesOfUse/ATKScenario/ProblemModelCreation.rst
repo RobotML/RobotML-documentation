@@ -42,7 +42,7 @@ Next clic on finish. The new SNV repository will be added in the **Project explo
 Checking out our SVN repository and create the RobotML project
 **************************************************************
 
-.. image:: ../ATKScenario_images/svn_checkout.png
+.. image:: ../ATKScenario_images/svn_checkout_name.png
    :align: left
    :alt: SVN Checkout command
    
@@ -71,7 +71,7 @@ Name your RobotML project as "ATK_Scenario", and clic **Finish**.
 With the **Window** menu, select the **Java** perspective. We should to view the new **ATK_Scenario** project in the **Project explorer** view.
 This projct contains the new RobotML project created.
 
-.. image:: ../ATKScenario_images/added_project_into_wokspace.png
+.. image:: ../ATKScenario_images/added_project_into_workspace.png
    :align: center
    :alt: Project added into workspace
 
@@ -221,6 +221,7 @@ In the **Property** view, select **Profil** and assign the **AlgorithmLibrary** 
    :alt: External librairy profil setting
 
 .. ExternalFunctions:
+
 Create our external librairy's functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -239,7 +240,7 @@ Go on the profil tab and assign the **Algorithm** profil.
 Edit the properties and add the function arguments on clicking on |add_parameter| button *(See the* :ref:`Annex <Annex>` *to know the parameters)*.
 
 .. |add_parameter| image:: ../ATKScenario_images/add_parameter_button.png
-   :align: center
+   :align: middle
    :alt: Add parameter button
 
 Create the external function referenced in the :ref:`Annex <Annex>`.
@@ -255,8 +256,8 @@ To add a processing select **libExternalFunction** component in the **model expl
 Edit the properties to change name, add an language definition, and link this processing to an interaction. To modeling processing, we choose the :term:`Alf <Alf>` language definition. This language is known by all plateform's generators and could be known by the custom generators (see :ref:`Alf  . 
 Generators API <_Alf_Gen_API>`). The action description code is write on the "body" property section. To link the processing with an interaction, clic on |add_specification| button in the **Specification** property section.
 
-.. |add_specification| image:: ../ATKScenario_images/add_specification_button.png
-   :align: center
+.. |add_specification| image:: ../ATKScenario_images/add_parameter_button.png
+   :align: middle
    :alt: Add operation specification button
 
 .. image:: ../ATKScenario_imaes/processing_properties.png
