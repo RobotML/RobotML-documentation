@@ -6,7 +6,7 @@ Life cycle
 Roles
 ^^^^^
 
-As presented in the above picture there are several roles to be considered:
+As presented in picture :ref:`ITR-I-F1` there are several roles to be considered:
 
 	1. :term:`Provider <provider>`\ : Here it means someone that is able to upload something on the :term:`portal` either using the different tools developed in the :term:`PROTEUS` project or directly knowing the protocols to be used. These actions ask for an authentication that will allow to limit access to the different parts of the portal. 
 	2. :term:`User <user>`\ : Here it means someone that is able to download something from the portal in the same conditions as the :term:`provider` with as much authentication knowing that some parts will be relayed to private website askinng perhaps for other authentication steps

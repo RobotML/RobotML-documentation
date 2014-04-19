@@ -18,17 +18,19 @@ three parts are:
   :term:`Cycab-Tk`)
 
 
-The rationale of RobotML  
+The rationale of RobotML
 ************************
 
 The goal of the RobotML development is to ease interactions between the different actors of the community.
 This goal is based upon the idea promoted in the following schematic.
 
+.. _ITR-I-F1:
+
 .. figure:: ./images/D0.11-P0.8-P0.1-ProteusWorkflow-2.png
    :align: center
    :width: 500
-   :alt: Proteus Rationale graphical presentation
-
+   :alt: Proteus Rationale graphical presentation   
+   
    *PROTEUS Rationale*
 
 The sections that follow are detailing this schematic. 
