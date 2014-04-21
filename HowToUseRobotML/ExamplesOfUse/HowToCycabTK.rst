@@ -49,12 +49,14 @@ To verify the installation, you can launch the tutorial launchfile : ::
 
    $ roslaunch CycabTKSimulator cycabtk_tutorial.launch 
    
-After that, you should see a window like this :
+After that, you should see a window like this:
 
-.. figure:: HowToCycabTK_images/cycabtk_tutorial_screenshot.png 
+.. image:: ./HowToCycabTK_images/cycabtk_tutorial_screenshot.png
    :align: center
+   :alt: cycab-TK screenshot
+
  
- You can move the robot by pressing the keyboard arrows.
+You can move the robot by pressing the keyboard arrows.
  
  You can check you have sensors / commands topics in ROS : ::
  

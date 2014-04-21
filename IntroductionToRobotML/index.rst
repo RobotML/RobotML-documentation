@@ -48,14 +48,14 @@ the :term:`RobotML` explains how the different developed tools and parts instant
 
 
 
-Some history
-************
+Origin of RobotML
+*****************
 
-The :term:`RobotML` platform has been created thanks to the French :term:`ANR` :term:`PROTEUS` project. It seems polite to tell some words about it. 
+The :term:`RobotML` platform has been created thanks to the French :term:`ANR` :term:`PROTEUS` project.
+It seems polite to tell some words about it. 
 
 .. toctree::
    :maxdepth: 1
 
    PROTEUS as a project <ProteusProject> 
    PROTEUS and the Robotic community <ProteusRoboticCommunity>
-   After PROTEUS <AfterProteus>

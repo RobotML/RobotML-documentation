@@ -260,9 +260,10 @@ Generators API <_Alf_Gen_API>`). The action description code is write on the "bo
    :align: middle
    :alt: Add operation specification button
 
-.. image:: ../ATKScenario_imaes/processing_properties.png
-   :align: center
-   :alt: Processing properties
+.. comment
+   image:: ../ATKScenario_images/processing_properties.png
+   align: center
+   alt: Processing properties
 
 Create all the processing defined in the :ref:`Annex <Annex>`.
 
@@ -312,9 +313,10 @@ With the **RobotML tool panel**:
 * Select the **Final state** element and drag it on the diagram. Edit their properties and named it **KILLED**.
 * Select the **Transition** element and draw the transition between "INIT / RUNNING" and "RUNNING / KILLED" states.
 
-.. image:: ../ATKScenario_images/SateMachineDiagram.png
-   :align: center
-   :alt: Automat state machine digram 
+.. comment
+   image:: ../ATKScenario_images/StateMachineDiagram.png
+   align: center
+   alt: Automat state machine digram 
 
 *Add transtion's guard and effect*
 Normally we have already added the usally function in the model. If it is not do, then
@@ -354,9 +356,10 @@ In the property view, choose **StatusList** for the port type. By default the da
 | * | In / Out | Input and ouput port |
 +---+----------+----------------------+
 
-.. image:: ../ATKScenario_images/robotml_dataflow.png
-   :align: center
-   :alt: RobotML tab's property for the dataflow.
+.. comment
+   image:: ../ATKScenario_images/robotml_dataflow.png
+   align: center
+   alt: RobotML tab's property for the dataflow.
 
 *Adding property*
 To add a property to the component, select the **property** element in **RobotML tool panel**, and drag it on the component. The new property is symbilzed by a rectangle. Named this property as **esmDef**, and edit their property.

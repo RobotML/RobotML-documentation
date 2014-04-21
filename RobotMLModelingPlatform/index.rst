@@ -2,7 +2,7 @@ RobotML Modeling Platform
 *************************
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
 About Papyrus
 =============
@@ -152,12 +152,7 @@ Robotic environment package
 '''''''''''''''''''''''''''
 
 The **environment** is the highest possible "container" for the **physical** objects to exist, and it is
-considered as part of the architecture of a robotic system. Figure 8 shows the **robotic environment**
-package which enables the specification of different types of environments.
-
-.. image:: images/robotic_environment_package.png
-   :align: center
-   :alt: The robotic environment package
+considered as part of the architecture of a robotic system.
    
 See `RobotML API documentation <http://www.google.fr>`_.
 

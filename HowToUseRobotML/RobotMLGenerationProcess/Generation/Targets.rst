@@ -4,8 +4,7 @@ Targets
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-
-  Middlewares <Targets/Middlewares.rst>
-  Environments <Targets/Environments.rst>
-
+   :maxdepth: 1
+   
+   Middlewares <Targets/Middlewares.rst>
+   Environments <Targets/Environments.rst>
