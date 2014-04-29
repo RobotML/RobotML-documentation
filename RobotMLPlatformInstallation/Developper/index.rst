@@ -1,6 +1,10 @@
+.. _RMLPI-DIG:
+
+Developper Installation Guide
+*****************************
 
 Modeller
-********
+========
 
 You need to download the `Eclipse Modelling tools <http://www.eclipse.org/downloads/packages/eclipse-modeling-tools/keplersr1>`_.
 Then extract the modeller on your computer and launch it.
@@ -9,7 +13,7 @@ Next, you need to install :term:`Papyrus`, with :term:`RobotML` extra feature, a
 .. _Papyrusinstallation:
 
 Papyrus
-*******
+=======
 
 In **Help** menu, select "Install new software...". Clic on "Add" button, and add the right update site.
 
@@ -25,7 +29,7 @@ Install the "Papyrus UML" components.
 .. _RobotMLInstallation:
 
 RobotML
-*******
+=======
 
 To install :term:`RobotML`, :term:`Papyrus`is required. See :ref:`Papyrus installation<Papyrusinstallation>` to install it.
 In **Help** menu, select **Install new software...**, and choose the **Papyrus update site**. Uncheck the **group item** option.
@@ -34,7 +38,7 @@ In the filter field, enter **RobotML** and select the binary element. You can no
 .. _RobotMLExtensionInstallation:
 
 RobotML extension
-*****************
+=================
 RobotML extension is not include as feature of :term:`Papyrus`. You need to build the *RobotML extension* update site to install it.
 
 RobotML extension building
@@ -73,22 +77,22 @@ Click next and accept the condition to finish the installation.
 Ok the extension as been install on your platform.
 
 Generator
-#########
+=========
 
 Acceleo
-*******
+'''''''
 
 To install :term:`Acceleo` on your platform, use the Eclips's tool **Install Modeling Component**, from the ***Help** menu.
 
 .. seealso:: :ref:`Acceleo presentation<DevGuideGeneratorAcceleo>`   
 
 XText
-*****
+'''''
 
 To install :term:`Xtext` on your platform, use the Eclips's tool **Install Modeling Component**, from the ***Help** menu.
 
 RTMaps
-******
+''''''
 
 :term:`RTMaps` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on yout platform.
 
@@ -105,7 +109,7 @@ In the filter field, enter **RTMaps** and select the binary element. You can now
 .. seealso:: :ref:`RTMaps presentation<>`
 
 OROCOS
-******
+''''''
 
 :term:`OROCOS` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on yout platform.
 
@@ -122,7 +126,7 @@ In the filter field, enter **OROCOS** and select the binary element. You can now
 .. seealso:: :ref:`Orrocos presentation<>`
 
 ARROCAM
-*******
+'''''''
 
 :term:`ARROCAM` has an extras feature of :term:`Papyrus`. To use you need to have :term:`Papyrus` and :term:`RobotML` installed on your platform.
 
@@ -139,10 +143,10 @@ In the filter field, enter **Arrocam** and select the binary element. You can no
 .. seealso:: :ref:`Arrocam presentation<>`
 
 Dynamic Validation
-******************
+==================
 
 Dynamic validation is a RobotML extension include. It be installed, with the extension.
 
 .. seealso:: :ref:`Dynamic validation presentation<>`
 
-:ref:`Up<PlatformInstallation>`
+:ref:`Up<RMLPI-DIG>`
