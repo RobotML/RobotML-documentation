@@ -31,6 +31,11 @@ Glossary
      ARROCAM is one of the existing Robotic middle-ware target that exists for the :term:`RobotML` JUNO flavour.
      This middle-ware is developped by EFFIDENCE company. More information is available following `www.effidence.com <http://www.effidence.com>`_
 
+   blender
+   BLENDER
+      **BLENDER** is an open-source tool trying to provide the capabilities to model and animate 3D objects. It is very powerful and can be compared to
+      existing 3D modeller such as `MAYA <http://www.autodesk.fr/products/autodesk-maya/overview>`_ . More information on the `BLENDER website <http://www.blender.org>`_
+
    BRICS
      **BRICS** stands for **B**\ est p\ **R**\ actice in robot \
      **ICS***\ . It is an European project which goals are overlapping PROTEUS project. More information can be found followin `http://www.best-of-robotics.org/
@@ -68,7 +73,7 @@ Glossary
    
    EPL
       **EPL** (**E**\ clipse **P**\ ublic **L**\ icense) is an open source
-      software license used by the `Eclipse Foundation<http://www.eclipse.org>`_
+      software license used by the `Eclipse Foundation <http://www.eclipse.org>`_
       for its software.
    
    EUROP / EURON
@@ -86,6 +91,11 @@ Glossary
       associated to a club grouping interested Industrial partners. A
       `Portal <http://www.gdr-robtique.org>`_ exists that  allows interested
       readers to access this community.
+
+   INRIA
+   inria
+      **INRIA** stands for **I**\ nstitut **N**\ ational de **R**\ echerche en **I**\ nformatique et en **A**\ utomatique.
+      It is a French research organism that focussed primly on STIC. More information on its `website <http://www.inria.fr>`_ .
 
    LAAS
       `LAAS <http://www.laas.fr/>`_ stands for **L**\ aboratoire d'**A**\ nalyse et d'**A**\ rchitecture des **S**\ ystèmes.
@@ -117,6 +127,13 @@ Glossary
       supports model-driven engineering of software systems. It was launched by
       the Object Management Group (:term:`OMG`) in 2001.
 
+   middleware
+      A middleware is a piece of software allowing its user to ignore complexities
+      of the underlying software and / or hardware structure. As an example, robotic
+      middleware try to promote a view where sensors and effectors are not to be
+      programmed anymore but to be configured using the same methodology (see :term:`OROCOS`
+      or :term:`RTMaps`)
+   
    model
       A model provides an abstract view of the situation someone wants to convey
       to another person. This view if embodied using a Domain Specific Language
@@ -153,6 +170,7 @@ Glossary
       **OS** stands for **O**\ perating **S**\ ystem. It is the software that
       makes everything run on a computer
 
+   PAPYRUS
    Papyrus
       **Papyrus** is the toolset on which the :term:`RobotML` language has been
       based. More information can be found on
@@ -191,6 +209,11 @@ Glossary
    RCP
       it stands for *R*\ ich *C*\ lient *P*\ latform. It is the tool used in
       order to create the :term:`RobotML` platform.
+
+   RIM
+      **RIM** stands for **R**\ obot **I**\ ndependant **M**\ odel. It is an attempt to create a repository of robotic architectures not linked to any particular
+      robotic system and which, used in conjunction with :term:`RobotML` platform, may allow their user to share knowledge among the robotic community. RIM is
+      specifically linked to a dedicated :term:`portal` that can be accessed through the `RIM portal link <http://europe.bourges.univ-orleans.fr/>`_
 
    robot
       **Robot** definition is of ambiguous nature. Considering its wikipedia
