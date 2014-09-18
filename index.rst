@@ -17,7 +17,7 @@
 .. _I:
 
 .. note::
-   This page introducess the :term:`RobotML` platform (see section below)
+   This page introduces the :term:`RobotML` platform (see section below)
    as well as the the way to build the documentation you are reading (see :ref:`I_DHT`).
    There is, following, a section dedicated to indices and tables (see :ref:`I_IT`)
    and finally a list of websites linked to the platform (see :ref:`I_LW`). 

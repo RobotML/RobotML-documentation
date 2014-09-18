@@ -1,9 +1,9 @@
 RobotML Platform Installation
 =============================
 
-As explained previously, there will be throughout this documentation two points of view considered.
-The first one is the user point of view and the second one tries to provide enough information
-to those willing to participate to the platform development for him/her to install part or everything needed.
+The :term:`RobotML` platform as already explained is a complex object. In order to help the future user of the platform to install it packages have been created.
+The links to these different packages are available in the *User installation guide* pages.
+Many more explanations allowing a developer to begin working on one or many parts of the platform are provided in the *Developer installation guide* pages.
 
 
 .. toctree::
