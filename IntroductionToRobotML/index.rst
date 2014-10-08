@@ -6,9 +6,10 @@ Introduction to :term:`RobotML`
 :term:`RobotML` covers many things. In order to understand its underlying logic it is necessary to understand what
 are its different parts. :term:`RobotML` is in fact composed of three main parts and some associated tools. These parts are:
 
-1. **A modelling platform** based upon :term:`Papyrus` that allows to represent Robotics systems and associated environments ;
-2. **Generators** based upon :term:`Acceleo` and allowing to deploy the models composed thanks to the above part towards a list of targets;
-3. **Associated tools** that allow the :term:`user` to compile and execute the code generated thanks to the generators above. There are two types of targets:
+1. **A modelling platform** based upon :term:`Papyrus` that allows its :term:`user` to represent Robotics systems and associated environments;
+2. **Generators** based upon :term:`Acceleo` and allowing to deploy the models composed thanks to the above part towards a list of targets. If the :term:`user` can use
+   the generators proposed, it up to the :term:`developper` to create the plugin providing this capability. More details are provided following :ref:`RMLCG_I`;
+3. **Associated tools** that allow the :term:`user` to compile and execute the generated code thanks to the generators above. There are two types of targets:
 
    1. **Robotic middleware targets**: This type of targets allow the robotician to ignore the details of sensors and actuators focussing on the processing of information (such as decision taking).
    2. **Environment simulators**: this type of targets allow the robotician tp ake the robot(s) live somewhere, presents information to the sensors and exhibit the consequence of decision taken onto the "real" world.
@@ -31,9 +32,9 @@ The following figure presents the parts and their possible interactions.
 .. figure:: ./images/5-OriginOfDifferentImagesOfDocumentation.png
    :align: center
    :width: 700
-   :alt: Proteus Rationale graphical presentation   
+   :alt: RobotML Rationale graphical presentation   
    
-   *PROTEUS Rationale*
+   **PROTEUS Rationale**
 
 The sections that follow are detailing this schematic explaining how the interactions occur and what kind of interactions
 exists. This is what we called the 
@@ -47,14 +48,18 @@ the :term:`RobotML` explains how the different developed tools and parts instant
    RobotML development and Life cycle <LifeCycleSupportingTools>   
 
 
-.. note:: It is of more importance to read the description of the :ref:`Life cycle <QS-L>` and the following pages.
+.. note:
+   It is of some importance to read the description of the :ref:`Life cycle <QS-L>` and the following pages.
+   This is due to the fact that it allows the reader to understand the underlying logic of the all :term:`RobotML` approach.
+
 
 .. _ITR_I_RMLQ:
 
 RobotML Quickstart
 ******************
 
-In this section, we'll show you some steps in order to let you 
+The best way to start working with :term:`RobotML` is to first install it from one of its binary (go to http://rim.bourges.univ-orleans.fr)
+and then go directly to the expanded tutorial (see section :ref:`UG_T).
 
 .. _ITR_I_ORML:
 

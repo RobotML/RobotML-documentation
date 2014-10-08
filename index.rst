@@ -50,8 +50,8 @@ formally the system developed whatever they are. This need arises from several d
   on which this algorithm will work. In other word, there is a need of such a standard to allow the emergence
   of an actual "parts for robots" market.
 
-In order to answer the need demonstrated above a project (see :term:`PROTEUS`) allowed to create a modelling language
-and other associated toolings which this documentation is foccussing on. Thus
+In order to answer the need presented above a project (see :term:`PROTEUS`) allowed to create a modelling language
+and other associated tools which this documentation is foccussing on. Thus
 :term:`RobotML` is a language associated to a platform linked to :term:`PAPYRUS` tool and build
 upon :term:`ECLIPSE` framework. The goal of this language is to answer the above problematics and thus to ease development of
 robotics application and to facilitate exchanges between roboticians and
@@ -62,7 +62,7 @@ end-users.
 :term:`RobotML` documentation is decomposed in many parts. 
 A presentation of its rationale is done in its introduction, 
 then, instructions are provided in order to install the platform
-followed by some hints of how to use it through some examples.
+followed by some hints of how to use it through one expanded tutorial and other how-to informations.
 The following sections are providing in-depth information on the underlying language
 (the so-called meta-model), the different choices done in order to present the user modelling capabilities
 and finally the different generators add-ons with example of use.
@@ -89,7 +89,9 @@ dedicated portal that is accessible directly following
 `<http://rim.bourges.univ-orleans.fr/>`_ .
 
 .. warning::
-   Documentation is written solely in English due to lack of resources that would have allowed at least a French version. The reason for this choice is the importance of dissemination and cooperation at the European Level (see projects such as :term:`BRICS`\ ).
+   Documentation is written solely in English due to lack of resources that would have allowed at least a French version. 
+   The reason for this choice is the importance of dissemination and cooperation at the European Level 
+   (see projects such as :term:`BRICS`\ ).
 
 .. _I_DHT:
 

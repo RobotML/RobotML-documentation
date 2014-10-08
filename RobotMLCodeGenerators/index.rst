@@ -1,3 +1,5 @@
+.. _RMLCG_I:
+
 RobotML Code Generators
 ***********************
 

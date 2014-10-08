@@ -80,6 +80,10 @@ Glossary
       `EUROP / EURON <http://www.robotics-platform.eu/>`_ stands for EUROpean
       Platform / EUropean RObotics Network.
 
+   FSM
+      **FSM** stands for **F**inite **S**tate **M**achine. This is a computer representation of State Machine that is based
+      upon a theory allowing to understand its underlying limitations.
+
    git
       **git** is a distributed revision control and source code management (SCM)
       system.
