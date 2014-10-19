@@ -8,7 +8,7 @@ are its different parts. :term:`RobotML` is in fact composed of three main parts
 
 1. **A modelling platform** based upon :term:`Papyrus` that allows its :term:`user` to represent Robotics systems and associated environments;
 2. **Generators** based upon :term:`Acceleo` and allowing to deploy the models composed thanks to the above part towards a list of targets. If the :term:`user` can use
-   the generators proposed, it up to the :term:`developper` to create the plugin providing this capability. More details are provided following :ref:`RMLCG_I`;
+   the generators proposed, it up to the :term:`developer` to create the plugin providing this capability. More details are provided following :ref:`RMLCG_I`;
 3. **Associated tools** that allow the :term:`user` to compile and execute the generated code thanks to the generators above. There are two types of targets:
 
    1. **Robotic middleware targets**: This type of targets allow the robotician to ignore the details of sensors and actuators focussing on the processing of information (such as decision taking).
@@ -37,9 +37,8 @@ The following figure presents the parts and their possible interactions.
    **PROTEUS Rationale**
 
 The sections that follow are detailing this schematic explaining how the interactions occur and what kind of interactions
-exists. This is what we called the 
-The *Life Cycle* section details how the interactions are embodied in real life and 
-the :term:`RobotML` explains how the different developed tools and parts instantiate this life cycle.
+exists. This is what we called **the Life Cycle** that is detailed below and indicates how the interactions are embodied in real life. 
+the *RobotML development and Life cycle* explains how the different developed tools and parts instantiate this life cycle.
 
 .. toctree::
    :maxdepth: 1

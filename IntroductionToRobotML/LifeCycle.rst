@@ -1,26 +1,32 @@
-.. _QS-L:
+.. _ITR_LC:
 
 Life cycle
 ----------
 
+In order to understand the life cycle, it is necessary to introduce some definitions that explicit its different actors and what they are manipulating. 
+
 Roles
 ^^^^^
 
-As presented in picture :ref:`ITR-I-F1` there are several roles to be considered:
+The different actors of the *lifecycle* are many. Nevertheless the roles they can adopt are not so.
+Figure :ref:`ITR_I_F1` introduces the two roles to be considered:
 
-	1. :term:`Provider <provider>`\ : Here it means someone that is able to upload something on the :term:`portal` either using the different tools developed in the :term:`PROTEUS` project or directly knowing the protocols to be used. These actions ask for an authentication that will allow to limit access to the different parts of the portal. 
-	2. :term:`User <user>`\ : Here it means someone that is able to download something from the portal in the same conditions as the :term:`provider` with as much authentication knowing that some parts will be relayed to private website askinng perhaps for other authentication steps
+	#. :term:`Provider <provider>`\ : Here it means one actor that is producing objects to be provided to actors adpoting the second role;
+	#. :term:`User <user>`\ : Here it means one actor that is using what was provided by th eprevious actor eventually (two roles in one actor) to produce
+      and provide other objects.
+      
 
 Objects on the :term:`portal`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:term:`provider`\ s create and upload many different elements that can be downloaded by many :term:`user`\ s. Elements that could be exchanged are numerous:
+Thus :term:`provider`\ s create and upload many different objects that can be downloaded by many :term:`user`\ s. Objects' type that could be exchanged are numerous:
 
-	1. :term:`Model <model>`\ : It is an abstract view of a system as implemented using the :term:`RobotML` representation 
-	2. :term:`Algorithm <algorithm>`\ : an Algorithm :term:`provider` can provide to the community either a description of its solution or a software module implementing this description. In the scope of the :term:`portal` this module will have to respect properties.
-	3. :term:`Problem <problem>`\ : in the scope of the portal a *problem* is not only some documents lightly defining problems' condition. It means to provide specific data allowing to understand in detail what it is and to assess possible answers against it.
-	4. :term:`Robot <robot>`\ : This portal is open to the community and thus also to Robots providers that will be able to promote their products on the portal. In the context of the life cycle it means also that
-	5. Data: It can be videos, photos, whatever that is of interest to robotic, e.g. elements to test video processing functions or EM images, etc.
+	#. :term:`Model <model>`\ : It is an abstract view of a system; 
+	#. :term:`Algorithm <algorithm>`\ : an Algorithm :term:`provider` can provide to the community either a description of its solution or a software module implementing 
+      this description. In the scope of the :term:`portal` this module will have to respect properties.
+	#. :term:`Problem <problem>`\ : in the scope of the portal a *problem* is not only some documents lightly defining problems' condition. It means to provide specific data allowing to understand in detail what it is and to assess possible answers against it.
+	#. :term:`Robot <robot>`\ : This portal is open to the community and thus also to Robots providers that will be able to promote their products on the portal. In the context of the life cycle it means also that
+	#. Data: It can be videos, photos, whatever that is of interest to robotic, e.g. elements to test video processing functions or EM images, etc.
 	
 .. TODO 
 	it is necessary to reference the properties stated to exist considering algorithms as well as video and the like...

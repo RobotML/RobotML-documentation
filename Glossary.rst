@@ -45,8 +45,8 @@ Glossary
      Cycab-Tk is one of the existing Environment simulator target that exists for the :term:`RobotML` JUNO flavour.
      This middle-ware is developped by a community under :term:`INRIA` direction. More information is available following `gforge.inria.fr/projects/cycabtk/ <https://gforge.inria.fr/projects/cycabtk/>`_      
 
-   developper
-      The **developper** is someone intervening on the :term:`RobotML` platfrom development and thus that interacts with the development's repositories.
+   developer
+      The **developer** is someone intervening on the :term:`RobotML` platfrom development and thus that interacts with the development's repositories.
 
    DEVS
       **DEVS** stands for **D**\ iscrete **EV**\ vent system **S**\
@@ -275,7 +275,7 @@ Glossary
 
    SVN
       **SVN** stands for `SubVersioN <http://subversion.apache.org>`_\ . It is a
-      Version Control software that allows developers to synchronise source code
+      Version Control software that allows :term:`developer`s to synchronise source code
       in a distributed fashion. In the context of :term:`RobotML` platform, there
       is on the :term:`portal` a SVN erver allowing :term:`user`\s to share their
       experiences

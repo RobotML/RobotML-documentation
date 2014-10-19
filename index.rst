@@ -70,7 +70,7 @@ The last section is dedicated to the web :term:`portal`
 and its interactions with the :term:`RobotML` platform.
 
 The last bit of important information is that each time it is necessary,
-the documentation will separate the :term:`user` point of view from the :term:`developper` one
+the documentation will separate the :term:`user` point of view from the :term:`developer` one
 trying to limit the amount of knowledge to what is strictly deemed necessary.
 
 .. toctree::
