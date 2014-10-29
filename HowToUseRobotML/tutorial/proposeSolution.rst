@@ -164,8 +164,13 @@ Expand the current profil, and put the direction as *in* and the type as *Long*.
 +--------------------+--------------+----------------+-----------+
 | GPS                | CurPosition  | out            | Position  |
 +--------------------+--------------+----------------+-----------+
-| Cartography module | DestPosition | out            | Position  |
+| Cartography module | CarPosition  | in             | Position  |
 +--------------------+--------------+----------------+-----------+
+|                    | DestPosition | in             | Position  |
++--------------------+--------------+----------------+-----------+
+|                    | Distance     | out            | Long      |
++--------------------+--------------+----------------+-----------+
+
 
 Create the dataflow port for all component.
  
@@ -182,17 +187,17 @@ Open the *CarAuto_Systems* project and open the *Component definition diagram*. 
 +------------+--------------+----------------+-----------+
 | Component  | Port name    | Port direction | Port type |
 +============+==============+================+===========+
-| Navigation | CarPosition  | out            | Position  |
+| Navigation | DestPosition | in             | Position  |
 +------------+--------------+----------------+-----------+
-| Navigation | DestPosition | out            | Position  |
-+------------+--------------+----------------+-----------+
-| Propulsive | Velocity     | in             | Long      |
+|            | Distance     | out            | Long      |
 +------------+--------------+----------------+-----------+
 | Logic unit | Velocity     | out            | Long      |
 +------------+--------------+----------------+-----------+
-| Logic unit | CarPosition  | in             | Position  |
+|            | DestPosition | out            | Position  |
 +------------+--------------+----------------+-----------+
-| Logic unit | DestPosition | in             | Position  |
+|            | Distance     | in             | Long      |
++------------+--------------+----------------+-----------+
+| Propulsive | Velocity     | in             | Long      |
 +------------+--------------+----------------+-----------+
  
 
@@ -203,7 +208,8 @@ Open the *CarAuto_Systems* project and open the *Component definition diagram*. 
 
 Now we should link the component's communication port. Open the *CarAuto_SystemArchitecture* diagram and select the connector tool from the right tools menu. Connect the differents system in this order:
 
-- *Navigation/CarPosition* port to *Naviagtion/GPS/CurPosition* port,
+- *GPS/CurPosition* port to *Navigation/Cartography module/CarPosition* port,
+- *Navigation/Distance* port to *Navigation/Cartography module/DestPosition* port,
 - *Navigation/DestPosition* port to *Navigation/Cartography module/DestPosition* port,
 - *Propulsive/Velocity* port to *Propulisve/Engine/Velocity* port.
 
@@ -214,7 +220,7 @@ Now we should link the component's communication port. Open the *CarAuto_SystemA
 
 Do the operation on the car's system. Open the *CarAuto_CarArchiecture* diagram, and connect the following systems between us:
 
-- *Navigation/CarPosition* port to *Logic unit/CarPosition* port,
+- *Navigation/Distance* port to *Logic unit/Distance* port,
 - *Navigation/DestPosition* port to *Logic unit/DestPosition* port,
 - *Logic unit/Velocity* port to *Propulsive/Velocity* port.
 
@@ -255,12 +261,15 @@ From the *Component menu* select the *Operation* component and drag it in the *A
 | applySpeed      | speed          | in        |
 +-----------------+----------------+-----------+
 | processToMap    | carPosition    | in        |
++-----------------+----------------+-----------+
 |                 | destPosition   | in        |
++-----------------+----------------+-----------+
 |                 | command        | out       |
 +-----------------+----------------+-----------+
 | currentPosition | carPosition    | out       |
 +-----------------+----------------+-----------+
 | updateSpeed     | speedLogicunit | in        |
++-----------------+----------------+-----------+
 |                 | speedEngine    | out       |
 +-----------------+----------------+-----------+
 | updatePosition  | carPosition    | out       |
