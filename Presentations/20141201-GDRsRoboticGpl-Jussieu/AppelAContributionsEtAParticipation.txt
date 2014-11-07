@@ -1,0 +1,132 @@
+APPEL à CONTRIBUTIONS ET à PARTICIPATION
+
+
+ Journée sur les Architectures Logicielles pour la Robotique Autonome, les Systèmes Cyber-Physiques et les Systèmes Auto-Adaptables
+
+
+ UPMC-LIP6 Paris, lundi 1 décembre 2014 
+
+ Date limite de soumission : vendredi 14 novembre 2014
+
+
+ Soutenue conjointement par les GDR GPL et Robotique du CNRS
+
+
+
+ Depuis une vingtaine d'années, la robotique autonome fait face à une
+ croissance rapide dans la complexité des besoins et des exigences pour
+ des robots chargés de missions multiples, capables de se coordonner,
+ et développés de telle manière que des garanties de sûreté et de
+ sécurité puissent être vérifiées et certifiées en vue d'une
+ utilisation dans un environnement humain. En parallèle, une évolution
+ similaire dans le domaine des systèmes temps-réel embarqués répartis a
+ justifié l'émergence du domaine des systèmes ‘cyber-physiques’
+reflétant une montée similaire en complexité. D'autres domaines sont
+ également apparus, comme l'informatique autonomique, partageant les
+ mêmes objectifs scientifiques dans la conception et la mise en oeuvre
+ de leurs architectures logicielles.
+
+
+ Les architectures logicielles dans ces différents domaines cherchent
+ globalement à intégrer un système informatisé de contrôle dans un
+ contexte en prise avec le monde réel, avec d'autres traitements
+ d'information de plus en plus lourds (cartographie, planification,
+ analyse de données, apprentissage, etc.). L'expérience de ces vingt
+ dernières années en robotique autonome montre que la réalisation
+ d'architectures logicielles correctes et s?res, facilement
+ réutilisables et évolutives reste un défi formidable car il est très
+ difficile d'obtenir un bon découplage entre capteurs, contrôle,
+ algorithmes et actionneurs. La prise en compte du temps et des
+ contraintes diverses a mené à des systèmes robotiques très couplés, où
+ les caractéristiques des capteurs et des actionneurs de même que le
+ cahier des charges des fonctionnalités des robots finissent par dicter
+ des solutions spécifiques en termes d'algorithmes, d'architectures, de
+ configurations des intergiciels et du système, etc., solutions qui
+ sont coûteuses à développer et ensuite difficiles à faire évoluer.
+
+
+ La Journée sur les Architectures Logicielles pour la Robotique
+ Autonome, les Systèmes Cyber-Physiques et les Systèmes
+ Auto-Adaptables, soutenue par les GDR Génie de la Programmation et des
+ Logiciels et Robotique, est organisée pour identifier les chercheurs
+ et les équipes intéressés à animer une communauté vouée à l'échange et
+ à la collaboration pour s'attaquer aux défis scientifiques communs au
+ génie logiciel et au développement de ces architectures de contrôle et
+ cyber-physiques. Outre un état des lieux, la journée vise à
+ déterminer des thèmes prioritaires qui pourront faire l'objet de
+ futures journées et initiatives.
+
+
+ Les thématiques visées, toujours comprises dans l'optique de ces
+ architectures logicielles, couvrent sans se limiter à :
+
+
+- définition d'architectures logicielles
+
+ - langages de programmation, abstractions de programmation, et patrons
+ de conception
+
+- spécification, modélisation et validation, en particulier en
+ fonction de leur impact et contraintes sur les architectures
+ logicielles
+
+- les aspects du génie logiciel directement liés aux architectures
+ logiciels : conception, développement, tests, validation, gestion du
+ cycle de vie, etc. 
+
+- composition, coordination, inter-connexion de ces systèmes
+
+
+ La journée sera organisée autour de présentations invitées, de
+ présentations émanant des chercheurs et équipes et d'une session
+ poster, de manière à favoriser la participation et les discussions.
+ Trois modalités de réponse à cet appel vous sont proposées :
+
+
+- proposition de présentation longue sous la forme d'une soumission
+ d'article (incluant des travaux déjà publiés)
+
+- proposition de présentation courte sous la forme d'une soumission
+ d'un résume (abstract) et d'un poster
+
+- demande de participation simple accompagnée d'une description des
+ objectifs et travaux de recherche du chercheur ou de son équipe
+
+
+ Les modalités de soumission sont :
+
+
+ - la date limite de soumission est le vendredi 14 novembre 2014, mais
+ elles seront évaluées au fil de l'eau ;
+
+- les soumissions sont envoyées directement par courrier électronique
+ à l'un ou l'autre des organisateurs ;
+
+- préciser lors de la soumission les noms des personnes qui souhaitent
+ participer effectivement à la journée ;
+
+- les résultats et invitations à participer à la journée seront
+ données rapidement après les soumissions, et au plus tard le
+ mercredi 19 novembre.
+
+
+ Sous réserve d'invitation, les participants devront aussi s'inscrire
+ auprès de Jacques Malenfant au plus tard le lundi 24 novembre. Cette
+ inscription est gratuite mais obligatoire pour permettre de préparer
+ la logistique nécessaire.
+
+
+ Le Comité d'organisation de la Journée,
+
+
+ Jacques, David, Roger et Noury.
+
+
+
+ Jacques Malenfant, LIP6, membre du GDR GPL,  jacques.malenfant@lip6.fr
+
+ David Andreu, LIRMM, membre du GDR Robotique, andreu@lirmm.fr
+
+ Roger Pissard-Gibolet, INRIA Grenoble, membre du GDR Robotique,  roger.pissard@inria.fr
+
+ Noury Bouraqadi, EM Douai, membre du GDR GPL,  noury.bouraqadi@mines-douai.fr
